@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Chun&#39;s Blog</title>
+    <link>http://localhost:1313/post/</link>
+    <description>Recent content in Posts on Chun&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Chun</copyright>
+    <lastBuildDate>Wed, 15 Jan 2020 00:58:44 +0800</lastBuildDate>
+    
+	<atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Bootstrap框架03：样式组件插件</title>
+      <link>http://localhost:1313/post/202001-bootstrap%E6%A1%86%E6%9E%B603%E6%A0%B7%E5%BC%8F%E7%BB%84%E4%BB%B6%E6%8F%92%E4%BB%B6/</link>
+      <pubDate>Wed, 15 Jan 2020 00:58:44 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/202001-bootstrap%E6%A1%86%E6%9E%B603%E6%A0%B7%E5%BC%8F%E7%BB%84%E4%BB%B6%E6%8F%92%E4%BB%B6/</guid>
+      <description>&lt;p&gt;这部分学习常用样式，组件，和插件&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Bootstrap框架02：栅格系统</title>
+      <link>http://localhost:1313/post/202001-bootstrap%E6%A1%86%E6%9E%B602%E6%A0%85%E6%A0%BC%E7%B3%BB%E7%BB%9F/</link>
+      <pubDate>Tue, 14 Jan 2020 23:49:42 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/202001-bootstrap%E6%A1%86%E6%9E%B602%E6%A0%85%E6%A0%BC%E7%B3%BB%E7%BB%9F/</guid>
+      <description>&lt;p&gt;响应式布局依靠的是栅格系统：将一行平均分成12个格子&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Bootstrap框架01：概述入门</title>
+      <link>http://localhost:1313/post/202001-bootstrap%E6%A1%86%E6%9E%B601%E6%A6%82%E8%BF%B0%E5%85%A5%E9%97%A8/</link>
+      <pubDate>Fri, 10 Jan 2020 21:17:24 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/202001-bootstrap%E6%A1%86%E6%9E%B601%E6%A6%82%E8%BF%B0%E5%85%A5%E9%97%A8/</guid>
+      <description>&lt;p&gt;Bootstrap是美国Twitter公司的设计师Mark Otto和Jacob Thornton合作基于HTML、CSS、JavaScript 开发的简洁、直观、强悍的前端开发&lt;strong&gt;框架&lt;/strong&gt;，使得 Web 开发更加快捷。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>JAVA入门08：多态</title>
+      <link>http://localhost:1313/post/201912-java%E5%85%A5%E9%97%A808%E5%A4%9A%E6%80%81/</link>
+      <pubDate>Fri, 27 Dec 2019 15:07:13 +0000</pubDate>
+      
+      <guid>http://localhost:1313/post/201912-java%E5%85%A5%E9%97%A808%E5%A4%9A%E6%80%81/</guid>
+      <description>&lt;p&gt;多态就是一个同一个方法，可以根据发送对象不同采用不同的方法&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>JAVA入门07：方法重写</title>
+      <link>http://localhost:1313/post/201912-java%E5%85%A5%E9%97%A807%E6%96%B9%E6%B3%95%E9%87%8D%E5%86%99/</link>
+      <pubDate>Thu, 26 Dec 2019 22:19:30 +0000</pubDate>
+      
+      <guid>http://localhost:1313/post/201912-java%E5%85%A5%E9%97%A807%E6%96%B9%E6%B3%95%E9%87%8D%E5%86%99/</guid>
+      <description>重写是指子类重写父类方法（方法体不同），注意只能是方法！ 重写特点 方法名必须相同 参数列表必须相同（不然就变成了重载） 修饰符：范围可以扩大但是不</description>
+    </item>
+    
+    <item>
+      <title>JAVA入门06：Super关键字</title>
+      <link>http://localhost:1313/post/201912-java%E5%85%A5%E9%97%A806super%E5%85%B3%E9%94%AE%E5%AD%97/</link>
+      <pubDate>Thu, 26 Dec 2019 22:01:55 +0000</pubDate>
+      
+      <guid>http://localhost:1313/post/201912-java%E5%85%A5%E9%97%A806super%E5%85%B3%E9%94%AE%E5%AD%97/</guid>
+      <description>JAVA中的super 详解 super super 调用父类的构造方法，必须在构造方法的第一个 super 必须只能出现在子类的方法或者构造方法中（不可能调用Object的）</description>
+    </item>
+    
+    <item>
+      <title>JAVA入门05：数组内存分析</title>
+      <link>http://localhost:1313/post/201912-java%E5%85%A5%E9%97%A805%E6%95%B0%E7%BB%84%E5%86%85%E5%AD%98%E5%88%86%E6%9E%90/</link>
+      <pubDate>Thu, 26 Dec 2019 19:51:38 +0000</pubDate>
+      
+      <guid>http://localhost:1313/post/201912-java%E5%85%A5%E9%97%A805%E6%95%B0%E7%BB%84%E5%86%85%E5%AD%98%E5%88%86%E6%9E%90/</guid>
+      <description>首先我们得知道JAVA内存分为三种：堆，栈，方法区; 堆:存放new的对象与数据; 栈:存放基本变量类型（具体数值）; 数组内存分析 声明数组 1 int[] array</description>
+    </item>
+    
+    <item>
+      <title>JAVA入门04：数据转换与运算</title>
+      <link>http://localhost:1313/post/201912-java%E5%85%A5%E9%97%A804%E6%95%B0%E6%8D%AE%E8%BD%AC%E6%8D%A2/</link>
+      <pubDate>Wed, 25 Dec 2019 21:40:06 +0000</pubDate>
+      
+      <guid>http://localhost:1313/post/201912-java%E5%85%A5%E9%97%A804%E6%95%B0%E6%8D%AE%E8%BD%AC%E6%8D%A2/</guid>
+      <description>&lt;p&gt;数据转换分为两种：强制类型转换和自动类型转换
+数据类型转换优先级由低到高：
+byte -&amp;gt; short -&amp;gt; char -&amp;gt; int -&amp;gt; long -&amp;gt; float -&amp;gt; double
+(先是小数点型大于整数型，然后是按字节大小)&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>JAVA入门03：数据类型</title>
+      <link>http://localhost:1313/post/201912-java%E5%85%A5%E9%97%A803%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</link>
+      <pubDate>Wed, 25 Dec 2019 17:11:02 +0000</pubDate>
+      
+      <guid>http://localhost:1313/post/201912-java%E5%85%A5%E9%97%A803%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</guid>
+      <description>&lt;p&gt;JAVA的数据类型分类
+&lt;img src=&#34;http://localhost:1313/image/201912-JAVA%E5%85%A5%E9%97%A803%EF%BC%9A%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/1.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>JAVA入门02：卸载与安装JDK</title>
+      <link>http://localhost:1313/post/201912-java%E5%85%A5%E9%97%A802%E5%8D%B8%E8%BD%BD%E4%B8%8E%E5%AE%89%E8%A3%85jdk/</link>
+      <pubDate>Wed, 25 Dec 2019 15:55:26 +0000</pubDate>
+      
+      <guid>http://localhost:1313/post/201912-java%E5%85%A5%E9%97%A802%E5%8D%B8%E8%BD%BD%E4%B8%8E%E5%AE%89%E8%A3%85jdk/</guid>
+      <description>&lt;p&gt;如何干净删除JDK&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>JAVA入门01：学习路线</title>
+      <link>http://localhost:1313/post/201912-java%E5%85%A5%E9%97%A801%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF/</link>
+      <pubDate>Tue, 24 Dec 2019 21:57:33 +0000</pubDate>
+      
+      <guid>http://localhost:1313/post/201912-java%E5%85%A5%E9%97%A801%E5%AD%A6%E4%B9%A0%E8%B7%AF%E7%BA%BF/</guid>
+      <description>&lt;p&gt;大概学习java路线：javase，数据库，前端，javaweb，SSM框架，Linux，SpringBoot，SpringCloud，Hadoop&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

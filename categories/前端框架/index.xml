@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>前端框架 on Chun&#39;s Blog</title>
+    <link>http://localhost:1313/categories/%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6/</link>
+    <description>Recent content in 前端框架 on Chun&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Chun</copyright>
+    <lastBuildDate>Fri, 10 Jan 2020 21:17:24 +0800</lastBuildDate>
+    
+	<atom:link href="http://localhost:1313/categories/%E5%89%8D%E7%AB%AF%E6%A1%86%E6%9E%B6/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Bootstrap框架01：概述入门</title>
+      <link>http://localhost:1313/post/202001-bootstrap%E6%A1%86%E6%9E%B601%E6%A6%82%E8%BF%B0%E5%85%A5%E9%97%A8/</link>
+      <pubDate>Fri, 10 Jan 2020 21:17:24 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/202001-bootstrap%E6%A1%86%E6%9E%B601%E6%A6%82%E8%BF%B0%E5%85%A5%E9%97%A8/</guid>
+      <description>&lt;p&gt;Bootstrap是美国Twitter公司的设计师Mark Otto和Jacob Thornton合作基于HTML、CSS、JavaScript 开发的简洁、直观、强悍的前端开发&lt;strong&gt;框架&lt;/strong&gt;，使得 Web 开发更加快捷。&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
