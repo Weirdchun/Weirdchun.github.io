@@ -121,7 +121,36 @@
   </url>
   
   <url>
+    <loc>http://localhost:1313/tags/git/</loc>
+    <lastmod>2019-10-15T04:20:09+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/post/201911-git%E6%93%8D%E4%BD%9C%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/</loc>
+    <lastmod>2019-10-15T04:20:09+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2019-10-15T04:20:09+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/vultr/</loc>
+    <lastmod>2019-10-02T20:29:28+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/post/202001-vultr%E5%BF%AB%E7%85%A7%E5%AF%86%E7%A0%81/</loc>
+    <lastmod>2019-10-02T20:29:28+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>

@@ -124,5 +124,23 @@ byte -&amp;gt; short -&amp;gt; char -&amp;gt; int -&amp;gt; long -&amp;gt; float
       <description>&lt;p&gt;大概学习java路线：javase，数据库，前端，javaweb，SSM框架，Linux，SpringBoot，SpringCloud，Hadoop&lt;/p&gt;</description>
     </item>
     
+    <item>
+      <title>Git操作常见问题</title>
+      <link>http://localhost:1313/post/201911-git%E6%93%8D%E4%BD%9C%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Tue, 15 Oct 2019 04:20:09 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/201911-git%E6%93%8D%E4%BD%9C%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/</guid>
+      <description>&lt;p&gt;git&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Vultr快照密码</title>
+      <link>http://localhost:1313/post/202001-vultr%E5%BF%AB%E7%85%A7%E5%AF%86%E7%A0%81/</link>
+      <pubDate>Wed, 02 Oct 2019 20:29:28 +0000</pubDate>
+      
+      <guid>http://localhost:1313/post/202001-vultr%E5%BF%AB%E7%85%A7%E5%AF%86%E7%A0%81/</guid>
+      <description>&lt;p&gt;隐藏&lt;/p&gt;</description>
+    </item>
+    
   </channel>
 </rss>
