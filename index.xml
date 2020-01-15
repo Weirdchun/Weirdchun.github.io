@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Chun</copyright>
-    <lastBuildDate>Wed, 15 Jan 2020 00:58:44 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 15 Jan 2020 22:29:40 +0800</lastBuildDate>
     
 	<atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     
@@ -19,6 +19,42 @@
       
       <guid>http://localhost:1313/about/</guid>
       <description>Hugo博客 前言 由于Hexo博客的生成速度太慢了，所以我开始使用Hugo博客 写博客 当使用Hugo博客后，写文章的姿势 1 hugo new post/202001-xxxxxx.md 生成静态文件 使用</description>
+    </item>
+    
+    <item>
+      <title>202001 XML入门04：约束</title>
+      <link>http://localhost:1313/post/202001-xml%E5%85%A5%E9%97%A804%E7%BA%A6%E6%9D%9F/</link>
+      <pubDate>Wed, 15 Jan 2020 22:29:40 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/202001-xml%E5%85%A5%E9%97%A804%E7%BA%A6%E6%9D%9F/</guid>
+      <description>&lt;p&gt;约束：规定了xml文档的书写规则&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>XML入门03：组成部分</title>
+      <link>http://localhost:1313/post/202001-xml%E5%85%A5%E9%97%A803%E7%BB%84%E6%88%90%E9%83%A8%E5%88%86/</link>
+      <pubDate>Wed, 15 Jan 2020 22:05:27 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/202001-xml%E5%85%A5%E9%97%A803%E7%BB%84%E6%88%90%E9%83%A8%E5%88%86/</guid>
+      <description>&lt;p&gt;xml文档包含了：文档声明，指令，标签，属性，文本&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>XML入门02：语法</title>
+      <link>http://localhost:1313/post/202001-xml%E5%85%A5%E9%97%A802%E8%AF%AD%E6%B3%95/</link>
+      <pubDate>Wed, 15 Jan 2020 20:12:48 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/202001-xml%E5%85%A5%E9%97%A802%E8%AF%AD%E6%B3%95/</guid>
+      <description>&lt;p&gt;xml必须严格遵守语法&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>XML入门01：概述</title>
+      <link>http://localhost:1313/post/202001-xml%E5%85%A5%E9%97%A801%E6%A6%82%E8%BF%B0/</link>
+      <pubDate>Wed, 15 Jan 2020 19:05:41 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/202001-xml%E5%85%A5%E9%97%A801%E6%A6%82%E8%BF%B0/</guid>
+      <description>&lt;p&gt;XML(Extensible Markup Language)：可扩展标记语言，标签可以自定义&lt;/p&gt;</description>
     </item>
     
     <item>

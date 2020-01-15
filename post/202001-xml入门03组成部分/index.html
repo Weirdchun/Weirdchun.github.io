@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Categories - Chun&#39;s Blog</title>
+  <title>XML入门03：组成部分 - Chun&#39;s Blog</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,8 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Chun" /><meta name="description" content="Hugo theme even example site." /><meta name="keywords" content="Hugo, theme, even" />
+<meta name="author" content="Chun" /><meta name="description" content="xml文档包含了：文档声明，指令，标签，属性，文本
+" /><meta name="keywords" content="Hugo, theme, even" />
 
 
 
@@ -26,9 +27,7 @@
 <meta name="generator" content="Hugo 0.62.2 with theme even" />
 
 
-<link rel="canonical" href="http://localhost:1313/categories/" />
-  <link href="http://localhost:1313/categories/index.xml" rel="alternate" type="application/rss+xml" title="Chun&#39;s Blog" />
-  <link href="http://localhost:1313/categories/index.xml" rel="feed" type="application/rss+xml" title="Chun&#39;s Blog" />
+<link rel="canonical" href="http://localhost:1313/post/202001-xml%E5%85%A5%E9%97%A803%E7%BB%84%E6%88%90%E9%83%A8%E5%88%86/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -40,15 +39,23 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="Categories" />
-<meta property="og:description" content="Hugo theme even example site." />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="http://localhost:1313/categories/" />
-<meta property="og:updated_time" content="2020-01-15T22:29:40+08:00" />
-<meta itemprop="name" content="Categories">
-<meta itemprop="description" content="Hugo theme even example site."><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Categories"/>
-<meta name="twitter:description" content="Hugo theme even example site."/>
+<meta property="og:title" content="XML入门03：组成部分" />
+<meta property="og:description" content="xml文档包含了：文档声明，指令，标签，属性，文本" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/post/202001-xml%E5%85%A5%E9%97%A803%E7%BB%84%E6%88%90%E9%83%A8%E5%88%86/" />
+<meta property="article:published_time" content="2020-01-15T22:05:27+08:00" />
+<meta property="article:modified_time" content="2020-01-15T22:05:27+08:00" />
+<meta itemprop="name" content="XML入门03：组成部分">
+<meta itemprop="description" content="xml文档包含了：文档声明，指令，标签，属性，文本">
+<meta itemprop="datePublished" content="2020-01-15T22:05:27&#43;08:00" />
+<meta itemprop="dateModified" content="2020-01-15T22:05:27&#43;08:00" />
+<meta itemprop="wordCount" content="252">
+
+
+
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="XML入门03：组成部分"/>
+<meta name="twitter:description" content="xml文档包含了：文档声明，指令，标签，属性，文本"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -112,27 +119,111 @@
     <main id="main" class="main">
       <div class="content-wrapper">
         <div id="content" class="content">
-          <div class="terms">
-      <div class="terms-title">
-        3 Categories In Total
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">XML入门03：组成部分</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2020-01-15 </span>
+        <div class="post-category">
+            <a href="/categories/xml%E8%AF%AD%E8%A8%80/"> XML语言 </a>
+            </div>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
-      <div class="terms-tags">
-        <a class="terms-link" href="/categories/javase/">
-            javase
-            <span class="terms-count">8</span>
-          </a>
-        <a class="terms-link" href="/categories/xml%E8%AF%AD%E8%A8%80/">
-            xml语言
-            <span class="terms-count">4</span>
-          </a>
-        <a class="terms-link" href="/categories/bootstrap%E6%A1%86%E6%9E%B6/">
-            bootstrap框架
-            <span class="terms-count">3</span>
-          </a>
-        </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#文档声明">文档声明</a></li>
+    <li><a href="#指令了解">指令（了解）</a></li>
+    <li><a href="#标签">标签</a></li>
+    <li><a href="#属性">属性</a></li>
+    <li><a href="#文本">文本</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <p>xml文档包含了：文档声明，指令，标签，属性，文本</p>
+<h2 id="文档声明">文档声明</h2>
+<p>格式：<code>&lt;?xml 属性列表 ?&gt;</code>
+- 属性列表：
+- version：版本号（必须属性,1.0就行）
+- encoding:编码方式。告诉解析引擎（浏览器）当前文档使用的字符集，默认：ISO-8859-1
+- standalone:是否独立(yes:不依赖其他，no：依赖其他)</p>
+<h2 id="指令了解">指令（了解）</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml-stylesheet type=&#34;text/css&#34; href=&#34;a.css&#34;?&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="标签">标签</h2>
+<p>标签名称是自定义的。
+规则：</p>
+<ul>
+<li>名称不能以数字或标点开始</li>
+<li>名称不能以xml开始</li>
+<li>名称不能包含空格</li>
+</ul>
+<h2 id="属性">属性</h2>
+<p>id属性值唯一</p>
+<h2 id="文本">文本</h2>
+<p>CDATA区：在该区域中的数据会被原样展示</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">&lt;![CDATA[ 数据 ]]&gt;
+</code></pre></td></tr></table>
+</div>
+</div>
     </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Chun</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2020-01-15
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      
+      <nav class="post-nav">
+        <a class="prev" href="/post/202001-xml%E5%85%A5%E9%97%A804%E7%BA%A6%E6%9D%9F/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">202001 XML入门04：约束</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="/post/202001-xml%E5%85%A5%E9%97%A802%E8%AF%AD%E6%B3%95/">
+            <span class="next-text nav-default">XML入门02：语法</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
         </div>
         
+
+  
+
+  
 
       </div>
     </main>
