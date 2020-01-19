@@ -7,15 +7,33 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Chun</copyright>
-    <lastBuildDate>Wed, 15 Jan 2020 22:29:40 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 20 Jan 2020 01:05:37 +0800</lastBuildDate>
     
 	<atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>JAVASE</title>
+      <link>http://localhost:1313/categories/javase/</link>
+      <pubDate>Mon, 20 Jan 2020 01:05:37 +0800</pubDate>
+      
+      <guid>http://localhost:1313/categories/javase/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Spring框架</title>
+      <link>http://localhost:1313/categories/spring%E6%A1%86%E6%9E%B6/</link>
+      <pubDate>Thu, 16 Jan 2020 23:30:59 +0800</pubDate>
+      
+      <guid>http://localhost:1313/categories/spring%E6%A1%86%E6%9E%B6/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>XML语言</title>
       <link>http://localhost:1313/categories/xml%E8%AF%AD%E8%A8%80/</link>
-      <pubDate>Wed, 15 Jan 2020 22:29:40 +0800</pubDate>
+      <pubDate>Thu, 16 Jan 2020 21:10:28 +0800</pubDate>
       
       <guid>http://localhost:1313/categories/xml%E8%AF%AD%E8%A8%80/</guid>
       <description></description>
@@ -27,15 +45,6 @@
       <pubDate>Wed, 15 Jan 2020 00:58:44 +0800</pubDate>
       
       <guid>http://localhost:1313/categories/bootstrap%E6%A1%86%E6%9E%B6/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>JAVASE</title>
-      <link>http://localhost:1313/categories/javase/</link>
-      <pubDate>Fri, 27 Dec 2019 15:07:13 +0000</pubDate>
-      
-      <guid>http://localhost:1313/categories/javase/</guid>
       <description></description>
     </item>
     

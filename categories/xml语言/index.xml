@@ -7,13 +7,22 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Chun</copyright>
-    <lastBuildDate>Wed, 15 Jan 2020 22:29:40 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 16 Jan 2020 21:10:28 +0800</lastBuildDate>
     
 	<atom:link href="http://localhost:1313/categories/xml%E8%AF%AD%E8%A8%80/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>202001 XML入门04：约束</title>
+      <title>XML入门05：解析</title>
+      <link>http://localhost:1313/post/202001-xml%E5%85%A5%E9%97%A805%E8%A7%A3%E6%9E%90/</link>
+      <pubDate>Thu, 16 Jan 2020 21:10:28 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/202001-xml%E5%85%A5%E9%97%A805%E8%A7%A3%E6%9E%90/</guid>
+      <description>&lt;p&gt;解析：操作xml文档，将文档中数据读取到内存中&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>XML入门04：约束</title>
       <link>http://localhost:1313/post/202001-xml%E5%85%A5%E9%97%A804%E7%BA%A6%E6%9D%9F/</link>
       <pubDate>Wed, 15 Jan 2020 22:29:40 +0800</pubDate>
       

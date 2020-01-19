@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>XML入门04：约束 - Chun&#39;s Blog</title>
+  <title>JAVASE09：注解 - Chun&#39;s Blog</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Chun" /><meta name="description" content="约束：规定了xml文档的书写规则
+<meta name="author" content="Chun" /><meta name="description" content="注解是一些代码的标签，有利于我们快速知道代码信息。
 " /><meta name="keywords" content="Hugo, theme, even" />
 
 
@@ -27,7 +27,7 @@
 <meta name="generator" content="Hugo 0.62.2 with theme even" />
 
 
-<link rel="canonical" href="http://localhost:1313/post/202001-xml%E5%85%A5%E9%97%A804%E7%BA%A6%E6%9D%9F/" />
+<link rel="canonical" href="http://localhost:1313/post/201912-javase09%E6%B3%A8%E8%A7%A3/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -39,23 +39,23 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="XML入门04：约束" />
-<meta property="og:description" content="约束：规定了xml文档的书写规则" />
+<meta property="og:title" content="JAVASE09：注解" />
+<meta property="og:description" content="注解是一些代码的标签，有利于我们快速知道代码信息。" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://localhost:1313/post/202001-xml%E5%85%A5%E9%97%A804%E7%BA%A6%E6%9D%9F/" />
-<meta property="article:published_time" content="2020-01-15T22:29:40+08:00" />
-<meta property="article:modified_time" content="2020-01-15T22:29:40+08:00" />
-<meta itemprop="name" content="XML入门04：约束">
-<meta itemprop="description" content="约束：规定了xml文档的书写规则">
-<meta itemprop="datePublished" content="2020-01-15T22:29:40&#43;08:00" />
-<meta itemprop="dateModified" content="2020-01-15T22:29:40&#43;08:00" />
-<meta itemprop="wordCount" content="395">
+<meta property="og:url" content="http://localhost:1313/post/201912-javase09%E6%B3%A8%E8%A7%A3/" />
+<meta property="article:published_time" content="2020-01-20T01:05:37+08:00" />
+<meta property="article:modified_time" content="2020-01-20T01:05:37+08:00" />
+<meta itemprop="name" content="JAVASE09：注解">
+<meta itemprop="description" content="注解是一些代码的标签，有利于我们快速知道代码信息。">
+<meta itemprop="datePublished" content="2020-01-20T01:05:37&#43;08:00" />
+<meta itemprop="dateModified" content="2020-01-20T01:05:37&#43;08:00" />
+<meta itemprop="wordCount" content="537">
 
 
 
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="XML入门04：约束"/>
-<meta name="twitter:description" content="约束：规定了xml文档的书写规则"/>
+<meta name="twitter:title" content="JAVASE09：注解"/>
+<meta name="twitter:description" content="注解是一些代码的标签，有利于我们快速知道代码信息。"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -122,12 +122,12 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">XML入门04：约束</h1>
+      <h1 class="post-title">JAVASE09：注解</h1>
 
       <div class="post-meta">
-        <span class="post-time"> 2020-01-15 </span>
+        <span class="post-time"> 2020-01-20 </span>
         <div class="post-category">
-            <a href="/categories/xml%E8%AF%AD%E8%A8%80/"> XML语言 </a>
+            <a href="/categories/javase/"> JAVASE </a>
             </div>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -138,44 +138,70 @@
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#知识点要求">知识点要求</a></li>
-    <li><a href="#分类">分类</a>
-      <ul>
-        <li><a href="#dtd简单约束技术">DTD（简单约束技术）</a></li>
-        <li><a href="#schema复杂约束技术">Schema（复杂约束技术）</a></li>
-      </ul>
-    </li>
+    <li><a href="#内置注解">内置注解</a></li>
+    <li><a href="#元注解">元注解</a></li>
+    <li><a href="#自定义注解">自定义注解</a></li>
   </ul>
 </nav>
   </div>
 </div>
     <div class="post-content">
-      <p>约束：规定了xml文档的书写规则</p>
-<h2 id="知识点要求">知识点要求</h2>
-<ol>
-<li>能够在xml中引入约束文档</li>
-<li>能够简单读懂约束文档</li>
-</ol>
-<h2 id="分类">分类</h2>
-<h3 id="dtd简单约束技术">DTD（简单约束技术）</h3>
-<p>引入dtd文档到xml文档中</p>
-<ol>
-<li>内部dtd：将约束规则定义在xml文档中</li>
-<li>外部dtd：将约束规则定义在xml文档外的<code>.dtd</code>文件中
+      <p>注解是一些代码的标签，有利于我们快速知道代码信息。</p>
+<h2 id="内置注解">内置注解</h2>
+<p>这些注解是jdk5.0自己定义的<strong>注解</strong>。
+@Override - 检查该方法是否是重载方法。如果发现其父类，或者是引用的接口中并没有该方法时，会报编译错误。
+@Deprecated - 标记过时方法。如果使用该方法，会报编译警告。
+@SuppressWarnings - 指示编译器去忽略注解中声明的警告。</p>
+<h2 id="元注解">元注解</h2>
+<p>元注解的作用就是注解其他注解。</p>
 <ul>
-<li>本地：<code>&lt;!DOCTYPE 根标签名 SYSTEM &quot;dtd文件的位置&quot;&gt;</code></li>
-<li>网络：<code>&lt;!DOCTYPE 根标签名 PUBLIC &quot;dtd文件名字&quot; &quot;dtd文件的位置URL&quot;&gt;</code></li>
+<li>@Target - 这个注解就被限定了运用的场景,相当于作用域
+<ul>
+<li>TYPE：用于描述类、接口</li>
+<li>METHOD:用于描述方法</li>
 </ul>
 </li>
-</ol>
-<h3 id="schema复杂约束技术">Schema（复杂约束技术）</h3>
-<p>后缀名为<code>xsd</code>,比dtd更强大，能约束标签里面的值。
-引入shema文档</p>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Target</span><span class="o">(</span><span class="n">value</span> <span class="o">=</span> <span class="n">ElementType</span><span class="o">.</span><span class="na">METHOD</span><span class="o">)</span> <span class="c1">//这个注解只能用在方法中
+</span><span class="c1"></span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>@Retention - 标识这个注解在什么地方有效,有SOURCE,CLASS,RUNTIME三个属性。
+<ul>
+<li>SOURCE:注解只在源码有效</li>
+<li>CLASS:注解只在<code>.class</code>文件有效</li>
+<li>RUNTIME:在什么情况都有效
+RUNTIME&gt;CLASS&gt;SOURCE（一般都写RUNTIME）</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Retention</span><span class="o">(</span><span class="n">value</span> <span class="o">=</span> <span class="n">RetentionPolicy</span><span class="o">.</span><span class="na">RUNTIME</span><span class="o">)</span> 
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>
+<p>@Documented - 标记这些注解是否生成在用户文档（JAVAdoc）中。</p>
+</li>
+<li>
+<p>@Inherited - 标记这个子类注解是继承于哪个父类注解类(默认注解并没有继承于任何子类)</p>
+</li>
+</ul>
+<h2 id="自定义注解">自定义注解</h2>
 <ol>
-<li>填写xml文档跟标签</li>
-<li>引入xsi前缀. xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&rdquo;</li>
-<li>引入xsd文件命名空间.xsi:schemaLocation=&quot;命名空间（名字） student.xsd(路径)&rdquo;</li>
-<li>为每个xsd约束声明一个前缀,作为标识 xmlns=&quot;http://www.xxx.com/xml&rdquo;</li>
+<li>注解定义
+自定义注解必须加上元注解</li>
 </ol>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -184,13 +210,33 @@
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-xml" data-lang="xml"><span class="nt">&lt;a:students</span> <span class="na">xmlns:xsi=</span><span class="s">&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span>
-            <span class="na">xsi:schemaLocation=</span><span class="s">&#34;http://www.xxx.com/xml student.xsd&#34;</span>
-            <span class="na">xmlns:a=</span><span class="s">&#34;http://www.xxx.com/xml&#34;</span>
-<span class="nt">&gt;</span>
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Target</span><span class="o">(</span><span class="o">{</span><span class="n">ElementType</span><span class="o">.</span><span class="na">TYPE</span><span class="o">,</span><span class="n">ElementType</span><span class="o">.</span><span class="na">METHOD</span><span class="o">}</span><span class="o">)</span>
+<span class="nd">@Retention</span><span class="o">(</span><span class="n">RetentionPolicy</span><span class="o">.</span><span class="na">RUNTIME</span><span class="o">)</span>
+<span class="kd">public</span> <span class="nd">@interface</span> <span class="n">TestAnnotation</span> <span class="o">{</span>
+    <span class="c1">//注解参数:参数类型+参数名（）;
+</span><span class="c1"></span>    <span class="n">String</span> <span class="nf">name</span><span class="o">(</span><span class="o">)</span><span class="o">;</span> <span class="c1">//当有参数后，使用也必须加参数，或者使用默认值
+</span><span class="c1"></span><span class="n">or</span>  <span class="n">String</span> <span class="nf">name</span><span class="o">(</span><span class="o">)</span> <span class="k">default</span> <span class="s">&#34;&#34;</span><span class="o">;</span>
+<span class="o">}</span>
 
+</code></pre></td></tr></table>
+</div>
+</div><p>创建了一张名字为 TestAnnotation 的注解。
+2. 注解的使用</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">@TestAnnotation
+public class Test {
+}
 </code></pre></td></tr></table>
 </div>
 </div>
@@ -204,7 +250,7 @@
   <p class="copyright-item">
     <span class="item-title">LastMod</span>
     <span class="item-content">
-        2020-01-15
+        2020-01-20
         
     </span>
   </p>
@@ -214,13 +260,9 @@
 <footer class="post-footer">
       
       <nav class="post-nav">
-        <a class="prev" href="/post/202001-xml%E5%85%A5%E9%97%A805%E8%A7%A3%E6%9E%90/">
-            <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">XML入门05：解析</span>
-            <span class="prev-text nav-mobile">Prev</span>
-          </a>
-        <a class="next" href="/post/202001-xml%E5%85%A5%E9%97%A803%E7%BB%84%E6%88%90%E9%83%A8%E5%88%86/">
-            <span class="next-text nav-default">XML入门03：组成部分</span>
+        
+        <a class="next" href="/post/202001-spring%E6%A1%86%E6%9E%B601%E7%AE%80%E4%BB%8B/">
+            <span class="next-text nav-default">202001 Spring框架01：简介</span>
             <span class="next-text nav-mobile">Next</span>
             <i class="iconfont icon-right"></i>
           </a>
