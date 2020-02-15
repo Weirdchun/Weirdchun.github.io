@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Chun</copyright>
-    <lastBuildDate>Mon, 20 Jan 2020 01:05:37 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 12 Feb 2020 02:58:22 +0800</lastBuildDate>
     
 	<atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     
@@ -22,6 +22,42 @@
     </item>
     
     <item>
+      <title>SpringBoot框架01：导入静态资源</title>
+      <link>http://localhost:1313/post/202002-springboot%E6%A1%86%E6%9E%B601%E5%AF%BC%E5%85%A5%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90/</link>
+      <pubDate>Wed, 12 Feb 2020 02:58:22 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/202002-springboot%E6%A1%86%E6%9E%B601%E5%AF%BC%E5%85%A5%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>202002 Sping框架03：Sring配置</title>
+      <link>http://localhost:1313/post/202002-sping%E6%A1%86%E6%9E%B603spring%E9%85%8D%E7%BD%AE/</link>
+      <pubDate>Sat, 08 Feb 2020 00:30:31 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/202002-sping%E6%A1%86%E6%9E%B603spring%E9%85%8D%E7%BD%AE/</guid>
+      <description>&lt;p&gt;Spring配置其实就是在xml文件中的参数&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Spring框架02：IOC</title>
+      <link>http://localhost:1313/post/202001-spring%E6%A1%86%E6%9E%B602ioc/</link>
+      <pubDate>Fri, 31 Jan 2020 18:25:58 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/202001-spring%E6%A1%86%E6%9E%B602ioc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>JAVASE10：反射</title>
+      <link>http://localhost:1313/post/201912-javase10%E5%8F%8D%E5%B0%84/</link>
+      <pubDate>Wed, 22 Jan 2020 20:58:10 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/201912-javase10%E5%8F%8D%E5%B0%84/</guid>
+      <description>&lt;p&gt;JAVA是一门静态语言，但是反射可以让JAVA变成“准动态”语言。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>JAVASE09：注解</title>
       <link>http://localhost:1313/post/201912-javase09%E6%B3%A8%E8%A7%A3/</link>
       <pubDate>Mon, 20 Jan 2020 01:05:37 +0800</pubDate>
@@ -31,7 +67,7 @@
     </item>
     
     <item>
-      <title>202001 Spring框架01：简介</title>
+      <title>Spring框架01：简介</title>
       <link>http://localhost:1313/post/202001-spring%E6%A1%86%E6%9E%B601%E7%AE%80%E4%BB%8B/</link>
       <pubDate>Thu, 16 Jan 2020 23:30:59 +0800</pubDate>
       

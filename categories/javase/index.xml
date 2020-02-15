@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Chun</copyright>
-    <lastBuildDate>Mon, 20 Jan 2020 01:05:37 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 22 Jan 2020 20:58:10 +0800</lastBuildDate>
     
 	<atom:link href="http://localhost:1313/categories/javase/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>JAVASE10：反射</title>
+      <link>http://localhost:1313/post/201912-javase10%E5%8F%8D%E5%B0%84/</link>
+      <pubDate>Wed, 22 Jan 2020 20:58:10 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/201912-javase10%E5%8F%8D%E5%B0%84/</guid>
+      <description>&lt;p&gt;JAVA是一门静态语言，但是反射可以让JAVA变成“准动态”语言。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>JAVASE09：注解</title>
