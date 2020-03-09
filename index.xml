@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Chun</copyright>
-    <lastBuildDate>Wed, 12 Feb 2020 02:58:22 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 09 Mar 2020 22:20:56 +0800</lastBuildDate>
     
 	<atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     
@@ -22,6 +22,42 @@
     </item>
     
     <item>
+      <title>Mybatis框架01：第一个Mybatis程序</title>
+      <link>http://localhost:1313/post/202003-mybatis%E6%A1%86%E6%9E%B601%E7%AC%AC%E4%B8%80%E4%B8%AAmybatis%E7%A8%8B%E5%BA%8F/</link>
+      <pubDate>Mon, 09 Mar 2020 22:20:56 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/202003-mybatis%E6%A1%86%E6%9E%B601%E7%AC%AC%E4%B8%80%E4%B8%AAmybatis%E7%A8%8B%E5%BA%8F/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>IDEA快捷键</title>
+      <link>http://localhost:1313/post/202002-idea%E5%BF%AB%E6%8D%B7%E9%94%AE/</link>
+      <pubDate>Tue, 18 Feb 2020 00:39:18 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/202002-idea%E5%BF%AB%E6%8D%B7%E9%94%AE/</guid>
+      <description>&lt;p&gt;查看所有源码 &lt;code&gt;双击shift&lt;/code&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>SpringBoot框架03：完整的项目过程</title>
+      <link>http://localhost:1313/post/202002-springboot%E6%A1%86%E6%9E%B603%E5%AE%8C%E6%95%B4%E7%9A%84%E9%A1%B9%E7%9B%AE%E8%BF%87%E7%A8%8B/</link>
+      <pubDate>Tue, 18 Feb 2020 00:21:56 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/202002-springboot%E6%A1%86%E6%9E%B603%E5%AE%8C%E6%95%B4%E7%9A%84%E9%A1%B9%E7%9B%AE%E8%BF%87%E7%A8%8B/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SpringBoot框架02：thymeleaf模板</title>
+      <link>http://localhost:1313/post/202002-springboot%E6%A1%86%E6%9E%B602thymeleaf%E6%A8%A1%E6%9D%BF/</link>
+      <pubDate>Sat, 15 Feb 2020 21:16:20 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/202002-springboot%E6%A1%86%E6%9E%B602thymeleaf%E6%A8%A1%E6%9D%BF/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>SpringBoot框架01：导入静态资源</title>
       <link>http://localhost:1313/post/202002-springboot%E6%A1%86%E6%9E%B601%E5%AF%BC%E5%85%A5%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90/</link>
       <pubDate>Wed, 12 Feb 2020 02:58:22 +0800</pubDate>
@@ -31,11 +67,11 @@
     </item>
     
     <item>
-      <title>202002 Sping框架03：Sring配置</title>
-      <link>http://localhost:1313/post/202002-sping%E6%A1%86%E6%9E%B603spring%E9%85%8D%E7%BD%AE/</link>
+      <title>Sping框架03：Sring配置</title>
+      <link>http://localhost:1313/post/202001-sping%E6%A1%86%E6%9E%B603spring%E9%85%8D%E7%BD%AE/</link>
       <pubDate>Sat, 08 Feb 2020 00:30:31 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/202002-sping%E6%A1%86%E6%9E%B603spring%E9%85%8D%E7%BD%AE/</guid>
+      <guid>http://localhost:1313/post/202001-sping%E6%A1%86%E6%9E%B603spring%E9%85%8D%E7%BD%AE/</guid>
       <description>&lt;p&gt;Spring配置其实就是在xml文件中的参数&lt;/p&gt;</description>
     </item>
     

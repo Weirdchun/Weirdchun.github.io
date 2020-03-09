@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Chun</copyright>
-    <lastBuildDate>Tue, 15 Oct 2019 04:20:09 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 18 Feb 2020 00:39:18 +0800</lastBuildDate>
     
 	<atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>IDEA</title>
+      <link>http://localhost:1313/tags/idea/</link>
+      <pubDate>Tue, 18 Feb 2020 00:39:18 +0800</pubDate>
+      
+      <guid>http://localhost:1313/tags/idea/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Git</title>
