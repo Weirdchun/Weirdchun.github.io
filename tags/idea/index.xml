@@ -18,7 +18,9 @@
       <pubDate>Tue, 18 Feb 2020 00:39:18 +0800</pubDate>
       
       <guid>http://localhost:1313/post/202002-idea%E5%BF%AB%E6%8D%B7%E9%94%AE/</guid>
-      <description>&lt;p&gt;查看所有源码 &lt;code&gt;双击shift&lt;/code&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;查看所有源码 ： &lt;code&gt;双击shift&lt;/code&gt;
+快速修改错误：  &lt;code&gt;Alt+Enter&lt;/code&gt;
+快速构造： &lt;code&gt;Alt+Insert&lt;/code&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>

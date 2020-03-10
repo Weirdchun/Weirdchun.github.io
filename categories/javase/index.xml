@@ -31,6 +31,19 @@
     </item>
     
     <item>
+      <title>JAVASE11：IO流</title>
+      <link>http://localhost:1313/post/201912-javase11io%E6%B5%81/</link>
+      <pubDate>Sun, 05 Jan 2020 17:31:47 +0000</pubDate>
+      
+      <guid>http://localhost:1313/post/201912-javase11io%E6%B5%81/</guid>
+      <description>&lt;p&gt;流分为字节流和字符流两大类
+字节流的类带有&lt;strong&gt;Stream&lt;/strong&gt;
+字符流的类带有&lt;strong&gt;Read&lt;/strong&gt;或&lt;strong&gt;Writer&lt;/strong&gt;
+&lt;img src=&#34;JAVA%E5%85%A5%E9%97%A809%EF%BC%9AIO%E6%B5%81/1.png&#34; alt=&#34;&#34;&gt;
+输入与输出是以内存来看的。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
       <title>JAVASE08：多态</title>
       <link>http://localhost:1313/post/201912-javase08%E5%A4%9A%E6%80%81/</link>
       <pubDate>Fri, 27 Dec 2019 15:07:13 +0000</pubDate>

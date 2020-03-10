@@ -7,10 +7,45 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Chun</copyright>
-    <lastBuildDate>Mon, 09 Mar 2020 22:20:56 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 11 Mar 2020 02:27:46 +0800</lastBuildDate>
     
 	<atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>JAVAWEB入门02：JDBC应用</title>
+      <link>http://localhost:1313/post/202003-javaweb%E5%85%A5%E9%97%A802jdbc%E5%BA%94%E7%94%A8/</link>
+      <pubDate>Wed, 11 Mar 2020 02:27:46 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/202003-javaweb%E5%85%A5%E9%97%A802jdbc%E5%BA%94%E7%94%A8/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;JDBC 固定步骤：&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;加载驱动&lt;/li&gt;
+&lt;li&gt;连接数据库,代表数据库&lt;/li&gt;
+&lt;li&gt;向数据库发送SQL的对象Statement : CRUD&lt;/li&gt;
+&lt;li&gt;编写SQL （根据业务，不同的SQL）&lt;/li&gt;
+&lt;li&gt;执行SQL&lt;/li&gt;
+&lt;li&gt;关闭连接(先开后关)&lt;/li&gt;
+&lt;/ol&gt;</description>
+    </item>
+    
+    <item>
+      <title>JAVAWEB入门01：第一个Servlet程序</title>
+      <link>http://localhost:1313/post/202003-javaweb%E5%85%A5%E9%97%A801%E7%AC%AC%E4%B8%80%E4%B8%AAservlet%E7%A8%8B%E5%BA%8F/</link>
+      <pubDate>Tue, 10 Mar 2020 21:30:37 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/202003-javaweb%E5%85%A5%E9%97%A801%E7%AC%AC%E4%B8%80%E4%B8%AAservlet%E7%A8%8B%E5%BA%8F/</guid>
+      <description>&lt;p&gt;先来跑一遍程序来理解servlet&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>MySQL安装与使用</title>
+      <link>http://localhost:1313/post/201912-mysql%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/</link>
+      <pubDate>Mon, 09 Mar 2020 23:41:32 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/201912-mysql%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/</guid>
+      <description>很多教程都是Mysql的，所以我也先学习mysql吧 第一次使用MySQL Mysql原理 其实我们安装的MySQL是一个服务，别人可以通过访问我</description>
+    </item>
     
     <item>
       <title>Mybatis框架01：第一个Mybatis程序</title>
@@ -18,7 +53,7 @@
       <pubDate>Mon, 09 Mar 2020 22:20:56 +0800</pubDate>
       
       <guid>http://localhost:1313/post/202003-mybatis%E6%A1%86%E6%9E%B601%E7%AC%AC%E4%B8%80%E4%B8%AAmybatis%E7%A8%8B%E5%BA%8F/</guid>
-      <description></description>
+      <description>&lt;p&gt;Mybatis是一个持久层（&lt;strong&gt;DAO&lt;/strong&gt;）框架,当然作用就是操作数据库的（增删改查）。&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -27,7 +62,9 @@
       <pubDate>Tue, 18 Feb 2020 00:39:18 +0800</pubDate>
       
       <guid>http://localhost:1313/post/202002-idea%E5%BF%AB%E6%8D%B7%E9%94%AE/</guid>
-      <description>&lt;p&gt;查看所有源码 &lt;code&gt;双击shift&lt;/code&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;查看所有源码 ： &lt;code&gt;双击shift&lt;/code&gt;
+快速修改错误：  &lt;code&gt;Alt+Enter&lt;/code&gt;
+快速构造： &lt;code&gt;Alt+Insert&lt;/code&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -172,6 +209,19 @@
       
       <guid>http://localhost:1313/post/202001-bootstrap%E6%A1%86%E6%9E%B601%E6%A6%82%E8%BF%B0%E5%85%A5%E9%97%A8/</guid>
       <description>&lt;p&gt;Bootstrap是美国Twitter公司的设计师Mark Otto和Jacob Thornton合作基于HTML、CSS、JavaScript 开发的简洁、直观、强悍的前端开发&lt;strong&gt;框架&lt;/strong&gt;，使得 Web 开发更加快捷。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>JAVASE11：IO流</title>
+      <link>http://localhost:1313/post/201912-javase11io%E6%B5%81/</link>
+      <pubDate>Sun, 05 Jan 2020 17:31:47 +0000</pubDate>
+      
+      <guid>http://localhost:1313/post/201912-javase11io%E6%B5%81/</guid>
+      <description>&lt;p&gt;流分为字节流和字符流两大类
+字节流的类带有&lt;strong&gt;Stream&lt;/strong&gt;
+字符流的类带有&lt;strong&gt;Read&lt;/strong&gt;或&lt;strong&gt;Writer&lt;/strong&gt;
+&lt;img src=&#34;JAVA%E5%85%A5%E9%97%A809%EF%BC%9AIO%E6%B5%81/1.png&#34; alt=&#34;&#34;&gt;
+输入与输出是以内存来看的。&lt;/p&gt;</description>
     </item>
     
     <item>
