@@ -48,7 +48,7 @@
 <meta itemprop="description" content="">
 <meta itemprop="datePublished" content="2020-02-18T00:21:56&#43;08:00" />
 <meta itemprop="dateModified" content="2020-02-18T00:21:56&#43;08:00" />
-<meta itemprop="wordCount" content="29">
+<meta itemprop="wordCount" content="73">
 
 
 
@@ -126,7 +126,7 @@
       <div class="post-meta">
         <span class="post-time"> 2020-02-18 </span>
         <div class="post-category">
-            <a href="/categories/springboot/"> SpringBoot </a>
+            <a href="/categories/springboot%E6%A1%86%E6%9E%B6/"> SpringBoot框架 </a>
             </div>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -141,7 +141,23 @@
     <div class="post-content">
       <ol>
 <li>所有页面的静态资源都需要使用thymeleaf接管,@{}</li>
-<li></li>
+<li>员工列表展示
+<ul>
+<li>提取公共页面</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-h" data-lang="h"><span class="nl">th</span><span class="p">:</span><span class="n">fragment</span><span class="o">=</span><span class="sa"></span><span class="s">&#34;</span><span class="s">sidebar</span><span class="s">&#34;</span>
+<span class="nl">th</span><span class="p">:</span><span class="n">replace</span><span class="o">=</span><span class="sa"></span><span class="s">&#34;</span><span class="s">~{commons/commons::topbar}</span><span class="s">&#34;</span>
+<span class="c1">// 如果要传递参数，可以直接使用（）传参，接收判断即可！
+</span></code></pre></td></tr></table>
+</div>
+</div></li>
 </ol>
     </div>
 

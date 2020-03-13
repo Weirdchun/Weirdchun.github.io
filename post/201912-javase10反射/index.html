@@ -49,7 +49,7 @@
 <meta itemprop="description" content="JAVA是一门静态语言，但是反射可以让JAVA变成“准动态”语言。">
 <meta itemprop="datePublished" content="2020-01-22T20:58:10&#43;08:00" />
 <meta itemprop="dateModified" content="2020-01-22T20:58:10&#43;08:00" />
-<meta itemprop="wordCount" content="75">
+<meta itemprop="wordCount" content="387">
 
 
 
@@ -138,7 +138,11 @@
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#反射">反射</a></li>
+    <li><a href="#反射">反射</a>
+      <ul>
+        <li><a href="#获取class类的实例">获取Class类的实例</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
   </div>
@@ -146,7 +150,31 @@
     <div class="post-content">
       <p>JAVA是一门静态语言，但是反射可以让JAVA变成“准动态”语言。</p>
 <h2 id="反射">反射</h2>
-<p>反射机制允许程序在执行期获取类的所有信息，并能直接操作任意对象的内部属性和方法。</p>
+<p>反射机制允许程序在执行期获取类的所有信息，并能直接操作任意对象的内部属性和方法。
+正常方式：引入包名——&gt;通过new实例化——&gt;取得是实例化对象
+反射方法：需要一个实例化对象——&gt;getClass()方法——&gt;得到完整包名
+Java反射机制主要提供<strong>功能</strong>：</p>
+<ol>
+<li>在运行时判断任意一个对象所属的类；</li>
+<li>在运行时构造任意一个类的对象；</li>
+<li>在运行时判断任意一个类所具有的成员变量和方法；</li>
+<li>在运行时调用任意一个对象的方法；生成动态代理。</li>
+</ol>
+<h3 id="获取class类的实例">获取Class类的实例</h3>
+<ol>
+<li>
+<p>通过反射获取类的Class对象（一个类只有一个class对象）
+<code>Class c1 = Class.forName(&quot;包名.类名&quot;)</code></p>
+</li>
+<li>
+<p>任何类继承Object，Object中有一个方法也可以获取类对象
+<code>Class c1 = person.getClass()</code></p>
+</li>
+<li>
+<p>如果已经知道类，通过类的class属性获取
+<code>Class c1 = Person.class</code></p>
+</li>
+</ol>
     </div>
 
     <div class="post-copyright">
@@ -167,9 +195,9 @@
 <footer class="post-footer">
       
       <nav class="post-nav">
-        <a class="prev" href="/post/202001-spring%E6%A1%86%E6%9E%B602ioc/">
+        <a class="prev" href="/post/201912-javase11io%E6%B5%81/">
             <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">Spring框架02：IOC</span>
+            <span class="prev-text nav-default">JAVASE11：IO流</span>
             <span class="prev-text nav-mobile">Prev</span>
           </a>
         <a class="next" href="/post/201912-javase09%E6%B3%A8%E8%A7%A3/">

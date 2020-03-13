@@ -7,10 +7,23 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Chun</copyright>
-    <lastBuildDate>Wed, 22 Jan 2020 20:58:10 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 23 Jan 2020 17:31:47 +0000</lastBuildDate>
     
 	<atom:link href="http://localhost:1313/categories/javase/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>JAVASE11：IO流</title>
+      <link>http://localhost:1313/post/201912-javase11io%E6%B5%81/</link>
+      <pubDate>Thu, 23 Jan 2020 17:31:47 +0000</pubDate>
+      
+      <guid>http://localhost:1313/post/201912-javase11io%E6%B5%81/</guid>
+      <description>&lt;p&gt;流分为字节流和字符流两大类
+字节流的类带有&lt;strong&gt;Stream&lt;/strong&gt;
+字符流的类带有&lt;strong&gt;Read&lt;/strong&gt;或&lt;strong&gt;Writer&lt;/strong&gt;
+&lt;img src=&#34;JAVA%E5%85%A5%E9%97%A809%EF%BC%9AIO%E6%B5%81/1.png&#34; alt=&#34;&#34;&gt;
+输入与输出是以内存来看的。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>JAVASE10：反射</title>
@@ -28,19 +41,6 @@
       
       <guid>http://localhost:1313/post/201912-javase09%E6%B3%A8%E8%A7%A3/</guid>
       <description>&lt;p&gt;注解是一些代码的标签，有利于我们快速知道代码信息。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>JAVASE11：IO流</title>
-      <link>http://localhost:1313/post/201912-javase11io%E6%B5%81/</link>
-      <pubDate>Sun, 05 Jan 2020 17:31:47 +0000</pubDate>
-      
-      <guid>http://localhost:1313/post/201912-javase11io%E6%B5%81/</guid>
-      <description>&lt;p&gt;流分为字节流和字符流两大类
-字节流的类带有&lt;strong&gt;Stream&lt;/strong&gt;
-字符流的类带有&lt;strong&gt;Read&lt;/strong&gt;或&lt;strong&gt;Writer&lt;/strong&gt;
-&lt;img src=&#34;JAVA%E5%85%A5%E9%97%A809%EF%BC%9AIO%E6%B5%81/1.png&#34; alt=&#34;&#34;&gt;
-输入与输出是以内存来看的。&lt;/p&gt;</description>
     </item>
     
     <item>

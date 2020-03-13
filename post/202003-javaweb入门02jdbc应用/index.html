@@ -65,7 +65,7 @@
 ">
 <meta itemprop="datePublished" content="2020-03-11T02:27:46&#43;08:00" />
 <meta itemprop="dateModified" content="2020-03-11T02:27:46&#43;08:00" />
-<meta itemprop="wordCount" content="1238">
+<meta itemprop="wordCount" content="1304">
 
 
 
@@ -328,7 +328,7 @@
 </code></pre></td></tr></table>
 </div>
 </div><h3 id="预编译sql">预编译SQL</h3>
-<p>提高效率</p>
+<p>使用了预编语句,在预编译池中保留的编译语句就可以直接拿出来用,将里面的?号代替直接使用,这样不用每一句语句都用编译,这样运行的效率大大提升了</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt"> 1
@@ -370,43 +370,43 @@
 </span><span class="lnt">37
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">public class TestJDBC2 {
-    public static void main(String[] args) throws Exception {
-        //配置信息
-        //useUnicode=true&amp;characterEncoding=utf-8 解决中文乱码
-        String url=&#34;jdbc:mysql://localhost:3306/jdbc?useUnicode=true&amp;characterEncoding=utf-8&#34;;
-        String username = &#34;root&#34;;
-        String password = &#34;123456&#34;;
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">TestJDBC2</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[</span><span class="o">]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
+        <span class="c1">//配置信息
+</span><span class="c1"></span>        <span class="c1">//useUnicode=true&amp;characterEncoding=utf-8 解决中文乱码
+</span><span class="c1"></span>        <span class="n">String</span> <span class="n">url</span><span class="o">=</span><span class="s">&#34;jdbc:mysql://localhost:3306/jdbc?useUnicode=true&amp;characterEncoding=utf-8&#34;</span><span class="o">;</span>
+        <span class="n">String</span> <span class="n">username</span> <span class="o">=</span> <span class="s">&#34;root&#34;</span><span class="o">;</span>
+        <span class="n">String</span> <span class="n">password</span> <span class="o">=</span> <span class="s">&#34;123456&#34;</span><span class="o">;</span>
 
-        //1.加载驱动
-        Class.forName(&#34;com.mysql.jdbc.Driver&#34;);
-        //2.连接数据库,代表数据库
-        Connection connection = DriverManager.getConnection(url, username, password);
+        <span class="c1">//1.加载驱动
+</span><span class="c1"></span>        <span class="n">Class</span><span class="o">.</span><span class="na">forName</span><span class="o">(</span><span class="s">&#34;com.mysql.jdbc.Driver&#34;</span><span class="o">)</span><span class="o">;</span>
+        <span class="c1">//2.连接数据库,代表数据库
+</span><span class="c1"></span>        <span class="n">Connection</span> <span class="n">connection</span> <span class="o">=</span> <span class="n">DriverManager</span><span class="o">.</span><span class="na">getConnection</span><span class="o">(</span><span class="n">url</span><span class="o">,</span> <span class="n">username</span><span class="o">,</span> <span class="n">password</span><span class="o">)</span><span class="o">;</span>
 
-        //3.编写SQL
-        String sql = &#34;insert into  users(id, name, password, email, birthday) values (?,?,?,?,?);&#34;;
+        <span class="c1">//3.编写SQL
+</span><span class="c1"></span>        <span class="n">String</span> <span class="n">sql</span> <span class="o">=</span> <span class="s">&#34;insert into  users(id, name, password, email, birthday) values (?,?,?,?,?);&#34;</span><span class="o">;</span>
 
-        //4.预编译
-        PreparedStatement preparedStatement = connection.prepareStatement(sql);
+        <span class="c1">//4.预编译
+</span><span class="c1"></span>        <span class="n">PreparedStatement</span> <span class="n">preparedStatement</span> <span class="o">=</span> <span class="n">connection</span><span class="o">.</span><span class="na">prepareStatement</span><span class="o">(</span><span class="n">sql</span><span class="o">)</span><span class="o">;</span>
 
-        preparedStatement.setInt(1,2);//给第一个占位符？ 的值赋值为1；
-        preparedStatement.setString(2,&#34;狂神说Java&#34;);//给第二个占位符？ 的值赋值为狂神说Java；
-        preparedStatement.setString(3,&#34;123456&#34;);//给第三个占位符？ 的值赋值为123456；
-        preparedStatement.setString(4,&#34;24736743@qq.com&#34;);//给第四个占位符？ 的值赋值为1；
-        preparedStatement.setDate(5,new Date(new java.util.Date().getTime()));//给第五个占位符？ 的值赋值为new Date(new java.util.Date().getTime())；
+        <span class="n">preparedStatement</span><span class="o">.</span><span class="na">setInt</span><span class="o">(</span><span class="n">1</span><span class="o">,</span><span class="n">2</span><span class="o">)</span><span class="o">;</span><span class="c1">//给第一个占位符？ 的值赋值为2；
+</span><span class="c1"></span>        <span class="n">preparedStatement</span><span class="o">.</span><span class="na">setString</span><span class="o">(</span><span class="n">2</span><span class="o">,</span><span class="s">&#34;狂神说Java&#34;</span><span class="o">)</span><span class="o">;</span><span class="c1">//给第二个占位符？ 的值赋值为狂神说Java；
+</span><span class="c1"></span>        <span class="n">preparedStatement</span><span class="o">.</span><span class="na">setString</span><span class="o">(</span><span class="n">3</span><span class="o">,</span><span class="s">&#34;123456&#34;</span><span class="o">)</span><span class="o">;</span><span class="c1">//给第三个占位符？ 的值赋值为123456；
+</span><span class="c1"></span>        <span class="n">preparedStatement</span><span class="o">.</span><span class="na">setString</span><span class="o">(</span><span class="n">4</span><span class="o">,</span><span class="s">&#34;24736743@qq.com&#34;</span><span class="o">)</span><span class="o">;</span><span class="c1">//给第四个占位符？ 的值赋值为1；
+</span><span class="c1"></span>        <span class="n">preparedStatement</span><span class="o">.</span><span class="na">setDate</span><span class="o">(</span><span class="n">5</span><span class="o">,</span><span class="k">new</span> <span class="n">Date</span><span class="o">(</span><span class="k">new</span> <span class="n">java</span><span class="o">.</span><span class="na">util</span><span class="o">.</span><span class="na">Date</span><span class="o">(</span><span class="o">)</span><span class="o">.</span><span class="na">getTime</span><span class="o">(</span><span class="o">)</span><span class="o">)</span><span class="o">)</span><span class="o">;</span><span class="c1">//给第五个占位符？ 的值赋值为new Date(new java.util.Date().getTime())；
+</span><span class="c1"></span>
+        <span class="c1">//5.执行SQL
+</span><span class="c1"></span>        <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">preparedStatement</span><span class="o">.</span><span class="na">executeUpdate</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
 
-        //5.执行SQL
-        int i = preparedStatement.executeUpdate();
+        <span class="k">if</span> <span class="o">(</span><span class="n">i</span><span class="o">&gt;</span><span class="n">0</span><span class="o">)</span><span class="o">{</span>
+            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;插入成功@&#34;</span><span class="o">)</span><span class="o">;</span>
+        <span class="o">}</span>
 
-        if (i&gt;0){
-            System.out.println(&#34;插入成功@&#34;);
-        }
-
-        //6.关闭连接，释放资源（一定要做） 先开后关
-        preparedStatement.close();
-        connection.close();
-    }
-}
+        <span class="c1">//6.关闭连接，释放资源（一定要做） 先开后关
+</span><span class="c1"></span>        <span class="n">preparedStatement</span><span class="o">.</span><span class="na">close</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+        <span class="n">connection</span><span class="o">.</span><span class="na">close</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
 </code></pre></td></tr></table>
 </div>
 </div>
@@ -430,7 +430,11 @@
 <footer class="post-footer">
       
       <nav class="post-nav">
-        
+        <a class="prev" href="/post/202003-smbmsservlet%E7%89%8801%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA%E5%87%86%E5%A4%87/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">smbmsServlet版01：项目搭建准备</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
         <a class="next" href="/post/202003-javaweb%E5%85%A5%E9%97%A801%E7%AC%AC%E4%B8%80%E4%B8%AAservlet%E7%A8%8B%E5%BA%8F/">
             <span class="next-text nav-default">JAVAWEB入门01：第一个Servlet程序</span>
             <span class="next-text nav-mobile">Next</span>
