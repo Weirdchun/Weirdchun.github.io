@@ -18,7 +18,9 @@
       <pubDate>Fri, 13 Mar 2020 03:07:49 +0800</pubDate>
       
       <guid>http://localhost:1313/post/202003-ajax%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/</guid>
-      <description></description>
+      <description>&lt;p&gt;AJAX = Asynchronous JavaScript and XML（异步的 JavaScript 和 XML）。
+AJAX 不是新的编程语言，而是一种使用现有标准的新方法。
+AJAX 是与服务器交换数据并更新部分网页的艺术，在不重新加载整个页面的情况下。&lt;/p&gt;</description>
     </item>
     
   </channel>

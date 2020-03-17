@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Tags - Chun&#39;s Blog</title>
+  <title>JAVASE13：类加载器 - Chun&#39;s Blog</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,8 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Chun" /><meta name="description" content="Hugo theme even example site." /><meta name="keywords" content="Hugo, theme, even" />
+<meta name="author" content="Chun" /><meta name="description" content="开发java代码的流程： .java——(经过java编译器)——&amp;gt;.class——(JVM类加载器)and(JVM解析)——&amp;gt;二进制数据——&amp;gt;(操作平台)
+" /><meta name="keywords" content="Hugo, theme, even" />
 
 
 
@@ -26,9 +27,7 @@
 <meta name="generator" content="Hugo 0.62.2 with theme even" />
 
 
-<link rel="canonical" href="http://localhost:1313/tags/" />
-  <link href="http://localhost:1313/tags/index.xml" rel="alternate" type="application/rss+xml" title="Chun&#39;s Blog" />
-  <link href="http://localhost:1313/tags/index.xml" rel="feed" type="application/rss+xml" title="Chun&#39;s Blog" />
+<link rel="canonical" href="http://localhost:1313/post/202003-javase13%E7%B1%BB%E5%8A%A0%E8%BD%BD%E5%99%A8/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -40,15 +39,29 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="Tags" />
-<meta property="og:description" content="Hugo theme even example site." />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="http://localhost:1313/tags/" />
-<meta property="og:updated_time" content="2020-03-13T03:07:49+08:00" />
-<meta itemprop="name" content="Tags">
-<meta itemprop="description" content="Hugo theme even example site."><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Tags"/>
-<meta name="twitter:description" content="Hugo theme even example site."/>
+<meta property="og:title" content="JAVASE13：类加载器" />
+<meta property="og:description" content="开发java代码的流程：
+
+.java——(经过java编译器)——&gt;.class——(JVM类加载器)and(JVM解析)——&gt;二进制数据——&gt;(操作平台)" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/post/202003-javase13%E7%B1%BB%E5%8A%A0%E8%BD%BD%E5%99%A8/" />
+<meta property="article:published_time" content="2020-03-14T04:14:13+08:00" />
+<meta property="article:modified_time" content="2020-03-14T04:14:13+08:00" />
+<meta itemprop="name" content="JAVASE13：类加载器">
+<meta itemprop="description" content="开发java代码的流程：
+
+.java——(经过java编译器)——&gt;.class——(JVM类加载器)and(JVM解析)——&gt;二进制数据——&gt;(操作平台)">
+<meta itemprop="datePublished" content="2020-03-14T04:14:13&#43;08:00" />
+<meta itemprop="dateModified" content="2020-03-14T04:14:13&#43;08:00" />
+<meta itemprop="wordCount" content="243">
+
+
+
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="JAVASE13：类加载器"/>
+<meta name="twitter:description" content="开发java代码的流程：
+
+.java——(经过java编译器)——&gt;.class——(JVM类加载器)and(JVM解析)——&gt;二进制数据——&gt;(操作平台)"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -112,34 +125,87 @@
     <main id="main" class="main">
       <div class="content-wrapper">
         <div id="content" class="content">
-          <div class="terms">
-      <div class="terms-title">
-        4 Tags In Total
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">JAVASE13：类加载器</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2020-03-14 </span>
+        <div class="post-category">
+            <a href="/categories/javase/"> JAVASE </a>
+            </div>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
-      <div class="terms-tags">
-          <a class="terms-link" href="/tags/ajax/">
-            ajax
-            <span class="terms-count">1</span>
-          </a>
-        
-          <a class="terms-link" href="/tags/git/">
-            git
-            <span class="terms-count">1</span>
-          </a>
-        
-          <a class="terms-link" href="/tags/idea/">
-            idea
-            <span class="terms-count">1</span>
-          </a>
-        
-          <a class="terms-link" href="/tags/vultr/">
-            vultr
-            <span class="terms-count">1</span>
-          </a>
-        </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#类加载器">类加载器</a>
+      <ul>
+        <li><a href="#类加载器分类">类加载器分类</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <p>开发java代码的流程：
+<!-- raw HTML omitted --></p>
+<p>.java——(经过java编译器)——&gt;.class——(JVM类加载器)and(JVM解析)——&gt;二进制数据——&gt;(操作平台)</p>
+<h2 id="类加载器">类加载器</h2>
+<ul>
+<li>类加载器作用：将.class字节码文件内容加载到内存中，将这些静态数据转换成方法区的数据结构，然后在堆中生成一个Class对象，作为方法区中类数据的访问入口</li>
+<li>类缓存：一旦某个类被加载到类加载器中，它将维持加载（缓存）一段时间，JVM的垃圾回收机制可以回收这些Class对象
+Tip：使用缓存提高效率</li>
+</ul>
+<h3 id="类加载器分类">类加载器分类</h3>
+<ol>
+<li></li>
+</ol>
     </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Chun</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2020-03-14
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      
+      <nav class="post-nav">
+        <a class="prev" href="/post/202003-smbmsservlet%E7%89%8804%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86%E5%AE%9E%E7%8E%B0/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">smbmsServlet版04：用户管理实现</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="/post/202003-smbmsservlet%E7%89%8803%E4%BF%AE%E6%94%B9%E5%AF%86%E7%A0%81%E5%AE%9E%E7%8E%B0/">
+            <span class="next-text nav-default">smbmsServlet版03：修改密码实现</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
         </div>
         
+
+  
+
+  
 
       </div>
     </main>
