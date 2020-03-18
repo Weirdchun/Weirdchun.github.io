@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Chun</copyright>
-    <lastBuildDate>Wed, 18 Mar 2020 01:19:23 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 19 Mar 2020 02:54:28 +0800</lastBuildDate>
     
 	<atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Mybatis框架</title>
+      <link>http://localhost:1313/categories/mybatis%E6%A1%86%E6%9E%B6/</link>
+      <pubDate>Thu, 19 Mar 2020 02:54:28 +0800</pubDate>
+      
+      <guid>http://localhost:1313/categories/mybatis%E6%A1%86%E6%9E%B6/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>smbmsServlet版项目</title>
@@ -54,15 +63,6 @@
       <pubDate>Mon, 09 Mar 2020 23:41:32 +0800</pubDate>
       
       <guid>http://localhost:1313/categories/mysql/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Mybatis框架</title>
-      <link>http://localhost:1313/categories/mybatis%E6%A1%86%E6%9E%B6/</link>
-      <pubDate>Mon, 09 Mar 2020 22:20:56 +0800</pubDate>
-      
-      <guid>http://localhost:1313/categories/mybatis%E6%A1%86%E6%9E%B6/</guid>
       <description></description>
     </item>
     

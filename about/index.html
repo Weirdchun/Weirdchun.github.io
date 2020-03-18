@@ -48,7 +48,7 @@
 <meta itemprop="description" content="Hugo博客 前言 由于Hexo博客的生成速度太慢了，所以我开始使用Hugo博客 写博客 当使用Hugo博客后，写文章的姿势 1 hugo new post/202001-xxxxxx.md 生成静态文件 使用">
 <meta itemprop="datePublished" content="2017-08-20T21:38:52&#43;08:00" />
 <meta itemprop="dateModified" content="2017-08-28T21:41:52&#43;08:00" />
-<meta itemprop="wordCount" content="476">
+<meta itemprop="wordCount" content="717">
 
 
 
@@ -232,6 +232,7 @@ git push github master
 </div>
 </div><h3 id="双击deploysh文件">双击<code>deploy.sh</code>文件</h3>
 <p>双击后将开始部署，但是得输入Github账号与密码后才会自动部署。
+或者输入命令<code>sh deploy.sh</code>
 <strong>Tip</strong>:每次都得输入密码非常麻烦，我们需要Git免登录</p>
 <p>打开Git Bash，</p>
 <ol>
@@ -278,7 +279,37 @@ git push github master
 <pre class="chroma"><code class="language-fallback" data-lang="fallback">git config --global credential.helper store
 </code></pre></td></tr></table>
 </div>
-</div>
+</div><p>public class UserMapperTest {
+@Test
+public void test(){
+System.out.println(&ldquo;开始test&rdquo;);
+//第一步：获得SqlSession对象
+SqlSession sqlSession = MybatisUtils.getSqlSession();
+System.out.println(&ldquo;获得SqlSession对象&rdquo;);</p>
+<pre><code>    try{
+        //方式一：执行SQL，需要获得Dao对象
+        UserMapper mapper = sqlSession.getMapper(UserMapper.class);
+        System.out.println(&quot;获得Dao对象&quot;);
+        List&lt;User&gt; userList = mapper.getUserList();
+
+        //方式二：了解
+        //List&lt;User&gt; userList = sqlSession.selectList(&quot;com.chun.dao.UserDao.getUserList&quot;)
+
+        for (User user : userList){
+            System.out.println(user);
+        }
+
+    }catch(Exception e){
+        e.printStackTrace();
+    }finally{
+
+        //关闭SqlSession
+        sqlSession.close();
+
+    }
+}
+</code></pre>
+
   </div>
 </article>
         </div>
