@@ -18,7 +18,13 @@
       <pubDate>Thu, 19 Mar 2020 02:54:28 +0800</pubDate>
       
       <guid>http://localhost:1313/post/202003-mybatis%E6%A1%86%E6%9E%B602crud%E5%A2%9E%E5%88%A0%E6%94%B9%E6%9F%A5/</guid>
-      <description>&lt;p&gt;增加(Create)、读取(Retrieve)、更新(Update)和删除(Delete)&lt;/p&gt;</description>
+      <description>&lt;p&gt;增加(Create)、读取(Retrieve)、更新(Update)和删除(Delete)
+&lt;strong&gt;总体思路&lt;/strong&gt;：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;编写接口&lt;/li&gt;
+&lt;li&gt;编写对应的mapper中的sql语句&lt;/li&gt;
+&lt;li&gt;测试&lt;/li&gt;
+&lt;/ol&gt;</description>
     </item>
     
     <item>
@@ -358,7 +364,7 @@ AJAX 是与服务器交换数据并更新部分网页的艺术，在不重新加
     </item>
     
     <item>
-      <title>JAVA入门04：数据转换与运算</title>
+      <title>JAVASE04：数据转换与运算</title>
       <link>http://localhost:1313/post/201912-javase04%E6%95%B0%E6%8D%AE%E8%BD%AC%E6%8D%A2/</link>
       <pubDate>Wed, 25 Dec 2019 21:40:06 +0000</pubDate>
       
