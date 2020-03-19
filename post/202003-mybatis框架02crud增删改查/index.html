@@ -61,7 +61,7 @@
 ">
 <meta itemprop="datePublished" content="2020-03-19T02:54:28&#43;08:00" />
 <meta itemprop="dateModified" content="2020-03-19T02:54:28&#43;08:00" />
-<meta itemprop="wordCount" content="327">
+<meta itemprop="wordCount" content="725">
 
 
 
@@ -162,6 +162,8 @@
         <li><a href="#insert">insert</a></li>
         <li><a href="#update">update</a></li>
         <li><a href="#delete">delete</a></li>
+        <li><a href="#万能map">万能Map</a></li>
+        <li><a href="#模糊查询">模糊查询</a></li>
       </ul>
     </li>
   </ul>
@@ -288,6 +290,106 @@
     <span class="nt">&lt;/delete&gt;</span>
 </code></pre></td></tr></table>
 </div>
+</div><h3 id="万能map">万能Map</h3>
+<p>如果我们的实体类，或者数据库中的表，字段或参数过多，考虑使用Map！
+<strong>区别</strong>：</p>
+<ul>
+<li>Map传递参数，直接在sql中取出key <code>parameterType=&quot;map&quot;</code></li>
+<li>对象传递参数，直接在sql中取对象的属性 <code>parameterTyper=&quot;Object&quot;</code></li>
+</ul>
+<ol>
+<li>UserMapper</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java">    <span class="c1">//万能Map &lt;String&gt;表示key，&lt;Object&gt;表示value
+</span><span class="c1"></span>    <span class="kt">int</span> <span class="nf">addUser2</span><span class="o">(</span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span><span class="n">Object</span><span class="o">&gt;</span> <span class="n">map</span><span class="o">)</span><span class="o">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><ol start="2">
+<li>UserMapper.xml</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-xml" data-lang="xml"><span class="c">&lt;!--</span><span class="c">    传的是map的key</span><span class="c">--&gt;</span>
+    <span class="nt">&lt;insert</span> <span class="na">id=</span><span class="s">&#34;addUser2&#34;</span> <span class="na">parameterType=</span><span class="s">&#34;map&#34;</span> <span class="nt">&gt;</span>
+        insert into mybatis.user(id,name,pwd) value (#{userid},#{userName},#{passWord})
+    <span class="nt">&lt;/insert&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><ol start="3">
+<li>测试代码
+如果到时候只需要增加部分参数，选择<code>map.put(&quot;&quot;,&quot;&quot;)</code>即可,不用传所有参数。</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java">    <span class="nd">@Test</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">addUser2</span><span class="o">(</span><span class="o">)</span><span class="o">{</span>
+        <span class="n">SqlSession</span> <span class="n">sqlSession</span> <span class="o">=</span> <span class="n">MybatisUtils</span><span class="o">.</span><span class="na">getSqlSession</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+        <span class="n">UserMapper</span> <span class="n">mapper</span> <span class="o">=</span> <span class="n">sqlSession</span><span class="o">.</span><span class="na">getMapper</span><span class="o">(</span><span class="n">UserMapper</span><span class="o">.</span><span class="na">class</span><span class="o">)</span><span class="o">;</span>
+        <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Object</span><span class="o">&gt;</span> <span class="n">map</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Object</span><span class="o">&gt;</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+        <span class="n">map</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&#34;userid&#34;</span><span class="o">,</span><span class="n">3</span><span class="o">)</span><span class="o">;</span>
+        <span class="n">map</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&#34;userName&#34;</span><span class="o">,</span><span class="s">&#34;aaa&#34;</span><span class="o">)</span><span class="o">;</span>
+        <span class="n">map</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">&#34;passWord&#34;</span><span class="o">,</span><span class="s">&#34;12354&#34;</span><span class="o">)</span><span class="o">;</span>
+        <span class="n">mapper</span><span class="o">.</span><span class="na">addUser2</span><span class="o">(</span><span class="n">map</span><span class="o">)</span><span class="o">;</span>
+        <span class="n">sqlSession</span><span class="o">.</span><span class="na">commit</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+        <span class="n">sqlSession</span><span class="o">.</span><span class="na">close</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+    <span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="模糊查询">模糊查询</h3>
+<ol>
+<li>mapper.xml</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-xml" data-lang="xml">    <span class="nt">&lt;select</span> <span class="na">id=</span><span class="s">&#34;getUserLike&#34;</span>  <span class="na">resultType=</span><span class="s">&#34;com.chun.pojo.User&#34;</span><span class="nt">&gt;</span>
+                 <span class="c">&lt;!--</span><span class="c">用&#34;%&#34; &#34;%&#34; 写死，只让用户传递一个稳定的值，防止SQL注入 </span><span class="c">--&gt;</span>
+        select * from mybatis.user where name like &#34;%&#34;#{value}&#34;%&#34;
+    <span class="nt">&lt;/select&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><ol start="2">
+<li>Java代码执行的时候，传递通配符</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java">    <span class="n">List</span><span class="o">&lt;</span><span class="n">User</span><span class="o">&gt;</span> <span class="n">userList</span> <span class="o">=</span> <span class="n">mapper</span><span class="o">.</span><span class="na">getUserLike</span><span class="o">(</span><span class="s">&#34;张&#34;</span><span class="o">)</span><span class="o">;</span>
+</code></pre></td></tr></table>
+</div>
 </div>
     </div>
 
@@ -309,7 +411,11 @@
 <footer class="post-footer">
       
       <nav class="post-nav">
-        
+        <a class="prev" href="/post/spring%E6%A1%86%E6%9E%B603%E7%AC%AC%E4%B8%80%E4%B8%AAspring%E7%A8%8B%E5%BA%8F/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Spring框架04：第一个Spring程序</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
         <a class="next" href="/post/202003-smbmsservlet%E7%89%8804%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86%E5%AE%9E%E7%8E%B0/">
             <span class="next-text nav-default">smbmsServlet版04：用户管理实现</span>
             <span class="next-text nav-mobile">Next</span>

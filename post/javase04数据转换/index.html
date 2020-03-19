@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>JAVASE04：数据转换与运算 - Chun&#39;s Blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Chun" /><meta name="description" content="数据转换分为两种：强制类型转换和自动类型转换 数据类型转换优先级由低到高： byte -&amp;gt; short -&amp;gt; char -&amp;gt; int -&amp;gt; long -&amp;gt; float -&amp;gt; double (先是小数点型大于整数型，然后是按字节大小)
+" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.62.2 with theme even" />
+
+
+<link rel="canonical" href="http://localhost:1313/post/javase04%E6%95%B0%E6%8D%AE%E8%BD%AC%E6%8D%A2/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="JAVASE04：数据转换与运算" />
+<meta property="og:description" content="数据转换分为两种：强制类型转换和自动类型转换
+数据类型转换优先级由低到高：
+byte -&gt; short -&gt; char -&gt; int -&gt; long -&gt; float -&gt; double
+(先是小数点型大于整数型，然后是按字节大小)" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/post/javase04%E6%95%B0%E6%8D%AE%E8%BD%AC%E6%8D%A2/" />
+<meta property="article:published_time" content="2019-12-25T21:40:06+00:00" />
+<meta property="article:modified_time" content="2019-12-25T21:40:06+00:00" />
+<meta itemprop="name" content="JAVASE04：数据转换与运算">
+<meta itemprop="description" content="数据转换分为两种：强制类型转换和自动类型转换
+数据类型转换优先级由低到高：
+byte -&gt; short -&gt; char -&gt; int -&gt; long -&gt; float -&gt; double
+(先是小数点型大于整数型，然后是按字节大小)">
+<meta itemprop="datePublished" content="2019-12-25T21:40:06&#43;00:00" />
+<meta itemprop="dateModified" content="2019-12-25T21:40:06&#43;00:00" />
+<meta itemprop="wordCount" content="548">
+
+
+
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="JAVASE04：数据转换与运算"/>
+<meta name="twitter:description" content="数据转换分为两种：强制类型转换和自动类型转换
+数据类型转换优先级由低到高：
+byte -&gt; short -&gt; char -&gt; int -&gt; long -&gt; float -&gt; double
+(先是小数点型大于整数型，然后是按字节大小)"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Chun</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Chun</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">JAVASE04：数据转换与运算</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2019-12-25 </span>
+        <div class="post-category">
+            <a href="/categories/javase/"> JAVASE </a>
+            </div>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#数据转换">数据转换</a></li>
+    <li><a href="#自增与自减">自增与自减</a></li>
+    <li><a href="#位运算左移右移">位运算左移右移</a></li>
+    <li><a href="#字符串连接符">字符串连接符'+&rsquo;</a></li>
+    <li><a href="#三元运算">三元运算</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <p>数据转换分为两种：强制类型转换和自动类型转换
+数据类型转换优先级由低到高：
+byte -&gt; short -&gt; char -&gt; int -&gt; long -&gt; float -&gt; double
+(先是小数点型大于整数型，然后是按字节大小)</p>
+<h2 id="数据转换">数据转换</h2>
+<ol>
+<li>不能对布尔值进行转换</li>
+<li>不能把对象类型转换为不相干的</li>
+<li>高优先级到低优先级，强制转换</li>
+<li>转换的时候可能存在<strong>内存溢出</strong>，或者<strong>精度问题</strong></li>
+</ol>
+<ul>
+<li>内存溢出
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">  int i=128;
+  byte b =(byte)i; 
+  System.out.println(b);//此时输出的是一个随机数，因为&#34;128&#34;已经超过了byte类型
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>精度问题
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">System.out.println((int)23.7); //double类型强制转换int，输出为23
+System.out.println((int)-45.89f); //float强制转换int，输出为-45
+    
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<h2 id="自增与自减">自增与自减</h2>
+<ul>
+<li>i++
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">b = i++ //相当于 先给b赋值，再自增
+b = ++i //相当于 先自增，再给b赋值
+  
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>++i 与自增类似</li>
+</ul>
+<h2 id="位运算左移右移">位运算左移右移</h2>
+<p>面试可能会问到，用位运算<strong>效率高</strong></p>
+<ul>
+<li>左移&laquo;
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">System.out.println(2&lt;&lt;3);//类型于2^3 输出为16
+0000 0010 左移3位 0001 0000 
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>右移&raquo;</li>
+</ul>
+<h2 id="字符串连接符">字符串连接符'+&rsquo;</h2>
+<p>面试可能问到下面两个输出区别；</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">int a=10;
+int b=20;
+System.out.println(&#34; &#34;+a+b); //输出为1020，字符串在前面会拼接
+System.out.println(a+b+&#34;&#34;); //输出为30，字符串在后面，前面会依旧进行计算
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="三元运算">三元运算</h2>
+<p>开发过程中使用的比较多，类似于if</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">int score = 50;
+String type = score &lt; 60 ? &#34;不及格&#34; : &#34;及格&#34; ;
+</code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Chun</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2019-12-25
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      
+      <nav class="post-nav">
+        <a class="prev" href="/post/javase05%E6%95%B0%E7%BB%84%E5%86%85%E5%AD%98%E5%88%86%E6%9E%90/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">JAVASE05：数组内存分析</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="/post/javase03%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/">
+            <span class="next-text nav-default">JAVASE03：数据类型</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+  <a href="http://localhost:1313/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> site pv: <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> site uv: <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2020
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Chun</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

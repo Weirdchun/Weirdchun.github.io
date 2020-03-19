@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>MySQL安装与使用 - Chun&#39;s Blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Chun" /><meta name="description" content="很多教程都是Mysql的，所以我也先学习mysql吧 第一次使用MySQL Mysql原理 其实我们安装的MySQL是一个服务，别人可以通过访问我" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.62.2 with theme even" />
+
+
+<link rel="canonical" href="http://localhost:1313/post/zother-mysql%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="MySQL安装与使用" />
+<meta property="og:description" content="很多教程都是Mysql的，所以我也先学习mysql吧 第一次使用MySQL Mysql原理 其实我们安装的MySQL是一个服务，别人可以通过访问我" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/post/zother-mysql%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/" />
+<meta property="article:published_time" content="2020-03-09T23:41:32+08:00" />
+<meta property="article:modified_time" content="2020-03-09T23:41:32+08:00" />
+<meta itemprop="name" content="MySQL安装与使用">
+<meta itemprop="description" content="很多教程都是Mysql的，所以我也先学习mysql吧 第一次使用MySQL Mysql原理 其实我们安装的MySQL是一个服务，别人可以通过访问我">
+<meta itemprop="datePublished" content="2020-03-09T23:41:32&#43;08:00" />
+<meta itemprop="dateModified" content="2020-03-09T23:41:32&#43;08:00" />
+<meta itemprop="wordCount" content="850">
+
+
+
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="MySQL安装与使用"/>
+<meta name="twitter:description" content="很多教程都是Mysql的，所以我也先学习mysql吧 第一次使用MySQL Mysql原理 其实我们安装的MySQL是一个服务，别人可以通过访问我"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Chun</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Chun</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">MySQL安装与使用</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2020-03-09 </span>
+        <div class="post-category">
+            <a href="/categories/mysql/"> MySQL </a>
+            </div>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#mysql原理">Mysql原理</a></li>
+    <li><a href="#安装与配置">安装与配置</a></li>
+    <li><a href="#启动">启动</a></li>
+    <li><a href="#登录">登录</a></li>
+    <li><a href="#改密码">改密码</a></li>
+    <li><a href="#退出">退出</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <p>很多教程都是Mysql的，所以我也先学习mysql吧</p>
+<!-- raw HTML omitted -->
+<h1 id="第一次使用mysql">第一次使用MySQL</h1>
+<h2 id="mysql原理">Mysql原理</h2>
+<p><img src="MySQL%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/1.png" alt="">
+其实我们安装的MySQL是一个服务，别人可以通过访问我们电脑的IP与端口，来访问MySQL</p>
+<ol>
+<li>MySQL目录结构
+数据库：文件夹
+表：文件
+数据：文件里面的数据</li>
+</ol>
+<h2 id="安装与配置">安装与配置</h2>
+<p>在网上各种途径下载<code>mysql8.0.18.zip</code>（Mysql压缩包）,把它压缩到你想要的位置（其实就是安装位置了）。
+我把它压缩到了<code>G:\mysql\mysql-8.0.18-winx64</code>然后在这个文件下</p>
+<ul>
+<li>创建<code>my.ini</code>配置文件，编辑配置信息</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">[client]
+# 设置mysql客户端默认字符集
+default-character-set=utf8
+ 
+[mysqld]
+# 设置3306端口
+port = 3306
+# 设置mysql的安装目录
+basedir=G:\mysql\mysql-8.0.18-winx64
+
+//下面我没有配置
+# 设置 mysql数据库的数据的存放目录，MySQL 8+ 不需要以下配置，系统自己生成即可，否则有可能报错
+# datadir=C:\\web\\sqldata
+# 允许最大连接数
+max_connections=20
+# 服务端使用的字符集默认为8比特编码的latin1字符集
+character-set-server=utf8
+# 创建新表时将使用的默认存储引擎
+default-storage-engine=INNODB
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>加入到环境变量
+把<code>G:\mysql\mysql-8.0.18-winx64\bin</code>加入到系统变量的PATH中，才能使用下面启动mysql的命名</li>
+</ul>
+<h2 id="启动">启动</h2>
+<ul>
+<li>管理员身份打开cmd(我用的VScode)</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">PS C:\&gt; cd G:\mysql\mysql-8.0.18-winx64\bin //进入到bin文件
+PS G:\mysql\mysql-8.0.18-winx64\bin&gt; 
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>初始化数据库 <code>mysqld --initialize --console</code></li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">PS G:\mysql\mysql-8.0.18-winx64\bin&gt; mysqld --initialize --console
+...
+A temporary password is generated for root@localhost: APWCY5ws&amp;hjQ //得到一个初始密码，后面登录会使用上
+...
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>输入安装命令 <code>mysqld install</code></li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">PS G:\mysql\mysql-8.0.18-winx64\bin&gt; mysqld install
+The service already exists!
+The current server installed: G:\mysql\mysql-8.0.18-winx64\bin\mysqld.exe MySQL
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>输入启动命名 <code>net start mysql</code></li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">PS G:\mysql\mysql-8.0.18-winx64\bin&gt; net start mysql
+请求的服务已经启动。
+
+请键入 NET HELPMSG 2182 以获得更多的帮助。
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="登录">登录</h2>
+<p>登录本机的Mysql <code>mysql -u root -p</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">PS G:\mysql\mysql-8.0.18-winx64\bin&gt; mysql -u root -p
+Enter password: *****   //输入初始密码
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 15
+mysql&gt;
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>Tip</strong>：登录失败注意可能是<code>my.ini</code>的编码格式不对，必须是ANSI编码</p>
+<h2 id="改密码">改密码</h2>
+<p>初始密码太难记了，可以自己修改密码</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">PS G:\mysql\mysql-8.0.18-winx64\bin&gt; mysqladmin -u root -p password 输入新密码
+Enter password: 输入初始密码
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="退出">退出</h2>
+<p>退出数据库<code>exit</code>或者 <code>quit</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">mysql&gt; exit
+Bye
+PS G:\mysql\mysql-8.0.18-winx64\bin&gt;
+</code></pre></td></tr></table>
+</div>
+</div><h1 id="第n次使用mysql">第n次使用MySQL</h1>
+<ol>
+<li>Windows下</li>
+</ol>
+<ul>
+<li>启动服务</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">net start mysql  或者
+mysqld --console
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>关闭服务</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">net stop mysql  或者
+mysqladmin -uroot shudown　　　
+</code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Chun</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2020-03-09
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      
+      <nav class="post-nav">
+        <a class="prev" href="/post/202003-javaweb%E5%85%A5%E9%97%A801%E7%AC%AC%E4%B8%80%E4%B8%AAservlet%E7%A8%8B%E5%BA%8F/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">JAVAWEB入门01：第一个Servlet程序</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="/post/202003-mybatis%E6%A1%86%E6%9E%B601%E7%AC%AC%E4%B8%80%E4%B8%AAmybatis%E7%A8%8B%E5%BA%8F/">
+            <span class="next-text nav-default">Mybatis框架01：第一个Mybatis程序</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+  <a href="http://localhost:1313/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> site pv: <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> site uv: <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2020
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Chun</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>
