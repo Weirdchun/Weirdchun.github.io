@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Spring框架02：IOC - Chun&#39;s Blog</title>
+  <title>Spring框架02：IoC - Chun&#39;s Blog</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Chun" /><meta name="description" content="IOC是一个思想
+<meta name="author" content="Chun" /><meta name="description" content="IOC是一个设计思想，DI（依赖注入）是实现IOC的一种方法
 " /><meta name="keywords" content="Hugo, theme, even" />
 
 
@@ -39,23 +39,23 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="Spring框架02：IOC" />
-<meta property="og:description" content="IOC是一个思想" />
+<meta property="og:title" content="Spring框架02：IoC" />
+<meta property="og:description" content="IOC是一个设计思想，DI（依赖注入）是实现IOC的一种方法" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://localhost:1313/post/spring%E6%A1%86%E6%9E%B602ioc%E6%80%9D%E6%83%B3/" />
 <meta property="article:published_time" content="2020-01-31T18:25:58+08:00" />
 <meta property="article:modified_time" content="2020-01-31T18:25:58+08:00" />
-<meta itemprop="name" content="Spring框架02：IOC">
-<meta itemprop="description" content="IOC是一个思想">
+<meta itemprop="name" content="Spring框架02：IoC">
+<meta itemprop="description" content="IOC是一个设计思想，DI（依赖注入）是实现IOC的一种方法">
 <meta itemprop="datePublished" content="2020-01-31T18:25:58&#43;08:00" />
 <meta itemprop="dateModified" content="2020-01-31T18:25:58&#43;08:00" />
-<meta itemprop="wordCount" content="400">
+<meta itemprop="wordCount" content="328">
 
 
 
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Spring框架02：IOC"/>
-<meta name="twitter:description" content="IOC是一个思想"/>
+<meta name="twitter:title" content="Spring框架02：IoC"/>
+<meta name="twitter:description" content="IOC是一个设计思想，DI（依赖注入）是实现IOC的一种方法"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -122,7 +122,7 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">Spring框架02：IOC</h1>
+      <h1 class="post-title">Spring框架02：IoC</h1>
 
       <div class="post-meta">
         <span class="post-time"> 2020-01-31 </span>
@@ -138,22 +138,23 @@
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#ioc思想">IOC思想</a></li>
-    <li><a href="#ioc入门案例">IOC入门案例</a></li>
-    <li><a href="#ioc创建对象方式">IOC创建对象方式</a></li>
+    <li><a href="#ioc思想">IoC思想</a>
+      <ul>
+        <li><a href="#ioc是spring的核心">IoC是Spring的核心</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
   </div>
 </div>
     <div class="post-content">
-      <p>IOC是一个思想</p>
-<h2 id="ioc思想">IOC思想</h2>
-<h2 id="ioc入门案例">IOC入门案例</h2>
-<ol>
-<li>使用Maven导包
-Spring Maven地址：https://mvnrepository.com/artifact/org.springframework/spring-webmvc
-导入Spring Web MVC，maven就会把其他依赖的包全部下载</li>
-</ol>
+      <p>IOC是一个设计思想，DI（依赖注入）是实现IOC的一种方法</p>
+<h2 id="ioc思想">IoC思想</h2>
+<blockquote>
+<p>以前的开发中，程序员需要根据用户需求去改源代码，
+而我们使用Set接口实现，就不需要修改源代码了
+这就是IOC原型,我们不用去管理对象的创建了，系统耦合性大大降低。</p>
+</blockquote>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt"> 1
@@ -172,138 +173,24 @@ Spring Maven地址：https://mvnrepository.com/artifact/org.springframework/spri
 </span><span class="lnt">14
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-xml" data-lang="xml"><span class="c">&lt;!--</span><span class="c"> https://mvnrepository.com/artifact/org.springframework/spring</span><span class="c">-</span><span class="c">webmvc </span><span class="c">--&gt;</span>
-<span class="nt">&lt;dependency</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;groupId</span><span class="nt">&gt;</span>org.springframework<span class="nt">&lt;/groupId&gt;</span>
-    <span class="nt">&lt;artifactId</span><span class="nt">&gt;</span>spring-webmvc<span class="nt">&lt;/artifactId&gt;</span>
-    <span class="nt">&lt;version</span><span class="nt">&gt;</span>5.2.2.RELEASE<span class="nt">&lt;/version&gt;</span>
-<span class="nt">&lt;/dependency&gt;</span>
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">UserServiceImpl</span> <span class="kd">implements</span> <span class="n">UserService</span><span class="o">{</span>
+<span class="c1">//以前的开发,UserDaoImpl()需要根据需要改变，UserDaoMysqlImpl，UserDaoOracleImpl
+</span><span class="c1"></span><span class="c1">// private UserDao userDao = new UserDaoImpl();
+</span><span class="c1"></span>
 
-<span class="c">&lt;!--</span><span class="c"> Spring需要和mybatis整合就需要这个包 </span><span class="c">--&gt;</span>
-<span class="nt">&lt;dependency</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;groupId</span><span class="nt">&gt;</span>org.springframework<span class="nt">&lt;/groupId&gt;</span>
-    <span class="nt">&lt;artifactId</span><span class="nt">&gt;</span>spring-jdbc<span class="nt">&lt;/artifactId&gt;</span>
-    <span class="nt">&lt;version</span><span class="nt">&gt;</span>5.2.2.RELEASE<span class="nt">&lt;/version&gt;</span>
-<span class="nt">&lt;/dependency&gt;</span>
-
-</code></pre></td></tr></table>
-</div>
-</div><ol start="2">
-<li>配置xml文件</li>
-</ol>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
-<span class="nt">&lt;beans</span> <span class="na">xmlns=</span><span class="s">&#34;http://www.springframework.org/schema/beans&#34;</span>
-    <span class="na">xmlns:xsi=</span><span class="s">&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span>
-    <span class="na">xsi:schemaLocation=</span><span class="s">&#34;http://www.springframework.org/schema/beans
-</span><span class="s">        https://www.springframework.org/schema/beans/spring-beans.xsd&#34;</span><span class="nt">&gt;</span>
-
-    <span class="nt">&lt;bean</span> <span class="na">id=</span><span class="s">&#34;...&#34;</span> <span class="na">class=</span><span class="s">&#34;...&#34;</span><span class="nt">&gt;</span>  
-        <span class="c">&lt;!--</span><span class="c"> collaborators and configuration for this bean go here </span><span class="c">--&gt;</span>
-    <span class="nt">&lt;/bean&gt;</span>
-
-    <span class="nt">&lt;bean</span> <span class="na">id=</span><span class="s">&#34;...&#34;</span> <span class="na">class=</span><span class="s">&#34;...&#34;</span><span class="nt">&gt;</span>
-        <span class="c">&lt;!--</span><span class="c"> collaborators and configuration for this bean go here </span><span class="c">--&gt;</span>
-    <span class="nt">&lt;/bean&gt;</span>
-
-    <span class="c">&lt;!--</span><span class="c"> more bean definitions go here </span><span class="c">--&gt;</span>
-
-<span class="nt">&lt;/beans&gt;</span>
-</code></pre></td></tr></table>
-</div>
-</div><p><strong>Tip</strong>：id表示对象，class表示哪个具体类</p>
-<ol start="3">
-<li>实例化</li>
-</ol>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
-</span><span class="lnt">6
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Mytest</span> <span class="o">{</span>
-    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[</span><span class="o">]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
-        <span class="n">ApplicationContext</span> <span class="n">context</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ClassPathXmlApplicationContext</span><span class="o">(</span><span class="s">&#34;beans.xml&#34;</span><span class="o">)</span><span class="o">;</span>
+<span class="c1">//利用set进行动态实现值的注入后，程序将不需要修改
+</span><span class="c1"></span>    <span class="kd">private</span> <span class="n">UserDao</span> <span class="n">userDao</span><span class="o">;</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setUserDao</span><span class="o">(</span><span class="n">UserDao</span> <span class="n">userDao</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">userDao</span> <span class="o">=</span> <span class="n">userDao</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">getUser</span><span class="o">(</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">userDao</span><span class="o">.</span><span class="na">getUser</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
     <span class="o">}</span>
 <span class="o">}</span>
-
 </code></pre></td></tr></table>
 </div>
-</div><h2 id="ioc创建对象方式">IOC创建对象方式</h2>
-<ol>
-<li>使用无参构造创建对象，默认</li>
-<li>假设需要使用有参构造
-<ul>
-<li>下标赋值</li>
-</ul>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">&lt;bean id=&#34;user&#34; class=&#34;com.chun.pojo.User&#34;&gt;
-    &lt;constructor-arg index=&#34;0&#34; value=&#34;chun&#34;/&gt;
-&lt;/bean&gt;
-</code></pre></td></tr></table>
-</div>
-</div><ul>
-<li>类型赋值(不建议使用)</li>
-</ul>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">&lt;bean id=&#34;user&#34; class=&#34;com.chun.pojo.User&#34;&gt;
-    &lt;constructor-arg type=&#34;java.lang.String&#34; value=&#34;chun&#34;/&gt;
-&lt;/bean&gt;
-</code></pre></td></tr></table>
-</div>
-</div><ul>
-<li>直接通过参数名(会这个就行)</li>
-</ul>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">&lt;bean id=&#34;user&#34; class=&#34;com.chun.pojo.User&#34;&gt;
-    &lt;constructor-arg name=&#34;name&#34; value=&#34;chun&#34;/&gt;
-&lt;/bean&gt;
-</code></pre></td></tr></table>
-</div>
-</div></li>
-</ol>
+</div><h3 id="ioc是spring的核心">IoC是Spring的核心</h3>
+<p>Spring容器在初始化先读取配置文件，根据配置文件或元数据创建与组织对象存入容器中，程序使用时再从IoC容器中取出需要的对象。</p>
     </div>
 
     <div class="post-copyright">
