@@ -44,7 +44,7 @@
 <meta property="og:description" content="Hugo theme even example site." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://localhost:1313/" />
-<meta property="og:updated_time" content="2020-03-21T02:28:46+08:00" />
+<meta property="og:updated_time" content="2020-03-23T20:55:18+08:00" />
 <meta itemprop="name" content="Chun&#39;s Blog">
 <meta itemprop="description" content="Hugo theme even example site."><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Chun&#39;s Blog"/>
@@ -115,67 +115,75 @@
           <section id="posts" class="posts">
     <article class="post">
   <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/202003-smbmsservlet%E7%89%8804%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86%E5%AE%9E%E7%8E%B0/">smbmsServlet版04：用户管理实现</a></h1>
+    <h1 class="post-title"><a class="post-link" href="/post/spring%E6%A1%86%E6%9E%B609%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/">Spring框架09：代理模式</a></h1>
     <div class="post-meta">
-      <span class="post-time"> 2020-03-18 </span>
+      <span class="post-time"> 2020-03-22 </span>
       <div class="post-category">
-          <a href="/categories/smbmsservlet%E7%89%88%E9%A1%B9%E7%9B%AE/"> smbmsServlet版项目 </a>
+          <a href="/categories/spring%E6%A1%86%E6%9E%B6/"> Spring框架 </a>
           </div>
     </div>
   </header>
   
   <div class="post-content">
     <div class="post-summary">
-      <div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">&gt; 人——（发起请求）——&gt;Servlet————&gt;用户列表————&gt;Service————&gt;Dao————&gt;数据库
-&gt;                          ————&gt;角色列表————&gt;Service————&gt;Dao————&gt;数据库
-&gt;                          ————&gt;分页(总数)————&gt;Service————&gt;Dao————&gt;数据库
-</code></pre></td></tr></table>
-</div>
-</div>
+      <p>为什么要学习代理模式？因为是aop底层</p>
     </div>
     <div class="read-more">
-      <a href="/post/202003-smbmsservlet%E7%89%8804%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86%E5%AE%9E%E7%8E%B0/" class="read-more-link">Read more...</a>
+      <a href="/post/spring%E6%A1%86%E6%9E%B609%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/" class="read-more-link">Read more...</a>
     </div>
   </div>
 </article>
 
     <article class="post">
   <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/202003-javase13%E7%B1%BB%E5%8A%A0%E8%BD%BD%E5%99%A8/">JAVASE13：类加载器</a></h1>
+    <h1 class="post-title"><a class="post-link" href="/post/spring%E6%A1%86%E6%9E%B608%E4%BD%BF%E7%94%A8%E6%B3%A8%E8%A7%A3%E5%BC%80%E5%8F%91/">Spring框架08：使用注解开发</a></h1>
     <div class="post-meta">
-      <span class="post-time"> 2020-03-14 </span>
+      <span class="post-time"> 2020-03-22 </span>
       <div class="post-category">
-          <a href="/categories/javase/"> JAVASE </a>
+          <a href="/categories/spring%E6%A1%86%E6%9E%B6/"> Spring框架 </a>
           </div>
     </div>
   </header>
   
   <div class="post-content">
     <div class="post-summary">
-      <p>开发java代码的流程：
-<!-- raw HTML omitted --></p>
-<p>.java——(经过java编译器)——&gt;.class——(JVM类加载器)and(JVM解析)——&gt;二进制数据——&gt;(操作平台)</p>
+      在Spring4之后，要使用注解开发，需要导入aop包，导入context约束 1 2 3 4 5 6 7 8 &lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt; &lt;beans xmlns=&#34;http://www.springframework.org/schema/beans&#34; xmlns:xsi=&#34;http://www.w3.org/2001/XMLSchema-instance&#34; xmlns:context=&#34;http://www.springframework.org/schema/context&#34; xsi:schemaLocation=&#34;http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd&#34;&gt; &lt;context:annotation-config/&gt; &lt;/beans&gt; bean 属性如何注入 1 2 3
     </div>
     <div class="read-more">
-      <a href="/post/202003-javase13%E7%B1%BB%E5%8A%A0%E8%BD%BD%E5%99%A8/" class="read-more-link">Read more...</a>
+      <a href="/post/spring%E6%A1%86%E6%9E%B608%E4%BD%BF%E7%94%A8%E6%B3%A8%E8%A7%A3%E5%BC%80%E5%8F%91/" class="read-more-link">Read more...</a>
     </div>
   </div>
 </article>
 
     <article class="post">
   <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/202003-smbmsservlet%E7%89%8803%E4%BF%AE%E6%94%B9%E5%AF%86%E7%A0%81%E5%AE%9E%E7%8E%B0/">smbmsServlet版03：修改密码实现</a></h1>
+    <h1 class="post-title"><a class="post-link" href="/post/spring%E6%A1%86%E6%9E%B607bean%E7%9A%84%E8%87%AA%E5%8A%A8%E8%A3%85%E9%85%8D/">Spring框架07：Bean的自动装配</a></h1>
     <div class="post-meta">
-      <span class="post-time"> 2020-03-13 </span>
+      <span class="post-time"> 2020-03-21 </span>
       <div class="post-category">
-          <a href="/categories/smbmsservlet%E7%89%88%E9%A1%B9%E7%9B%AE/"> smbmsServlet版项目 </a>
+          <a href="/categories/spring%E6%A1%86%E6%9E%B6/"> Spring框架 </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      <p>自动装配是Spring满足bean依赖的一种方式！
+Bean自动装配空就是，Spring会在上下文中自动寻找，并自动给Bean装配</p>
+    </div>
+    <div class="read-more">
+      <a href="/post/spring%E6%A1%86%E6%9E%B607bean%E7%9A%84%E8%87%AA%E5%8A%A8%E8%A3%85%E9%85%8D/" class="read-more-link">Read more...</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/spring%E6%A1%86%E6%9E%B606di%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5/">Spring框架06：DI依赖注入</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2020-03-21 </span>
+      <div class="post-category">
+          <a href="/categories/spring%E6%A1%86%E6%9E%B6/"> Spring框架 </a>
           </div>
     </div>
   </header>
@@ -185,18 +193,39 @@
       
     </div>
     <div class="read-more">
-      <a href="/post/202003-smbmsservlet%E7%89%8803%E4%BF%AE%E6%94%B9%E5%AF%86%E7%A0%81%E5%AE%9E%E7%8E%B0/" class="read-more-link">Read more...</a>
+      <a href="/post/spring%E6%A1%86%E6%9E%B606di%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5/" class="read-more-link">Read more...</a>
     </div>
   </div>
 </article>
 
     <article class="post">
   <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/202003-smbmsservlet%E7%89%8802%E7%99%BB%E5%BD%95%E9%A1%B5%E9%9D%A2%E5%AE%9E%E7%8E%B0/">smbmsServlet版02：登录页面实现</a></h1>
+    <h1 class="post-title"><a class="post-link" href="/post/spring%E6%A1%86%E6%9E%B605spring%E9%85%8D%E7%BD%AE%E8%AF%B4%E6%98%8E/">Spring框架05：Spring配置说明</a></h1>
     <div class="post-meta">
-      <span class="post-time"> 2020-03-13 </span>
+      <span class="post-time"> 2020-03-21 </span>
       <div class="post-category">
-          <a href="/categories/smbmsservlet%E7%89%88%E9%A1%B9%E7%9B%AE/"> smbmsServlet版项目 </a>
+          <a href="/categories/spring%E6%A1%86%E6%9E%B6/"> Spring框架 </a>
+          </div>
+    </div>
+  </header>
+  
+  <div class="post-content">
+    <div class="post-summary">
+      <p><code>beans.xml</code>中可以配置的东西</p>
+    </div>
+    <div class="read-more">
+      <a href="/post/spring%E6%A1%86%E6%9E%B605spring%E9%85%8D%E7%BD%AE%E8%AF%B4%E6%98%8E/" class="read-more-link">Read more...</a>
+    </div>
+  </div>
+</article>
+
+    <article class="post">
+  <header class="post-header">
+    <h1 class="post-title"><a class="post-link" href="/post/spring%E6%A1%86%E6%9E%B604ioc%E5%88%9B%E5%BB%BA%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%96%B9%E5%BC%8F/">Spring框架04：IoC创建对象的方式</a></h1>
+    <div class="post-meta">
+      <span class="post-time"> 2020-03-21 </span>
+      <div class="post-category">
+          <a href="/categories/spring%E6%A1%86%E6%9E%B6/"> Spring框架 </a>
           </div>
     </div>
   </header>
@@ -206,72 +235,28 @@
       
     </div>
     <div class="read-more">
-      <a href="/post/202003-smbmsservlet%E7%89%8802%E7%99%BB%E5%BD%95%E9%A1%B5%E9%9D%A2%E5%AE%9E%E7%8E%B0/" class="read-more-link">Read more...</a>
+      <a href="/post/spring%E6%A1%86%E6%9E%B604ioc%E5%88%9B%E5%BB%BA%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%96%B9%E5%BC%8F/" class="read-more-link">Read more...</a>
     </div>
   </div>
 </article>
 
     <article class="post">
   <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/202003-javase12%E7%B1%BB%E5%8A%A0%E8%BD%BD%E5%86%85%E5%AD%98%E5%88%86%E6%9E%90/">JAVASE12：类加载内存分析</a></h1>
+    <h1 class="post-title"><a class="post-link" href="/post/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%AC%AC1%E7%AB%A0%E7%BB%AA%E8%AE%BA/">数据结构第1章：绪论</a></h1>
     <div class="post-meta">
-      <span class="post-time"> 2020-03-13 </span>
+      <span class="post-time"> 2020-03-20 </span>
       <div class="post-category">
-          <a href="/categories/javase/"> JAVASE </a>
+          <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"> 数据结构 </a>
           </div>
     </div>
   </header>
   
   <div class="post-content">
     <div class="post-summary">
-      
+      绪论 基础概率和术语 基础术语 数据:只要放到计算机中的都叫数据 有一些不同类型：数字，字符，声音，图形等） 数据元素:数据的基本单位，在计算机中常作
     </div>
     <div class="read-more">
-      <a href="/post/202003-javase12%E7%B1%BB%E5%8A%A0%E8%BD%BD%E5%86%85%E5%AD%98%E5%88%86%E6%9E%90/" class="read-more-link">Read more...</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/zother-ajax%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/">ajax快速入门</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2020-03-13 </span>
-      <div class="post-category">
-          <a href="/categories/ajax/"> ajax </a>
-          </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      <p>AJAX = Asynchronous JavaScript and XML（异步的 JavaScript 和 XML）。
-AJAX 不是新的编程语言，而是一种使用现有标准的新方法。
-AJAX 是与服务器交换数据并更新部分网页的艺术，在不重新加载整个页面的情况下。</p>
-    </div>
-    <div class="read-more">
-      <a href="/post/zother-ajax%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/" class="read-more-link">Read more...</a>
-    </div>
-  </div>
-</article>
-
-    <article class="post">
-  <header class="post-header">
-    <h1 class="post-title"><a class="post-link" href="/post/202003-smbmsservlet%E7%89%8801%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA%E5%87%86%E5%A4%87/">smbmsServlet版01：项目搭建准备</a></h1>
-    <div class="post-meta">
-      <span class="post-time"> 2020-03-11 </span>
-      <div class="post-category">
-          <a href="/categories/smbmsservlet%E7%89%88%E9%A1%B9%E7%9B%AE/"> smbmsServlet版项目 </a>
-          </div>
-    </div>
-  </header>
-  
-  <div class="post-content">
-    <div class="post-summary">
-      
-    </div>
-    <div class="read-more">
-      <a href="/post/202003-smbmsservlet%E7%89%8801%E9%A1%B9%E7%9B%AE%E6%90%AD%E5%BB%BA%E5%87%86%E5%A4%87/" class="read-more-link">Read more...</a>
+      <a href="/post/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%AC%AC1%E7%AB%A0%E7%BB%AA%E8%AE%BA/" class="read-more-link">Read more...</a>
     </div>
   </div>
 </article>

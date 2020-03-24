@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SpringMVC框架 on Chun&#39;s Blog</title>
+    <link>http://localhost:1313/categories/springmvc%E6%A1%86%E6%9E%B6/</link>
+    <description>Recent content in SpringMVC框架 on Chun&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Chun</copyright>
+    <lastBuildDate>Mon, 23 Mar 2020 15:41:24 +0800</lastBuildDate>
+    
+	<atom:link href="http://localhost:1313/categories/springmvc%E6%A1%86%E6%9E%B6/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>SpringMVC框架04：注解实现</title>
+      <link>http://localhost:1313/post/springmvc%E6%A1%86%E6%9E%B604%E6%B3%A8%E8%A7%A3%E5%AE%9E%E7%8E%B0/</link>
+      <pubDate>Mon, 23 Mar 2020 15:41:24 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/springmvc%E6%A1%86%E6%9E%B604%E6%B3%A8%E8%A7%A3%E5%AE%9E%E7%8E%B0/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SpringMVC框架03：HelloSpringMVC代码实现</title>
+      <link>http://localhost:1313/post/springmvc%E6%A1%86%E6%9E%B603hellospringmvc%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0/</link>
+      <pubDate>Mon, 23 Mar 2020 14:28:00 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/springmvc%E6%A1%86%E6%9E%B603hellospringmvc%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SpringMVC框架01：简介</title>
+      <link>http://localhost:1313/post/springmvc%E6%A1%86%E6%9E%B601%E7%AE%80%E4%BB%8B/</link>
+      <pubDate>Sun, 22 Mar 2020 23:59:20 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/springmvc%E6%A1%86%E6%9E%B601%E7%AE%80%E4%BB%8B/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

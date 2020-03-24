@@ -7,17 +7,17 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Chun</copyright>
-    <lastBuildDate>Fri, 20 Mar 2020 02:32:58 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 23 Mar 2020 14:27:18 +0800</lastBuildDate>
     
 	<atom:link href="http://localhost:1313/categories/xx/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Spring框架04：第一个Spring程序</title>
-      <link>http://localhost:1313/post/spring%E6%A1%86%E6%9E%B603%E7%AC%AC%E4%B8%80%E4%B8%AAspring%E7%A8%8B%E5%BA%8F/</link>
-      <pubDate>Fri, 20 Mar 2020 02:32:58 +0800</pubDate>
+      <title>SpringMVC框架02：原理</title>
+      <link>http://localhost:1313/post/springmvc%E6%A1%86%E6%9E%B602%E5%8E%9F%E7%90%86/</link>
+      <pubDate>Mon, 23 Mar 2020 14:27:18 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/spring%E6%A1%86%E6%9E%B603%E7%AC%AC%E4%B8%80%E4%B8%AAspring%E7%A8%8B%E5%BA%8F/</guid>
+      <guid>http://localhost:1313/post/springmvc%E6%A1%86%E6%9E%B602%E5%8E%9F%E7%90%86/</guid>
       <description></description>
     </item>
     

@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Spring框架08：使用注解开发 - Chun&#39;s Blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Chun" /><meta name="description" content="在Spring4之后，要使用注解开发，需要导入aop包，导入context约束 1 2 3 4 5 6 7 8 &amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;UTF-8&amp;#34;?&amp;gt; &amp;lt;beans xmlns=&amp;#34;http://www.springframework.org/schema/beans&amp;#34; xmlns:xsi=&amp;#34;http://www.w3.org/2001/XMLSchema-instance&amp;#34; xmlns:context=&amp;#34;http://www.springframework.org/schema/context&amp;#34; xsi:schemaLocation=&amp;#34;http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd&amp;#34;&amp;gt; &amp;lt;context:annotation-config/&amp;gt; &amp;lt;/beans&amp;gt; bean 属性如何注入 1 2 3" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.62.2 with theme even" />
+
+
+<link rel="canonical" href="http://localhost:1313/post/spring%E6%A1%86%E6%9E%B608%E4%BD%BF%E7%94%A8%E6%B3%A8%E8%A7%A3%E5%BC%80%E5%8F%91/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Spring框架08：使用注解开发" />
+<meta property="og:description" content="在Spring4之后，要使用注解开发，需要导入aop包，导入context约束 1 2 3 4 5 6 7 8 &lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt; &lt;beans xmlns=&#34;http://www.springframework.org/schema/beans&#34; xmlns:xsi=&#34;http://www.w3.org/2001/XMLSchema-instance&#34; xmlns:context=&#34;http://www.springframework.org/schema/context&#34; xsi:schemaLocation=&#34;http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd&#34;&gt; &lt;context:annotation-config/&gt; &lt;/beans&gt; bean 属性如何注入 1 2 3" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/post/spring%E6%A1%86%E6%9E%B608%E4%BD%BF%E7%94%A8%E6%B3%A8%E8%A7%A3%E5%BC%80%E5%8F%91/" />
+<meta property="article:published_time" content="2020-03-22T02:11:37+08:00" />
+<meta property="article:modified_time" content="2020-03-22T02:11:37+08:00" />
+<meta itemprop="name" content="Spring框架08：使用注解开发">
+<meta itemprop="description" content="在Spring4之后，要使用注解开发，需要导入aop包，导入context约束 1 2 3 4 5 6 7 8 &lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt; &lt;beans xmlns=&#34;http://www.springframework.org/schema/beans&#34; xmlns:xsi=&#34;http://www.w3.org/2001/XMLSchema-instance&#34; xmlns:context=&#34;http://www.springframework.org/schema/context&#34; xsi:schemaLocation=&#34;http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd&#34;&gt; &lt;context:annotation-config/&gt; &lt;/beans&gt; bean 属性如何注入 1 2 3">
+<meta itemprop="datePublished" content="2020-03-22T02:11:37&#43;08:00" />
+<meta itemprop="dateModified" content="2020-03-22T02:11:37&#43;08:00" />
+<meta itemprop="wordCount" content="329">
+
+
+
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Spring框架08：使用注解开发"/>
+<meta name="twitter:description" content="在Spring4之后，要使用注解开发，需要导入aop包，导入context约束 1 2 3 4 5 6 7 8 &lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt; &lt;beans xmlns=&#34;http://www.springframework.org/schema/beans&#34; xmlns:xsi=&#34;http://www.w3.org/2001/XMLSchema-instance&#34; xmlns:context=&#34;http://www.springframework.org/schema/context&#34; xsi:schemaLocation=&#34;http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd&#34;&gt; &lt;context:annotation-config/&gt; &lt;/beans&gt; bean 属性如何注入 1 2 3"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Chun</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Chun</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Spring框架08：使用注解开发</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2020-03-22 </span>
+        <div class="post-category">
+            <a href="/categories/spring%E6%A1%86%E6%9E%B6/"> Spring框架 </a>
+            </div>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#bean">bean</a></li>
+        <li><a href="#属性如何注入">属性如何注入</a></li>
+        <li><a href="#衍生的注解">衍生的注解</a></li>
+        <li><a href="#自动装配">自动装配</a></li>
+        <li><a href="#作用域">作用域</a></li>
+        <li><a href="#xml与注解">xml与注解</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <p>在Spring4之后，要使用注解开发，需要导入aop包，导入context约束</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+<span class="nt">&lt;beans</span> <span class="na">xmlns=</span><span class="s">&#34;http://www.springframework.org/schema/beans&#34;</span>
+       <span class="na">xmlns:xsi=</span><span class="s">&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span>
+       <span class="na">xmlns:context=</span><span class="s">&#34;http://www.springframework.org/schema/context&#34;</span>
+       <span class="na">xsi:schemaLocation=</span><span class="s">&#34;http://www.springframework.org/schema/beans
+</span><span class="s">        https://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd&#34;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;context:annotation-config</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/beans&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="bean">bean</h3>
+<h3 id="属性如何注入">属性如何注入</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="c1">//等价于    &lt;bean id=&#34;user&#34; class=&#34;com.chun.pojo.User&#34;/&gt;
+</span><span class="c1"></span><span class="nd">@Component</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">User</span> <span class="o">{</span>
+    <span class="c1">//相当于&lt;property name = &#34;name&#34; value = &#34;chun&#34;&gt;
+</span><span class="c1"></span>    <span class="nd">@Value</span><span class="o">(</span><span class="s">&#34;chun&#34;</span><span class="o">)</span>
+    <span class="kd">public</span> <span class="n">String</span> <span class="n">name</span> <span class="o">;</span>
+<span class="o">}</span>
+
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="衍生的注解">衍生的注解</h3>
+<ul>
+<li><strong>@Component</strong> 有几个衍生注解，我们在web开发中，会按照MVC三层架构
+<ul>
+<li><strong>@Repository</strong>  dao层</li>
+<li><strong>@Service</strong>   service层</li>
+<li><strong>@Controller</strong> controller层
+这四个注解功能都是一样，代表某个类注册到Spring中，装配Bean</li>
+</ul>
+</li>
+</ul>
+<h3 id="自动装配">自动装配</h3>
+<ul>
+<li><strong>@Autowired</strong></li>
+<li><strong>@Nullable</strong> ：字段标记了这个注解，说明这个字段可以为Null</li>
+<li><strong>@Resource</strong></li>
+</ul>
+<h3 id="作用域">作用域</h3>
+<ul>
+<li>@Scope(&ldquo;singleton&rdquo;) //prototype</li>
+</ul>
+<h3 id="xml与注解">xml与注解</h3>
+<ul>
+<li>xml： 更加万能，适用任何场合！维护方便简单</li>
+<li>注解：不是自己的类使用不了，维护相对复杂</li>
+</ul>
+<p>xml与注解最佳实践：</p>
+<ul>
+<li>xml用来管理bean</li>
+<li>注解只负责完成属性的注入</li>
+</ul>
+
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Chun</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2020-03-22
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      
+      <nav class="post-nav">
+        <a class="prev" href="/post/spring%E6%A1%86%E6%9E%B609%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Spring框架09：代理模式</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="/post/spring%E6%A1%86%E6%9E%B607bean%E7%9A%84%E8%87%AA%E5%8A%A8%E8%A3%85%E9%85%8D/">
+            <span class="next-text nav-default">Spring框架07：Bean的自动装配</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+  <a href="http://localhost:1313/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> site pv: <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> site uv: <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2020
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Chun</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

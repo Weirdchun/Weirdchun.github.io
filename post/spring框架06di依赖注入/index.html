@@ -48,7 +48,7 @@
 <meta itemprop="description" content="">
 <meta itemprop="datePublished" content="2020-03-21T02:28:46&#43;08:00" />
 <meta itemprop="dateModified" content="2020-03-21T02:28:46&#43;08:00" />
-<meta itemprop="wordCount" content="22">
+<meta itemprop="wordCount" content="1002">
 
 
 
@@ -139,7 +139,8 @@
   <ul>
     <li><a href="#构造器注入">构造器注入</a></li>
     <li><a href="#set方式注入重点">Set方式注入（重点）</a></li>
-    <li><a href="#扩展方式注入">扩展方式注入</a></li>
+    <li><a href="#扩展注入">扩展注入</a></li>
+    <li><a href="#bean的作用域">bean的作用域</a></li>
   </ul>
 </nav>
   </div>
@@ -147,7 +148,261 @@
     <div class="post-content">
       <h2 id="构造器注入">构造器注入</h2>
 <h2 id="set方式注入重点">Set方式注入（重点）</h2>
-<h2 id="扩展方式注入">扩展方式注入</h2>
+<ol>
+<li>依赖注入：set注入
+<ul>
+<li>依赖：bean对象的创建依赖于容器</li>
+<li>注入：bean对象中所有属性，由容器来注入</li>
+</ul>
+</li>
+<li>环境搭建
+定义一个Student类</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Student</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">name</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="n">Address</span> <span class="n">address</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="n">String</span><span class="o">[</span><span class="o">]</span> <span class="n">books</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="n">List</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">hobbies</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">card</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="n">Set</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span> <span class="n">games</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">wifi</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="n">Properties</span> <span class="n">info</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><ol start="3">
+<li>注入方式</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-xml" data-lang="xml"><span class="nt">&lt;bean</span> <span class="na">id =</span> <span class="s">&#34;student&#34;</span> <span class="na">class=</span><span class="s">&#34;com.chun.pojo.Student&#34;</span><span class="nt">&gt;</span>
+    <span class="c">&lt;!--</span><span class="c">第一种： 普通注入，value </span><span class="c">--&gt;</span>
+    <span class="nt">&lt;property</span> <span class="na">name =</span> <span class="s">&#34;name&#34;</span> <span class="na">value =</span> <span class="s">&#34;cc&#34;</span><span class="nt">&gt;</span>
+
+    <span class="c">&lt;!--</span><span class="c">第二种： Bean注入，ref </span><span class="c">--&gt;</span>
+    <span class="nt">&lt;property</span> <span class="na">name =</span> <span class="s">&#34;address&#34;</span> <span class="na">ref =</span> <span class="s">&#34;address&#34;</span><span class="nt">&gt;</span>
+
+    <span class="c">&lt;!--</span><span class="c">第三种： 数组注入，ref </span><span class="c">--&gt;</span>
+    <span class="nt">&lt;property</span> <span class="na">name =</span> <span class="s">&#34;books&#34;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;array</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;value</span><span class="nt">&gt;</span>红楼梦<span class="nt">&lt;/value&gt;</span>
+        <span class="nt">&lt;value</span><span class="nt">&gt;</span>西游记<span class="nt">&lt;/value&gt;</span>
+        <span class="nt">&lt;value</span><span class="nt">&gt;</span>三国演义<span class="nt">&lt;/value&gt;</span>
+        <span class="nt">&lt;value</span><span class="nt">&gt;</span>水浒传<span class="nt">&lt;/value&gt;</span>
+    <span class="nt">&lt;/array&gt;</span>
+    <span class="nt">&lt;/property&gt;</span>
+
+    <span class="c">&lt;!--</span><span class="c">第四种：List注入 </span><span class="c">--&gt;</span>
+    <span class="nt">&lt;property</span> <span class="na">name =</span> <span class="s">&#34;hobbies&#34;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;list</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;value</span><span class="nt">&gt;</span>听歌<span class="nt">&lt;/value&gt;</span>
+        <span class="nt">&lt;value</span><span class="nt">&gt;</span>代码<span class="nt">&lt;/value&gt;</span>
+        <span class="nt">&lt;value</span><span class="nt">&gt;</span>看电影<span class="nt">&lt;/value&gt;</span>
+    <span class="nt">&lt;/list&gt;</span>
+    <span class="nt">&lt;/property&gt;</span>
+
+    <span class="c">&lt;!--</span><span class="c">第五种：Map注入 </span><span class="c">--&gt;</span>
+    <span class="nt">&lt;property</span> <span class="na">name =</span> <span class="s">&#34;card&#34;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;map</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;entry</span> <span class="na">key=</span> <span class="s">&#34;身份证&#34;</span> <span class="na">value=</span> <span class="s">&#34;123456789&#34;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;entry</span> <span class="na">key=</span> <span class="s">&#34;银行卡&#34;</span> <span class="na">value=</span> <span class="s">&#34;123456789&#34;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;/map&gt;</span>
+    <span class="nt">&lt;/property&gt;</span>
+    
+    <span class="c">&lt;!--</span><span class="c">第六种：Set注入 </span><span class="c">--&gt;</span>
+    <span class="nt">&lt;property</span> <span class="na">name =</span> <span class="s">&#34;games&#34;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;set</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;value</span><span class="nt">&gt;</span>LOL<span class="nt">&lt;/value &gt;</span>
+        <span class="nt">&lt;value</span><span class="nt">&gt;</span>COC<span class="nt">&lt;/value &gt;</span>
+    <span class="nt">&lt;/set&gt;</span>
+    <span class="nt">&lt;/property&gt;</span>
+    
+    <span class="c">&lt;!--</span><span class="c"> 第七种：Null注入</span><span class="c">--&gt;</span>
+    <span class="nt">&lt;property</span> <span class="na">name =</span> <span class="s">&#34;wifi&#34;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;null</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/property&gt;</span>
+
+    <span class="c">&lt;!--</span><span class="c"> 第八种 ：Properties</span><span class="c">--&gt;</span>
+    <span class="nt">&lt;property</span> <span class="na">name =</span> <span class="s">&#34;info&#34;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;props</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;prop</span> <span class="na">key =</span> <span class="s">&#34;学号&#34;</span><span class="nt">&gt;</span>20190525<span class="nt">&lt;/prop&gt;</span>
+            <span class="nt">&lt;prop</span> <span class="na">key =</span> <span class="s">&#34;性别&#34;</span><span class="nt">&gt;</span>男<span class="nt">&lt;/prop&gt;</span>
+            <span class="nt">&lt;prop</span> <span class="na">key =</span> <span class="s">&#34;姓名&#34;</span><span class="nt">&gt;</span>小名<span class="nt">&lt;/prop&gt;</span>
+        <span class="nt">&lt;/props&gt;</span>
+
+    <span class="nt">&lt;/property&gt;</span>
+<span class="nt">&lt;/bean&gt;</span>
+
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="扩展注入">扩展注入</h2>
+<ul>
+<li>p命名空间注入
+需要约束，在xml文件头部写上条件</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-xml" data-lang="xml"><span class="nt">&lt;beans</span> <span class="na">xmlns:p=</span><span class="s">&#34;http://www.springframework.org/schema/p&#34;</span><span class="nt">&gt;</span> 
+    <span class="nt">&lt;bean</span> <span class="na">id=</span><span class="s">&#34;user&#34;</span> <span class="na">class=</span><span class="s">&#34;com.chun.pojo,User&#34;</span> <span class="na">p:name=</span><span class="s">&#34;chun&#34;</span> <span class="na">p:age=</span><span class="s">&#34;18&#34;</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/beans&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>c命名空间注入
+需要约束，在xml文件头部写上条件,
+通过构造器注入</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-xml" data-lang="xml"><span class="nt">&lt;beans</span> <span class="na">xmlns:c=</span><span class="s">&#34;http://www.springframework.org/schema/c&#34;</span><span class="nt">&gt;</span> 
+    <span class="nt">&lt;bean</span> <span class="na">id=</span><span class="s">&#34;user2&#34;</span> <span class="na">class=</span><span class="s">&#34;com.chun.pojo,User&#34;</span> <span class="na">c:name=</span><span class="s">&#34;chun&#34;</span> <span class="na">c:age=</span><span class="s">&#34;18&#34;</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/beans&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="bean的作用域">bean的作用域</h2>
+<ol>
+<li>单例模式（Spring默认默认）
+一个bean创建只有一个实例</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-xml" data-lang="xml"><span class="nt">&lt;bean</span> <span class="na">id =</span> <span class="s">&#34;user2&#34;</span> <span class="na">class =</span> <span class="s">&#34;com.chun.pojo.user&#34;</span> <span class="na">scope =</span> <span class="s">&#34;singleton/&#34;</span><span class="nt">&gt;</span>
+
+</code></pre></td></tr></table>
+</div>
+</div><p>例子</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="n">ApplicationContext</span> <span class="n">context</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ClassPathXmlApplicationContext</span><span class="o">(</span><span class="s">&#34;userbeans.xml&#34;</span><span class="o">)</span><span class="o">;</span>
+<span class="n">User</span> <span class="n">user</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="na">getBean</span><span class="o">(</span><span class="s">&#34;user2&#34;</span><span class="o">,</span><span class="n">User</span><span class="o">.</span><span class="na">class</span><span class="o">)</span><span class="o">;</span>
+<span class="n">User</span> <span class="n">user2</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="na">getBean</span><span class="o">(</span><span class="s">&#34;user2&#34;</span><span class="o">,</span><span class="n">User</span><span class="o">.</span><span class="na">class</span><span class="o">)</span><span class="o">;</span>
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">user</span><span class="o">=</span><span class="o">=</span><span class="n">user2</span><span class="o">)</span><span class="o">;</span> <span class="c1">// 结果等于true
+</span></code></pre></td></tr></table>
+</div>
+</div><ol start="2">
+<li>原型模式
+每次从容器中get，会产生一个新对象</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-xml" data-lang="xml"><span class="nt">&lt;bean</span> <span class="na">id =</span> <span class="s">&#34;user2&#34;</span> <span class="na">class =</span> <span class="s">&#34;com.chun.pojo.user&#34;</span> <span class="na">scope =</span> <span class="s">&#34;prototype/&#34;</span><span class="nt">&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>例子</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="n">ApplicationContext</span> <span class="n">context</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ClassPathXmlApplicationContext</span><span class="o">(</span><span class="s">&#34;userbeans.xml&#34;</span><span class="o">)</span><span class="o">;</span>
+<span class="n">User</span> <span class="n">user</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="na">getBean</span><span class="o">(</span><span class="s">&#34;user2&#34;</span><span class="o">,</span><span class="n">User</span><span class="o">.</span><span class="na">class</span><span class="o">)</span><span class="o">;</span>
+<span class="n">User</span> <span class="n">user2</span> <span class="o">=</span> <span class="n">context</span><span class="o">.</span><span class="na">getBean</span><span class="o">(</span><span class="s">&#34;user2&#34;</span><span class="o">,</span><span class="n">User</span><span class="o">.</span><span class="na">class</span><span class="o">)</span><span class="o">;</span>
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">user</span><span class="o">=</span><span class="o">=</span><span class="n">user2</span><span class="o">)</span><span class="o">;</span> <span class="c1">// 结果等于false
+</span></code></pre></td></tr></table>
+</div>
+</div><ol start="3">
+<li>request,session,application 这些只能在web开发中使用到！</li>
+</ol>
     </div>
 
     <div class="post-copyright">
@@ -168,7 +423,11 @@
 <footer class="post-footer">
       
       <nav class="post-nav">
-        
+        <a class="prev" href="/post/spring%E6%A1%86%E6%9E%B607bean%E7%9A%84%E8%87%AA%E5%8A%A8%E8%A3%85%E9%85%8D/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Spring框架07：Bean的自动装配</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
         <a class="next" href="/post/spring%E6%A1%86%E6%9E%B605spring%E9%85%8D%E7%BD%AE%E8%AF%B4%E6%98%8E/">
             <span class="next-text nav-default">Spring框架05：Spring配置说明</span>
             <span class="next-text nav-mobile">Next</span>

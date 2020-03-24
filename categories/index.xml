@@ -7,15 +7,60 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Chun</copyright>
-    <lastBuildDate>Sat, 21 Mar 2020 02:28:46 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 23 Mar 2020 20:55:18 +0800</lastBuildDate>
     
 	<atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>SSM框架</title>
+      <link>http://localhost:1313/categories/ssm%E6%A1%86%E6%9E%B6/</link>
+      <pubDate>Mon, 23 Mar 2020 20:55:18 +0800</pubDate>
+      
+      <guid>http://localhost:1313/categories/ssm%E6%A1%86%E6%9E%B6/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Mybatis框架</title>
+      <link>http://localhost:1313/categories/mybatis%E6%A1%86%E6%9E%B6/</link>
+      <pubDate>Mon, 23 Mar 2020 20:28:02 +0800</pubDate>
+      
+      <guid>http://localhost:1313/categories/mybatis%E6%A1%86%E6%9E%B6/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SpringMVC框架</title>
+      <link>http://localhost:1313/categories/springmvc%E6%A1%86%E6%9E%B6/</link>
+      <pubDate>Mon, 23 Mar 2020 15:41:24 +0800</pubDate>
+      
+      <guid>http://localhost:1313/categories/springmvc%E6%A1%86%E6%9E%B6/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>xx</title>
+      <link>http://localhost:1313/categories/xx/</link>
+      <pubDate>Mon, 23 Mar 2020 14:27:18 +0800</pubDate>
+      
+      <guid>http://localhost:1313/categories/xx/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Spirng框架</title>
+      <link>http://localhost:1313/categories/spirng%E6%A1%86%E6%9E%B6/</link>
+      <pubDate>Sun, 22 Mar 2020 23:23:48 +0800</pubDate>
+      
+      <guid>http://localhost:1313/categories/spirng%E6%A1%86%E6%9E%B6/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Spring框架</title>
       <link>http://localhost:1313/categories/spring%E6%A1%86%E6%9E%B6/</link>
-      <pubDate>Sat, 21 Mar 2020 02:28:46 +0800</pubDate>
+      <pubDate>Sun, 22 Mar 2020 03:19:28 +0800</pubDate>
       
       <guid>http://localhost:1313/categories/spring%E6%A1%86%E6%9E%B6/</guid>
       <description></description>
@@ -27,15 +72,6 @@
       <pubDate>Fri, 20 Mar 2020 05:11:46 +0800</pubDate>
       
       <guid>http://localhost:1313/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Mybatis框架</title>
-      <link>http://localhost:1313/categories/mybatis%E6%A1%86%E6%9E%B6/</link>
-      <pubDate>Thu, 19 Mar 2020 02:54:28 +0800</pubDate>
-      
-      <guid>http://localhost:1313/categories/mybatis%E6%A1%86%E6%9E%B6/</guid>
       <description></description>
     </item>
     

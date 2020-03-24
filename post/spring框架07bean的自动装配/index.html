@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Spring框架07：Bean的自动装配 - Chun&#39;s Blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Chun" /><meta name="description" content="自动装配是Spring满足bean依赖的一种方式！ Bean自动装配空就是，Spring会在上下文中自动寻找，并自动给Bean装配
+" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.62.2 with theme even" />
+
+
+<link rel="canonical" href="http://localhost:1313/post/spring%E6%A1%86%E6%9E%B607bean%E7%9A%84%E8%87%AA%E5%8A%A8%E8%A3%85%E9%85%8D/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Spring框架07：Bean的自动装配" />
+<meta property="og:description" content="自动装配是Spring满足bean依赖的一种方式！
+Bean自动装配空就是，Spring会在上下文中自动寻找，并自动给Bean装配" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/post/spring%E6%A1%86%E6%9E%B607bean%E7%9A%84%E8%87%AA%E5%8A%A8%E8%A3%85%E9%85%8D/" />
+<meta property="article:published_time" content="2020-03-21T22:12:51+08:00" />
+<meta property="article:modified_time" content="2020-03-21T22:12:51+08:00" />
+<meta itemprop="name" content="Spring框架07：Bean的自动装配">
+<meta itemprop="description" content="自动装配是Spring满足bean依赖的一种方式！
+Bean自动装配空就是，Spring会在上下文中自动寻找，并自动给Bean装配">
+<meta itemprop="datePublished" content="2020-03-21T22:12:51&#43;08:00" />
+<meta itemprop="dateModified" content="2020-03-21T22:12:51&#43;08:00" />
+<meta itemprop="wordCount" content="624">
+
+
+
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Spring框架07：Bean的自动装配"/>
+<meta name="twitter:description" content="自动装配是Spring满足bean依赖的一种方式！
+Bean自动装配空就是，Spring会在上下文中自动寻找，并自动给Bean装配"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Chun</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Chun</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Spring框架07：Bean的自动装配</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2020-03-21 </span>
+        <div class="post-category">
+            <a href="/categories/spring%E6%A1%86%E6%9E%B6/"> Spring框架 </a>
+            </div>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#byname自动装配">byName自动装配</a></li>
+        <li><a href="#bytype自动装配">byType自动装配</a></li>
+        <li><a href="#使用注解装配">使用注解装配</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <p>自动装配是Spring满足bean依赖的一种方式！
+Bean自动装配空就是，Spring会在上下文中自动寻找，并自动给Bean装配</p>
+<p>在Spring中有三种装配方式</p>
+<ol>
+<li>在XML中显示的配置</li>
+<li>在java中显示配置</li>
+<li>隐式的自动装配bean(掌握！)</li>
+</ol>
+<p>环境搭建: 一个人两个宠物</p>
+<h3 id="byname自动装配">byName自动装配</h3>
+<p>byName :会查找和自己对象set方法（setDog）后面的Dog然后变成小写 对应的 bean id</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-xml" data-lang="xml">    <span class="nt">&lt;bean</span>  <span class="na">id=</span><span class="s">&#34;people&#34;</span> <span class="na">class=</span><span class="s">&#34;com.chun.pojo.People&#34;</span> <span class="na">autowire=</span><span class="s">&#34;byName&#34;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&#34;name&#34;</span> <span class="na">value=</span><span class="s">&#34;chun&#34;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/bean&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="bytype自动装配">byType自动装配</h3>
+<p>使用这个需要：同一类型的对象，在spring容器中唯一。如果不唯一，会报不唯一的异常。
+byType :会查找和自己对象属性类型相同的 bean！</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-xml" data-lang="xml">    <span class="nt">&lt;bean</span>  <span class="na">id=</span><span class="s">&#34;people&#34;</span> <span class="na">class=</span><span class="s">&#34;com.chun.pojo.People&#34;</span> <span class="na">autowire=</span><span class="s">&#34;byType&#34;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&#34;name&#34;</span> <span class="na">value=</span><span class="s">&#34;chun&#34;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/bean&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="使用注解装配">使用注解装配</h3>
+<p>jdk1.5支持的注解，Spring2.5支持注解</p>
+<ul>
+<li>使用注解须知：
+<ol>
+<li>导入context约束</li>
+<li>配置注解的支持：<code>&lt;context:annotation-config/&gt;</code></li>
+</ol>
+</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+<span class="nt">&lt;beans</span> <span class="na">xmlns=</span><span class="s">&#34;http://www.springframework.org/schema/beans&#34;</span>
+    <span class="na">xmlns:xsi=</span><span class="s">&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span> 
+    <span class="na">xmlns:context=</span><span class="s">&#34;http://www.springframework.org/schema/context&#34;</span>
+    <span class="na">xsi:schemaLocation=</span><span class="s">&#34;</span>
+    <span class="err">h</span><span class="err">t</span><span class="err">t</span><span class="err">p</span><span class="err">:</span><span class="err">/</span><span class="err">/</span><span class="err">w</span><span class="err">w</span><span class="err">w</span><span class="err">.</span><span class="err">s</span><span class="err">p</span><span class="err">r</span><span class="err">i</span><span class="err">n</span><span class="err">g</span><span class="err">f</span><span class="err">r</span><span class="err">a</span><span class="err">m</span><span class="err">e</span><span class="err">w</span><span class="err">o</span><span class="err">r</span><span class="err">k</span><span class="err">.</span><span class="err">o</span><span class="err">r</span><span class="err">g</span><span class="err">/</span><span class="err">s</span><span class="err">c</span><span class="err">h</span><span class="err">e</span><span class="err">m</span><span class="err">a</span><span class="err">/</span><span class="err">b</span><span class="err">e</span><span class="err">a</span><span class="err">n</span><span class="err">s</span>
+    <span class="err">h</span><span class="err">t</span><span class="err">t</span><span class="err">p</span><span class="err">:</span><span class="err">/</span><span class="err">/</span><span class="err">w</span><span class="err">w</span><span class="err">w</span><span class="err">.</span><span class="err">s</span><span class="err">p</span><span class="err">r</span><span class="err">i</span><span class="err">n</span><span class="err">g</span><span class="err">f</span><span class="err">r</span><span class="err">a</span><span class="err">m</span><span class="err">e</span><span class="err">w</span><span class="err">o</span><span class="err">r</span><span class="err">k</span><span class="err">.</span><span class="err">o</span><span class="err">r</span><span class="err">g</span><span class="err">/</span><span class="err">s</span><span class="err">c</span><span class="err">h</span><span class="err">e</span><span class="err">m</span><span class="err">a</span><span class="err">/</span><span class="err">b</span><span class="err">e</span><span class="err">a</span><span class="err">n</span><span class="err">s</span><span class="err">/</span><span class="err">s</span><span class="err">p</span><span class="err">r</span><span class="err">i</span><span class="err">n</span><span class="err">g</span><span class="err">-</span><span class="err">b</span><span class="err">e</span><span class="err">a</span><span class="err">n</span><span class="err">s</span><span class="err">.</span><span class="err">x</span><span class="err">s</span><span class="err">d</span>
+    <span class="err">h</span><span class="err">t</span><span class="err">t</span><span class="err">p</span><span class="err">:</span><span class="err">/</span><span class="err">/</span><span class="err">w</span><span class="err">w</span><span class="err">w</span><span class="err">.</span><span class="err">s</span><span class="err">p</span><span class="err">r</span><span class="err">i</span><span class="err">n</span><span class="err">g</span><span class="err">f</span><span class="err">r</span><span class="err">a</span><span class="err">m</span><span class="err">e</span><span class="err">w</span><span class="err">o</span><span class="err">r</span><span class="err">k</span><span class="err">.</span><span class="err">o</span><span class="err">r</span><span class="err">g</span><span class="err">/</span><span class="err">s</span><span class="err">c</span><span class="err">h</span><span class="err">e</span><span class="err">m</span><span class="err">a</span><span class="err">/</span><span class="err">c</span><span class="err">o</span><span class="err">n</span><span class="err">t</span><span class="err">e</span><span class="err">x</span><span class="err">t</span>
+    <span class="err">h</span><span class="err">t</span><span class="err">t</span><span class="err">p</span><span class="err">:</span><span class="err">/</span><span class="err">/</span><span class="err">w</span><span class="err">w</span><span class="err">w</span><span class="err">.</span><span class="err">s</span><span class="err">p</span><span class="err">r</span><span class="err">i</span><span class="err">n</span><span class="err">g</span><span class="err">f</span><span class="err">r</span><span class="err">a</span><span class="err">m</span><span class="err">e</span><span class="err">w</span><span class="err">o</span><span class="err">r</span><span class="err">k</span><span class="err">.</span><span class="err">o</span><span class="err">r</span><span class="err">g</span><span class="err">/</span><span class="err">s</span><span class="err">c</span><span class="err">h</span><span class="err">e</span><span class="err">m</span><span class="err">a</span><span class="err">/</span><span class="err">c</span><span class="err">o</span><span class="err">n</span><span class="err">t</span><span class="err">e</span><span class="err">x</span><span class="err">t</span><span class="err">/</span><span class="err">s</span><span class="err">p</span><span class="err">r</span><span class="err">i</span><span class="err">n</span><span class="err">g</span><span class="err">-</span><span class="err">c</span><span class="err">o</span><span class="err">n</span><span class="err">t</span><span class="err">e</span><span class="err">x</span><span class="err">t</span><span class="err">.</span><span class="err">x</span><span class="err">s</span><span class="err">d</span><span class="nt">&gt;</span>
+        
+    <span class="c">&lt;!--</span><span class="c"> 开启注解的支持 </span><span class="c">--&gt;</span>
+    <span class="nt">&lt;context:annotation-config</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/beans&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li><strong>@Autowired</strong>
+<ul>
+<li>直接在属性上用即可!也可以在set方式上使用！符合先byType</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Resource</span> <span class="c1">//这段代码会在初始化的时候，在spring容器中寻找一个类型为Cat的bean实体注入，关联到cat的引入上。
+</span><span class="c1"></span><span class="kd">private</span> <span class="n">Cat</span> <span class="n">cat</span><span class="o">;</span>
+<span class="nd">@Autowired</span>
+<span class="kd">private</span> <span class="n">Dog</span> <span class="n">dog</span><span class="o">;</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li><strong>@Qualifier</strong> ：如果@Autowired不能唯一装配，常配合@Autowired使用，
+<ul>
+<li>@Qualifier注解来指明使用哪一个实现类，实际上也是通过byName的方式实现</li>
+</ul>
+</li>
+<li><strong>@Resource</strong>
+<ul>
+<li>默认通过byName实现，如果找不到，则通过byTpye，再找不到就报错</li>
+</ul>
+</li>
+</ul>
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Chun</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2020-03-21
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      
+      <nav class="post-nav">
+        <a class="prev" href="/post/spring%E6%A1%86%E6%9E%B608%E4%BD%BF%E7%94%A8%E6%B3%A8%E8%A7%A3%E5%BC%80%E5%8F%91/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Spring框架08：使用注解开发</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="/post/spring%E6%A1%86%E6%9E%B606di%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5/">
+            <span class="next-text nav-default">Spring框架06：DI依赖注入</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+  <a href="http://localhost:1313/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> site pv: <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> site uv: <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2020
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Chun</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

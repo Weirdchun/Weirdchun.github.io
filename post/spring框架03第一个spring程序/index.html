@@ -48,7 +48,7 @@
 <meta itemprop="description" content="IOC入门案例 使用Maven导包 Spring Maven地址：https://mvnrepository.com/artifact/org.spring">
 <meta itemprop="datePublished" content="2020-03-20T02:32:58&#43;08:00" />
 <meta itemprop="dateModified" content="2020-03-20T02:32:58&#43;08:00" />
-<meta itemprop="wordCount" content="475">
+<meta itemprop="wordCount" content="415">
 
 
 
@@ -138,7 +138,6 @@
     <nav id="TableOfContents">
   <ul>
     <li><a href="#ioc入门案例">IOC入门案例</a></li>
-    <li><a href="#ioc创建对象方式">IOC创建对象方式</a></li>
   </ul>
 </nav>
   </div>
@@ -213,6 +212,8 @@ Spring Maven地址：https://mvnrepository.com/artifact/org.springframework/spri
 </span><span class="lnt">22
 </span><span class="lnt">23
 </span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
@@ -220,6 +221,11 @@ Spring Maven地址：https://mvnrepository.com/artifact/org.springframework/spri
     <span class="na">xmlns:xsi=</span><span class="s">&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span>
     <span class="na">xsi:schemaLocation=</span><span class="s">&#34;http://www.springframework.org/schema/beans
 </span><span class="s">        https://www.springframework.org/schema/beans/spring-beans.xsd&#34;</span><span class="nt">&gt;</span>
+
+    <span class="nt">&lt;bean</span> <span class="na">id=</span><span class="s">&#34;hello&#34;</span> <span class="na">class=</span><span class="s">&#34;com.chun.pojo.Hello&#34;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&#34;str&#34;</span> <span class="na">value=</span><span class="s">&#34;spring&#34;</span><span class="nt">&gt;</span><span class="nt">&lt;/property&gt;</span>
+    <span class="nt">&lt;/bean&gt;</span>
+<span class="nt">&lt;/beans&gt;</span>
 
 <span class="c">&lt;!--</span><span class="c">    使用Spring来创建对象，在Spirng中对象就是Bean
 </span><span class="c">
@@ -229,16 +235,13 @@ Spring Maven地址：https://mvnrepository.com/artifact/org.springframework/spri
 </span><span class="c">         Spring:
 </span><span class="c">         bean = 对象
 </span><span class="c">
-</span><span class="c">
-</span><span class="c">            id ：变量名
-</span><span class="c">            class ：new 的对象
-</span><span class="c">            property： 相当于给对象中属性设置值
+</span><span class="c">        id ：变量名
+</span><span class="c">        class ：new 的对象
+</span><span class="c">        property： 相当于给对象中属性设置值
+</span><span class="c">            </span><span class="c">-</span><span class="c"> value:普通属性赋值
+</span><span class="c">            </span><span class="c">-</span><span class="c"> ref:引用其他bean的id
 </span><span class="c"></span><span class="c">--&gt;</span>
 
-    <span class="nt">&lt;bean</span> <span class="na">id=</span><span class="s">&#34;hello&#34;</span> <span class="na">class=</span><span class="s">&#34;com.chun.pojo.Hello&#34;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&#34;str&#34;</span> <span class="na">value=</span><span class="s">&#34;spring&#34;</span><span class="nt">&gt;</span><span class="nt">&lt;/property&gt;</span>
-    <span class="nt">&lt;/bean&gt;</span>
-<span class="nt">&lt;/beans&gt;</span>
 </code></pre></td></tr></table>
 </div>
 </div><p><strong>Tip</strong>：id表示对象，class表示哪个具体类</p>
@@ -267,58 +270,7 @@ Spring Maven地址：https://mvnrepository.com/artifact/org.springframework/spri
 
 </code></pre></td></tr></table>
 </div>
-</div><h2 id="ioc创建对象方式">IOC创建对象方式</h2>
-<ol>
-<li>使用无参构造创建对象，默认</li>
-<li>假设需要使用有参构造
-<ul>
-<li>下标赋值</li>
-</ul>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">&lt;bean id=&#34;user&#34; class=&#34;com.chun.pojo.User&#34;&gt;
-    &lt;constructor-arg index=&#34;0&#34; value=&#34;chun&#34;/&gt;
-&lt;/bean&gt;
-</code></pre></td></tr></table>
 </div>
-</div><ul>
-<li>类型赋值(不建议使用)</li>
-</ul>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">&lt;bean id=&#34;user&#34; class=&#34;com.chun.pojo.User&#34;&gt;
-    &lt;constructor-arg type=&#34;java.lang.String&#34; value=&#34;chun&#34;/&gt;
-&lt;/bean&gt;
-</code></pre></td></tr></table>
-</div>
-</div><ul>
-<li>直接通过参数名(会这个就行)</li>
-</ul>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">&lt;bean id=&#34;user&#34; class=&#34;com.chun.pojo.User&#34;&gt;
-    &lt;constructor-arg name=&#34;name&#34; value=&#34;chun&#34;/&gt;
-&lt;/bean&gt;
-</code></pre></td></tr></table>
-</div>
-</div></li>
-</ol>
-
     </div>
 
     <div class="post-copyright">

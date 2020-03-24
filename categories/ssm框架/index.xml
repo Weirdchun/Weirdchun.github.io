@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SSM框架 on Chun&#39;s Blog</title>
+    <link>http://localhost:1313/categories/ssm%E6%A1%86%E6%9E%B6/</link>
+    <description>Recent content in SSM框架 on Chun&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Chun</copyright>
+    <lastBuildDate>Mon, 23 Mar 2020 20:55:18 +0800</lastBuildDate>
+    
+	<atom:link href="http://localhost:1313/categories/ssm%E6%A1%86%E6%9E%B6/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>SSM框架整合01：环境搭建</title>
+      <link>http://localhost:1313/post/ssm%E6%A1%86%E6%9E%B6%E6%95%B4%E5%90%8801%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</link>
+      <pubDate>Mon, 23 Mar 2020 20:55:18 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/ssm%E6%A1%86%E6%9E%B6%E6%95%B4%E5%90%8801%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

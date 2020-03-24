@@ -7,10 +7,38 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Chun</copyright>
-    <lastBuildDate>Sat, 21 Mar 2020 02:28:46 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 22 Mar 2020 03:19:28 +0800</lastBuildDate>
     
 	<atom:link href="http://localhost:1313/categories/spring%E6%A1%86%E6%9E%B6/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Spring框架09：代理模式</title>
+      <link>http://localhost:1313/post/spring%E6%A1%86%E6%9E%B609%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/</link>
+      <pubDate>Sun, 22 Mar 2020 03:19:28 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/spring%E6%A1%86%E6%9E%B609%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/</guid>
+      <description>&lt;p&gt;为什么要学习代理模式？因为是aop底层&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Spring框架08：使用注解开发</title>
+      <link>http://localhost:1313/post/spring%E6%A1%86%E6%9E%B608%E4%BD%BF%E7%94%A8%E6%B3%A8%E8%A7%A3%E5%BC%80%E5%8F%91/</link>
+      <pubDate>Sun, 22 Mar 2020 02:11:37 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/spring%E6%A1%86%E6%9E%B608%E4%BD%BF%E7%94%A8%E6%B3%A8%E8%A7%A3%E5%BC%80%E5%8F%91/</guid>
+      <description>在Spring4之后，要使用注解开发，需要导入aop包，导入context约束 1 2 3 4 5 6 7 8 &amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;UTF-8&amp;#34;?&amp;gt; &amp;lt;beans xmlns=&amp;#34;http://www.springframework.org/schema/beans&amp;#34; xmlns:xsi=&amp;#34;http://www.w3.org/2001/XMLSchema-instance&amp;#34; xmlns:context=&amp;#34;http://www.springframework.org/schema/context&amp;#34; xsi:schemaLocation=&amp;#34;http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd&amp;#34;&amp;gt; &amp;lt;context:annotation-config/&amp;gt; &amp;lt;/beans&amp;gt; bean 属性如何注入 1 2 3</description>
+    </item>
+    
+    <item>
+      <title>Spring框架07：Bean的自动装配</title>
+      <link>http://localhost:1313/post/spring%E6%A1%86%E6%9E%B607bean%E7%9A%84%E8%87%AA%E5%8A%A8%E8%A3%85%E9%85%8D/</link>
+      <pubDate>Sat, 21 Mar 2020 22:12:51 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/spring%E6%A1%86%E6%9E%B607bean%E7%9A%84%E8%87%AA%E5%8A%A8%E8%A3%85%E9%85%8D/</guid>
+      <description>&lt;p&gt;自动装配是Spring满足bean依赖的一种方式！
+Bean自动装配空就是，Spring会在上下文中自动寻找，并自动给Bean装配&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Spring框架06：DI依赖注入</title>
@@ -60,7 +88,7 @@
     <item>
       <title>Spring框架02：IoC</title>
       <link>http://localhost:1313/post/spring%E6%A1%86%E6%9E%B602ioc%E6%80%9D%E6%83%B3/</link>
-      <pubDate>Fri, 31 Jan 2020 18:25:58 +0800</pubDate>
+      <pubDate>Mon, 27 Jan 2020 18:25:58 +0800</pubDate>
       
       <guid>http://localhost:1313/post/spring%E6%A1%86%E6%9E%B602ioc%E6%80%9D%E6%83%B3/</guid>
       <description>&lt;p&gt;IOC是一个设计思想，DI（依赖注入）是实现IOC的一种方法&lt;/p&gt;</description>
