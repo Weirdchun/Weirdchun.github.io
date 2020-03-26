@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Chun</copyright>
-    <lastBuildDate>Mon, 23 Mar 2020 20:55:18 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 26 Mar 2020 03:51:28 +0800</lastBuildDate>
     
 	<atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>SpringBoot框架</title>
+      <link>http://localhost:1313/categories/springboot%E6%A1%86%E6%9E%B6/</link>
+      <pubDate>Thu, 26 Mar 2020 03:51:28 +0800</pubDate>
+      
+      <guid>http://localhost:1313/categories/springboot%E6%A1%86%E6%9E%B6/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>SSM框架</title>
@@ -36,15 +45,6 @@
       <pubDate>Mon, 23 Mar 2020 15:41:24 +0800</pubDate>
       
       <guid>http://localhost:1313/categories/springmvc%E6%A1%86%E6%9E%B6/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>xx</title>
-      <link>http://localhost:1313/categories/xx/</link>
-      <pubDate>Mon, 23 Mar 2020 14:27:18 +0800</pubDate>
-      
-      <guid>http://localhost:1313/categories/xx/</guid>
       <description></description>
     </item>
     
@@ -117,15 +117,6 @@
       <pubDate>Mon, 09 Mar 2020 23:41:32 +0800</pubDate>
       
       <guid>http://localhost:1313/categories/mysql/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>SpringBoot框架</title>
-      <link>http://localhost:1313/categories/springboot%E6%A1%86%E6%9E%B6/</link>
-      <pubDate>Tue, 18 Feb 2020 00:21:56 +0800</pubDate>
-      
-      <guid>http://localhost:1313/categories/springboot%E6%A1%86%E6%9E%B6/</guid>
       <description></description>
     </item>
     

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Vultr快照密码 - Chun&#39;s Blog</title>
+  <title>SpringBoot框架02：thymeleaf模板 - Chun&#39;s Blog</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,8 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Chun" /><meta name="description" content="隐藏
-" /><meta name="keywords" content="Hugo, theme, even" />
+<meta name="author" content="Chun" /><meta name="description" content="" /><meta name="keywords" content="Hugo, theme, even" />
 
 
 
@@ -27,7 +26,7 @@
 <meta name="generator" content="Hugo 0.62.2 with theme even" />
 
 
-<link rel="canonical" href="http://localhost:1313/post/zother-vultr%E5%BF%AB%E7%85%A7%E5%AF%86%E7%A0%81/" />
+<link rel="canonical" href="http://localhost:1313/post/springboot%E6%A1%86%E6%9E%B602thymeleaf%E6%A8%A1%E6%9D%BF/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -39,23 +38,23 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="Vultr快照密码" />
-<meta property="og:description" content="隐藏" />
+<meta property="og:title" content="SpringBoot框架02：thymeleaf模板" />
+<meta property="og:description" content="" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://localhost:1313/post/zother-vultr%E5%BF%AB%E7%85%A7%E5%AF%86%E7%A0%81/" />
-<meta property="article:published_time" content="2019-10-02T20:29:28+00:00" />
-<meta property="article:modified_time" content="2019-10-02T20:29:28+00:00" />
-<meta itemprop="name" content="Vultr快照密码">
-<meta itemprop="description" content="隐藏">
-<meta itemprop="datePublished" content="2019-10-02T20:29:28&#43;00:00" />
-<meta itemprop="dateModified" content="2019-10-02T20:29:28&#43;00:00" />
-<meta itemprop="wordCount" content="18">
+<meta property="og:url" content="http://localhost:1313/post/springboot%E6%A1%86%E6%9E%B602thymeleaf%E6%A8%A1%E6%9D%BF/" />
+<meta property="article:published_time" content="2020-02-15T21:16:20+08:00" />
+<meta property="article:modified_time" content="2020-02-15T21:16:20+08:00" />
+<meta itemprop="name" content="SpringBoot框架02：thymeleaf模板">
+<meta itemprop="description" content="">
+<meta itemprop="datePublished" content="2020-02-15T21:16:20&#43;08:00" />
+<meta itemprop="dateModified" content="2020-02-15T21:16:20&#43;08:00" />
+<meta itemprop="wordCount" content="111">
 
 
 
-<meta itemprop="keywords" content="Vultr," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Vultr快照密码"/>
-<meta name="twitter:description" content="隐藏"/>
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="SpringBoot框架02：thymeleaf模板"/>
+<meta name="twitter:description" content=""/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -122,11 +121,13 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">Vultr快照密码</h1>
+      <h1 class="post-title">SpringBoot框架02：thymeleaf模板</h1>
 
       <div class="post-meta">
-        <span class="post-time"> 2019-10-02 </span>
-        
+        <span class="post-time"> 2020-02-15 </span>
+        <div class="post-category">
+            <a href="/categories/springboot%E6%A1%86%E6%9E%B6/"> SpringBoot框架 </a>
+            </div>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
     </header>
@@ -134,28 +135,50 @@
     <div class="post-toc" id="post-toc">
   <h2 class="post-toc-title">Contents</h2>
   <div class="post-toc-content always-active">
-    <nav id="TableOfContents"></nav>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#使用thymeleaf">使用thymeleaf</a></li>
+    <li><a href="#语法">语法</a></li>
+  </ul>
+</nav>
   </div>
 </div>
     <div class="post-content">
-      <p>隐藏</p>
+      <h2 id="使用thymeleaf">使用thymeleaf</h2>
+<ol>
+<li>需要加入这个才能使用模板</li>
+</ol>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
-</span><span class="lnt">2
-</span><span class="lnt">3
-</span><span class="lnt">4
-</span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-fallback" data-lang="fallback">git clone -b master https://github.com/Flyzy2005/ss-fly
-
-ss-fly/ss-fly.sh -i huang1 1024
-
-ss-fly/ss-fly.sh -bbr
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">&lt;html lang=&#34;en&#34; xmlns:th=&#34;http://www.thymeleaf.org&#34;&gt;
 </code></pre></td></tr></table>
 </div>
+</div><ol start="2">
+<li>使用th：绑定</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">&lt;div th:text=&#34;${msg}&#34;&gt;&lt;/div&gt;
+</code></pre></td></tr></table>
 </div>
+</div><h2 id="语法">语法</h2>
+<ol>
+<li>简单表达式
+<ul>
+<li>${&hellip;} 该语法表示引用</li>
+<li>*{&hellip;} 表示选择表达式，一般是th:object之后，直接取Object中的属性</li>
+<li>@{&hellip;} 链接url的表达式</li>
+<li>#{&hellip;} 国际化消息</li>
+<li>~{&hellip;} 片段表达式</li>
+</ul>
+</li>
+</ol>
     </div>
 
     <div class="post-copyright">
@@ -166,7 +189,7 @@ ss-fly/ss-fly.sh -bbr
   <p class="copyright-item">
     <span class="item-title">LastMod</span>
     <span class="item-content">
-        2019-10-02
+        2020-02-15
         
     </span>
   </p>
@@ -174,16 +197,18 @@ ss-fly/ss-fly.sh -bbr
   
 </div>
 <footer class="post-footer">
-      <div class="post-tags">
-          <a href="/tags/vultr/">Vultr</a>
-          </div>
+      
       <nav class="post-nav">
-        <a class="prev" href="/post/zother-git%E6%93%8D%E4%BD%9C%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/">
+        <a class="prev" href="/post/spring%E6%A1%86%E6%9E%B601%E7%AE%80%E4%BB%8B/">
             <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">Git操作常见问题</span>
+            <span class="prev-text nav-default">Spring框架01：简介</span>
             <span class="prev-text nav-mobile">Prev</span>
           </a>
-        
+        <a class="next" href="/post/springboot%E6%A1%86%E6%9E%B601%E5%AF%BC%E5%85%A5%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90/">
+            <span class="next-text nav-default">SpringBoot框架01：导入静态资源</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
       </nav>
     </footer>
   </article>

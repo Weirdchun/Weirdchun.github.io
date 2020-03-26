@@ -48,7 +48,7 @@
 <meta itemprop="description" content="在Spring4之后，要使用注解开发，需要导入aop包，导入context约束 1 2 3 4 5 6 7 8 &lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt; &lt;beans xmlns=&#34;http://www.springframework.org/schema/beans&#34; xmlns:xsi=&#34;http://www.w3.org/2001/XMLSchema-instance&#34; xmlns:context=&#34;http://www.springframework.org/schema/context&#34; xsi:schemaLocation=&#34;http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd&#34;&gt; &lt;context:annotation-config/&gt; &lt;/beans&gt; bean 属性如何注入 1 2 3">
 <meta itemprop="datePublished" content="2020-03-22T02:11:37&#43;08:00" />
 <meta itemprop="dateModified" content="2020-03-22T02:11:37&#43;08:00" />
-<meta itemprop="wordCount" content="329">
+<meta itemprop="wordCount" content="425">
 
 
 
@@ -145,6 +145,7 @@
         <li><a href="#自动装配">自动装配</a></li>
         <li><a href="#作用域">作用域</a></li>
         <li><a href="#xml与注解">xml与注解</a></li>
+        <li><a href="#使用java的方式配置spring">使用JAVA的方式配置Spring</a></li>
       </ul>
     </li>
   </ul>
@@ -230,6 +231,9 @@
 <li>xml用来管理bean</li>
 <li>注解只负责完成属性的注入</li>
 </ul>
+<h3 id="使用java的方式配置spring">使用JAVA的方式配置Spring</h3>
+<p>我们现在要完全部使用Spring的xml配置，全部交给JAVA来做！
+JAVAConfig是Spring的一个子项目，在Spring 4 之后， 它成为了一个核心功能</p>
 
     </div>
 

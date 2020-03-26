@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Chun</copyright>
-    <lastBuildDate>Mon, 23 Mar 2020 20:55:18 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 26 Mar 2020 03:51:28 +0800</lastBuildDate>
     
 	<atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     
@@ -22,6 +22,15 @@
     </item>
     
     <item>
+      <title>SpringBoot框架00：自动装配原理</title>
+      <link>http://localhost:1313/post/springboot%E6%A1%86%E6%9E%B600%E8%87%AA%E5%8A%A8%E8%A3%85%E9%85%8D%E5%8E%9F%E7%90%86/</link>
+      <pubDate>Thu, 26 Mar 2020 03:51:28 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/springboot%E6%A1%86%E6%9E%B600%E8%87%AA%E5%8A%A8%E8%A3%85%E9%85%8D%E5%8E%9F%E7%90%86/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>SSM框架整合01：环境搭建</title>
       <link>http://localhost:1313/post/ssm%E6%A1%86%E6%9E%B6%E6%95%B4%E5%90%8801%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/</link>
       <pubDate>Mon, 23 Mar 2020 20:55:18 +0800</pubDate>
@@ -31,7 +40,7 @@
     </item>
     
     <item>
-      <title>202003 Mybatis框架03：Mybatis Spring</title>
+      <title>Mybatis框架03：Mybatis Spring</title>
       <link>http://localhost:1313/post/202003-mybatis%E6%A1%86%E6%9E%B603mybatis-spring/</link>
       <pubDate>Mon, 23 Mar 2020 20:28:02 +0800</pubDate>
       
@@ -81,7 +90,7 @@
       <pubDate>Sun, 22 Mar 2020 23:23:48 +0800</pubDate>
       
       <guid>http://localhost:1313/post/spirng%E6%A1%86%E6%9E%B610aop/</guid>
-      <description></description>
+      <description>&lt;p&gt;面向切面编程，有效的降低了代码之间的耦合性，易于维护；例如：我们习惯在代码中加上一些日志信息，在程序出错时方便快速查找找到问题，通常做法是在请求进入方法的时候打印日志，退出前打印日志，还有在出错时打印日志，那么问题就来了，每个方法中都需要打印日志，这些相同的部分就可以当做一个切面，通过配置切点来触发所需要的功能，比如，我需要在请求进入方法的时候打印，即可使用aop当中的前置通知来做到，这样就不需要每个方法中都去写一遍，配置好之后引用即可&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -326,10 +335,10 @@ AJAX 是与服务器交换数据并更新部分网页的艺术，在不重新加
     
     <item>
       <title>SpringBoot框架03：完整的项目过程</title>
-      <link>http://localhost:1313/post/202002-springboot%E6%A1%86%E6%9E%B603%E5%AE%8C%E6%95%B4%E7%9A%84%E9%A1%B9%E7%9B%AE%E8%BF%87%E7%A8%8B/</link>
+      <link>http://localhost:1313/post/springboot%E6%A1%86%E6%9E%B603%E5%AE%8C%E6%95%B4%E7%9A%84%E9%A1%B9%E7%9B%AE%E8%BF%87%E7%A8%8B/</link>
       <pubDate>Tue, 18 Feb 2020 00:21:56 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/202002-springboot%E6%A1%86%E6%9E%B603%E5%AE%8C%E6%95%B4%E7%9A%84%E9%A1%B9%E7%9B%AE%E8%BF%87%E7%A8%8B/</guid>
+      <guid>http://localhost:1313/post/springboot%E6%A1%86%E6%9E%B603%E5%AE%8C%E6%95%B4%E7%9A%84%E9%A1%B9%E7%9B%AE%E8%BF%87%E7%A8%8B/</guid>
       <description></description>
     </item>
     
@@ -344,19 +353,19 @@ AJAX 是与服务器交换数据并更新部分网页的艺术，在不重新加
     
     <item>
       <title>SpringBoot框架02：thymeleaf模板</title>
-      <link>http://localhost:1313/post/202002-springboot%E6%A1%86%E6%9E%B602thymeleaf%E6%A8%A1%E6%9D%BF/</link>
+      <link>http://localhost:1313/post/springboot%E6%A1%86%E6%9E%B602thymeleaf%E6%A8%A1%E6%9D%BF/</link>
       <pubDate>Sat, 15 Feb 2020 21:16:20 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/202002-springboot%E6%A1%86%E6%9E%B602thymeleaf%E6%A8%A1%E6%9D%BF/</guid>
+      <guid>http://localhost:1313/post/springboot%E6%A1%86%E6%9E%B602thymeleaf%E6%A8%A1%E6%9D%BF/</guid>
       <description></description>
     </item>
     
     <item>
       <title>SpringBoot框架01：导入静态资源</title>
-      <link>http://localhost:1313/post/202002-springboot%E6%A1%86%E6%9E%B601%E5%AF%BC%E5%85%A5%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90/</link>
+      <link>http://localhost:1313/post/springboot%E6%A1%86%E6%9E%B601%E5%AF%BC%E5%85%A5%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90/</link>
       <pubDate>Wed, 12 Feb 2020 02:58:22 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/202002-springboot%E6%A1%86%E6%9E%B601%E5%AF%BC%E5%85%A5%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90/</guid>
+      <guid>http://localhost:1313/post/springboot%E6%A1%86%E6%9E%B601%E5%AF%BC%E5%85%A5%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90/</guid>
       <description></description>
     </item>
     
@@ -376,8 +385,8 @@ AJAX 是与服务器交换数据并更新部分网页的艺术，在不重新加
       
       <guid>http://localhost:1313/post/javase11io%E6%B5%81/</guid>
       <description>&lt;p&gt;流分为字节流和字符流两大类
-字节流的类带有&lt;strong&gt;Stream&lt;/strong&gt;
-字符流的类带有&lt;strong&gt;Read&lt;/strong&gt;或&lt;strong&gt;Writer&lt;/strong&gt;
+字节流的类带有&lt;strong&gt;Stream&lt;/strong&gt;：平常流
+字符流的类带有&lt;strong&gt;Read&lt;/strong&gt;或&lt;strong&gt;Writer&lt;/strong&gt;：一般写中文用
 &lt;img src=&#34;JAVA%E5%85%A5%E9%97%A809%EF%BC%9AIO%E6%B5%81/1.png&#34; alt=&#34;&#34;&gt;
 输入与输出是以内存来看的。&lt;/p&gt;</description>
     </item>
