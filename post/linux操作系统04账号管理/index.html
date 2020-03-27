@@ -16,9 +16,15 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Chun" /><meta name="description" content="用户账号的管理工作主要涉及到用户账号的添加、修改和删除。
-添加用户账号就是在系统中创建一个新账号，然后为新账号分配用户号、用户组、主目录和登录Shell等资源。
-" /><meta name="keywords" content="Hugo, theme, even" />
+<meta name="author" content="Chun" /><meta name="description" content="Linux系统是一个多用户多任务的分时操作系统，任何一个要使用系统资源的用户，都必须首先向系统管理员申请一个账号，然后以这个账号的身份进入系统。
+用户的账号一方面可以帮助系统管理员对使用系统的用户进行跟踪，并控制他们对系统资源的访问；另一方面也可以帮助用户组织文件，并为用户提供安全性保护。
+每个用户账号都拥有一个唯一的用户名和各自的口令。
+用户在登录时键入正确的用户名和口令后，就能够进入系统和自己的主目录。
+实现用户账号的管理，要完成的工作主要有如下几个方面：
+  用户账号的添加、删除与修改。
+  用户口令的管理。
+  用户组的管理。
+ " /><meta name="keywords" content="Hugo, theme, even" />
 
 
 
@@ -41,25 +47,67 @@
 
 
 <meta property="og:title" content="Linux操作系统04：账号管理" />
-<meta property="og:description" content="用户账号的管理工作主要涉及到用户账号的添加、修改和删除。
-添加用户账号就是在系统中创建一个新账号，然后为新账号分配用户号、用户组、主目录和登录Shell等资源。" />
+<meta property="og:description" content="Linux系统是一个多用户多任务的分时操作系统，任何一个要使用系统资源的用户，都必须首先向系统管理员申请一个账号，然后以这个账号的身份进入系统。
+用户的账号一方面可以帮助系统管理员对使用系统的用户进行跟踪，并控制他们对系统资源的访问；另一方面也可以帮助用户组织文件，并为用户提供安全性保护。
+每个用户账号都拥有一个唯一的用户名和各自的口令。
+用户在登录时键入正确的用户名和口令后，就能够进入系统和自己的主目录。
+实现用户账号的管理，要完成的工作主要有如下几个方面：
+
+
+用户账号的添加、删除与修改。
+
+
+用户口令的管理。
+
+
+用户组的管理。
+
+" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://localhost:1313/post/linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F04%E8%B4%A6%E5%8F%B7%E7%AE%A1%E7%90%86/" />
 <meta property="article:published_time" content="2020-03-27T15:42:05+08:00" />
 <meta property="article:modified_time" content="2020-03-27T15:42:05+08:00" />
 <meta itemprop="name" content="Linux操作系统04：账号管理">
-<meta itemprop="description" content="用户账号的管理工作主要涉及到用户账号的添加、修改和删除。
-添加用户账号就是在系统中创建一个新账号，然后为新账号分配用户号、用户组、主目录和登录Shell等资源。">
+<meta itemprop="description" content="Linux系统是一个多用户多任务的分时操作系统，任何一个要使用系统资源的用户，都必须首先向系统管理员申请一个账号，然后以这个账号的身份进入系统。
+用户的账号一方面可以帮助系统管理员对使用系统的用户进行跟踪，并控制他们对系统资源的访问；另一方面也可以帮助用户组织文件，并为用户提供安全性保护。
+每个用户账号都拥有一个唯一的用户名和各自的口令。
+用户在登录时键入正确的用户名和口令后，就能够进入系统和自己的主目录。
+实现用户账号的管理，要完成的工作主要有如下几个方面：
+
+
+用户账号的添加、删除与修改。
+
+
+用户口令的管理。
+
+
+用户组的管理。
+
+">
 <meta itemprop="datePublished" content="2020-03-27T15:42:05&#43;08:00" />
 <meta itemprop="dateModified" content="2020-03-27T15:42:05&#43;08:00" />
-<meta itemprop="wordCount" content="910">
+<meta itemprop="wordCount" content="2373">
 
 
 
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Linux操作系统04：账号管理"/>
-<meta name="twitter:description" content="用户账号的管理工作主要涉及到用户账号的添加、修改和删除。
-添加用户账号就是在系统中创建一个新账号，然后为新账号分配用户号、用户组、主目录和登录Shell等资源。"/>
+<meta name="twitter:description" content="Linux系统是一个多用户多任务的分时操作系统，任何一个要使用系统资源的用户，都必须首先向系统管理员申请一个账号，然后以这个账号的身份进入系统。
+用户的账号一方面可以帮助系统管理员对使用系统的用户进行跟踪，并控制他们对系统资源的访问；另一方面也可以帮助用户组织文件，并为用户提供安全性保护。
+每个用户账号都拥有一个唯一的用户名和各自的口令。
+用户在登录时键入正确的用户名和口令后，就能够进入系统和自己的主目录。
+实现用户账号的管理，要完成的工作主要有如下几个方面：
+
+
+用户账号的添加、删除与修改。
+
+
+用户口令的管理。
+
+
+用户组的管理。
+
+"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -142,19 +190,55 @@
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#添加账号-useradd">添加账号 useradd</a></li>
-    <li><a href="#删除帐号-userdel">删除帐号 userdel</a></li>
-    <li><a href="#修改帐号-usermod">修改帐号 usermod</a></li>
-    <li><a href="#切换用户">切换用户</a></li>
+    <li><a href="#用户管理">用户管理</a>
+      <ul>
+        <li><a href="#添加账号-useradd">添加账号 useradd</a></li>
+        <li><a href="#删除帐号-userdel">删除帐号 userdel</a></li>
+        <li><a href="#修改帐号-usermod">修改帐号 usermod</a></li>
+        <li><a href="#切换用户">切换用户</a></li>
+      </ul>
+    </li>
     <li><a href="#用户口令的管理">用户口令的管理</a></li>
+    <li><a href="#用户组管理">用户组管理</a>
+      <ul>
+        <li><a href="#增加用户组-groupadd">增加用户组 groupadd</a></li>
+        <li><a href="#删除用户组-groupdel">删除用户组 groupdel</a></li>
+        <li><a href="#修改用户组的属性-groupmod">修改用户组的属性 groupmod</a></li>
+        <li><a href="#切换组">切换组</a></li>
+      </ul>
+    </li>
+    <li><a href="#文件的查看">文件的查看</a>
+      <ul>
+        <li><a href="#etcpasswd">/etc/passwd</a></li>
+        <li><a href="#etcshadow">/etc/shadow</a></li>
+        <li><a href="#etcgroup">/etc/group</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
   </div>
 </div>
     <div class="post-content">
-      <p>用户账号的管理工作主要涉及到用户账号的添加、修改和删除。</p>
+      <p>Linux系统是一个多用户多任务的分时操作系统，任何一个要使用系统资源的用户，都必须首先向系统管理员申请一个账号，然后以这个账号的身份进入系统。</p>
+<p>用户的账号一方面可以帮助系统管理员对使用系统的用户进行跟踪，并控制他们对系统资源的访问；另一方面也可以帮助用户组织文件，并为用户提供安全性保护。</p>
+<p>每个用户账号都拥有一个唯一的用户名和各自的口令。</p>
+<p>用户在登录时键入正确的用户名和口令后，就能够进入系统和自己的主目录。</p>
+<p>实现用户账号的管理，要完成的工作主要有如下几个方面：</p>
+<ul>
+<li>
+<p>用户账号的添加、删除与修改。</p>
+</li>
+<li>
+<p>用户口令的管理。</p>
+</li>
+<li>
+<p>用户组的管理。</p>
+</li>
+</ul>
+<h2 id="用户管理">用户管理</h2>
+<p>用户账号的管理工作主要涉及到用户账号的添加、修改和删除。</p>
 <p>添加用户账号就是在系统中创建一个新账号，然后为新账号分配用户号、用户组、主目录和登录Shell等资源。</p>
-<h2 id="添加账号-useradd">添加账号 useradd</h2>
+<h3 id="添加账号-useradd">添加账号 useradd</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -184,7 +268,7 @@
 </ul>
 </li>
 </ul>
-<h2 id="删除帐号-userdel">删除帐号 userdel</h2>
+<h3 id="删除帐号-userdel">删除帐号 userdel</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -195,7 +279,7 @@
 </div>
 </div><p>常用的选项是 -r，它的作用是把用户的主目录一起删除
 此命令删除用户在系统文件中（主要是/etc/passwd, /etc/shadow, /etc/group等）的记录，同时删除用户的主目录。</p>
-<h2 id="修改帐号-usermod">修改帐号 usermod</h2>
+<h3 id="修改帐号-usermod">修改帐号 usermod</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -205,7 +289,7 @@
 </code></pre></td></tr></table>
 </div>
 </div><p>常用的选项包括-c, -d, -m, -g, -G, -s, -u以及-o等，这些选项的意义与useradd命令中的选项一样，可以为用户指定新的资源值。</p>
-<h2 id="切换用户">切换用户</h2>
+<h3 id="切换用户">切换用户</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -258,6 +342,142 @@ home为当前目录位置
 <li>-f 强迫用户下次登录时修改口令。
 如果默认用户名，则修改当前用户的口令。</li>
 </ul>
+<h2 id="用户组管理">用户组管理</h2>
+<p>每个用户都有一个用户组，系统可以对一个用户组中的所有用户进行集中管理（开发组，测试组，运维组）。不同Linux 系统对用户组的规定有所不同，如Linux下的用户属于与它同名的用户组，这个用户组在创建用户时同时创建。</p>
+<p>用户组的管理涉及用户组的添加、删除和修改。组的增加、删除和修改实际上就是对==/etc/group==文件的更新。</p>
+<h3 id="增加用户组-groupadd">增加用户组 groupadd</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">groupadd 选项 用户组
+</code></pre></td></tr></table>
+</div>
+</div><p>可以使用的选项有：</p>
+<ul>
+<li>-g GID 指定新用户组的组标识号（GID）。</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># groupadd -g 101 group2</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="删除用户组-groupdel">删除用户组 groupdel</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># groupdel group1</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="修改用户组的属性-groupmod">修改用户组的属性 groupmod</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">groupmod 选项 用户组
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>-g GID 为用户组指定新的组标识号。</li>
+<li>-n新用户组 将用户组的名字改为新名字</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 此命令将组group2的组标识号修改为102。</span>
+groupmod -g <span class="m">102</span> group2
+    
+<span class="c1"># 将组group2的标识号改为10000，组名修改为group3。</span>
+groupmod –g <span class="m">10000</span> -n group3 group2
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="切换组">切换组</h3>
+<p>如果一个用户同时属于多个用户组，那么用户可以在用户组之间切换，以便具有其他用户组的权限。</p>
+<p>用户可以在登录后，使用命令newgrp切换到其他用户组，这个命令的参数就是目的用户组。例如：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">$ newgrp root
+</code></pre></td></tr></table>
+</div>
+</div><p>这条命令将当前用户切换到root用户组，前提条件是root用户组确实是该用户的主组或附加组。</p>
+<h2 id="文件的查看">文件的查看</h2>
+<h3 id="etcpasswd">/etc/passwd</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="o">[</span>root@chun ~<span class="o">]</span><span class="c1"># cat /etc/passwd</span>
+root❌0:0:root:/root:/bin/bash
+bin❌1:1:bin:/bin:/sbin/nologin
+......
+chun❌1000:1000::/home/chun:/bin/bash
+weirdchun❌1001:1001::/home/weirdchun:/bin/bash
+
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">用户名:口令:用户标识号:组标识号:注释性描述:主目录:登录Shell
+</code></pre></td></tr></table>
+</div>
+</div><ol>
+<li>
+<p>&ldquo;用户名&quot;是代表用户账号的字符串。</p>
+</li>
+<li>
+<p>“口令”一些系统中，存放着加密后的用户口令字。</p>
+</li>
+</ol>
+<p>虽然这个字段存放的只是用户口令的加密串，不是明文，但是由于/etc/passwd文件对所有用户都可读，所以这仍是一个安全隐患。因此，现在许多Linux 系统（如SVR4）都使用了shadow技术，把真正的加密后的用户口令字存放到/etc/shadow文件中，而在/etc/passwd文件的口令字段中只存放一个特殊的字符，例如“x”或者“*”。</p>
+<ol start="3">
+<li>“用户标识号”是一个整数，系统内部用它来标识用户。</li>
+</ol>
+<p>一般情况下它与用户名是一一对应的。如果几个用户名对应的用户标识号是一样的，系统内部将把它们视为同一个用户，但是它们可以有不同的口令、不同的主目录以及不同的登录Shell等。</p>
+<ol start="4">
+<li>“组标识号”字段记录的是用户所属的用户组。</li>
+</ol>
+<p>它对应着/etc/group文件中的一条记录。</p>
+<ol start="5">
+<li>
+<p>“注释性描述”字段记录着用户的一些个人情况。</p>
+</li>
+<li>
+<p>“主目录”，也就是用户的起始工作目录。</p>
+</li>
+<li>
+<p>用户登录后，要启动一个进程，负责将用户的操作传给内核，这个进程是用户登录到系统后运行的命令解释器或某个特定的程序，即Shell。</p>
+</li>
+</ol>
+<h3 id="etcshadow">/etc/shadow</h3>
+<p>存放了用户密码</p>
+<h3 id="etcgroup">/etc/group</h3>
+<p>用户组的所有信息都存放在/etc/group文件中。</p>
     </div>
 
     <div class="post-copyright">
@@ -278,7 +498,11 @@ home为当前目录位置
 <footer class="post-footer">
       
       <nav class="post-nav">
-        
+        <a class="prev" href="/post/linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F05%E7%A3%81%E7%9B%98%E4%B8%8E%E8%BF%9B%E7%A8%8B%E5%91%BD%E5%90%8D/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Linux操作系统05：磁盘与进程管理</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
         <a class="next" href="/post/linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F03vim%E7%BC%96%E8%BE%91%E5%99%A8/">
             <span class="next-text nav-default">Linux操作系统03：Vim编辑器</span>
             <span class="next-text nav-mobile">Next</span>

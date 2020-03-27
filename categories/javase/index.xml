@@ -41,7 +41,7 @@
       <description>&lt;p&gt;流分为字节流和字符流两大类
 字节流的类带有&lt;strong&gt;Stream&lt;/strong&gt;：平常流
 字符流的类带有&lt;strong&gt;Read&lt;/strong&gt;或&lt;strong&gt;Writer&lt;/strong&gt;：一般写中文用
-&lt;img src=&#34;JAVA%E5%85%A5%E9%97%A809%EF%BC%9AIO%E6%B5%81/1.png&#34; alt=&#34;&#34;&gt;
+&lt;img src=&#34;http://localhost:1313/image/JAVA%E5%85%A5%E9%97%A809%EF%BC%9AIO%E6%B5%81/1.png&#34; alt=&#34;&#34;&gt;
 输入与输出是以内存来看的。&lt;/p&gt;</description>
     </item>
     
