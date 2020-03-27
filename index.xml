@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Chun</copyright>
-    <lastBuildDate>Thu, 26 Mar 2020 03:51:28 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 27 Mar 2020 10:58:59 +0800</lastBuildDate>
     
 	<atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     
@@ -19,6 +19,33 @@
       
       <guid>http://localhost:1313/about/</guid>
       <description>Hugo博客 前言 由于Hexo博客的生成速度太慢了，所以我开始使用Hugo博客 写博客 当使用Hugo博客后，写文章的姿势 1 hugo new post/202001-xxxxxx.md 生成静态文件 使用</description>
+    </item>
+    
+    <item>
+      <title>Linux操作系统02：基本常用命令</title>
+      <link>http://localhost:1313/post/linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F02%E5%9F%BA%E6%9C%AC%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</link>
+      <pubDate>Fri, 27 Mar 2020 10:58:59 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F02%E5%9F%BA%E6%9C%AC%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Linux操作系统01：系统结构</title>
+      <link>http://localhost:1313/post/linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F01%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84/</link>
+      <pubDate>Fri, 27 Mar 2020 10:26:17 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F01%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Spring注解</title>
+      <link>http://localhost:1313/post/zother-spring%E6%B3%A8%E8%A7%A3/</link>
+      <pubDate>Fri, 27 Mar 2020 00:08:22 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/zother-spring%E6%B3%A8%E8%A7%A3/</guid>
+      <description>@Autowired 自动装配 @@Responsebody 注解表示该方法的返回的结果直接写入 HTTP 响应正文（ResponseBody）中，一般在异步获取数据时使用，通常是在使用 @RequestMapping 后，返回值通</description>
     </item>
     
     <item>
@@ -330,7 +357,8 @@ AJAX 是与服务器交换数据并更新部分网页的艺术，在不重新加
       <guid>http://localhost:1313/post/zother-idea%E5%BF%AB%E6%8D%B7%E9%94%AE/</guid>
       <description>&lt;p&gt;查看所有源码 ： &lt;code&gt;双击shift&lt;/code&gt;
 快速修改错误：  &lt;code&gt;Alt+Enter&lt;/code&gt;
-快速构造： &lt;code&gt;Alt+Insert&lt;/code&gt;&lt;/p&gt;</description>
+快速构造： &lt;code&gt;Alt+Insert&lt;/code&gt;
+选择同一列的元素：&lt;code&gt;Alt+左键&lt;/code&gt;&lt;/p&gt;</description>
     </item>
     
     <item>

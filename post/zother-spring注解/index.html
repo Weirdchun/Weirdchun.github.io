@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>IDEA快捷键 - Chun&#39;s Blog</title>
+  <title>Spring注解 - Chun&#39;s Blog</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,8 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Chun" /><meta name="description" content="查看所有源码 ： 双击shift 快速修改错误： Alt&#43;Enter 快速构造： Alt&#43;Insert 选择同一列的元素：Alt&#43;左键
-" /><meta name="keywords" content="Hugo, theme, even" />
+<meta name="author" content="Chun" /><meta name="description" content="@Autowired 自动装配 @@Responsebody 注解表示该方法的返回的结果直接写入 HTTP 响应正文（ResponseBody）中，一般在异步获取数据时使用，通常是在使用 @RequestMapping 后，返回值通" /><meta name="keywords" content="Hugo, theme, even" />
 
 
 
@@ -27,7 +26,7 @@
 <meta name="generator" content="Hugo 0.62.2 with theme even" />
 
 
-<link rel="canonical" href="http://localhost:1313/post/zother-idea%E5%BF%AB%E6%8D%B7%E9%94%AE/" />
+<link rel="canonical" href="http://localhost:1313/post/zother-spring%E6%B3%A8%E8%A7%A3/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -39,32 +38,23 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="IDEA快捷键" />
-<meta property="og:description" content="查看所有源码 ： 双击shift
-快速修改错误：  Alt&#43;Enter
-快速构造： Alt&#43;Insert
-选择同一列的元素：Alt&#43;左键" />
+<meta property="og:title" content="Spring注解" />
+<meta property="og:description" content="@Autowired 自动装配 @@Responsebody 注解表示该方法的返回的结果直接写入 HTTP 响应正文（ResponseBody）中，一般在异步获取数据时使用，通常是在使用 @RequestMapping 后，返回值通" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://localhost:1313/post/zother-idea%E5%BF%AB%E6%8D%B7%E9%94%AE/" />
-<meta property="article:published_time" content="2020-02-18T00:39:18+08:00" />
-<meta property="article:modified_time" content="2020-02-18T00:39:18+08:00" />
-<meta itemprop="name" content="IDEA快捷键">
-<meta itemprop="description" content="查看所有源码 ： 双击shift
-快速修改错误：  Alt&#43;Enter
-快速构造： Alt&#43;Insert
-选择同一列的元素：Alt&#43;左键">
-<meta itemprop="datePublished" content="2020-02-18T00:39:18&#43;08:00" />
-<meta itemprop="dateModified" content="2020-02-18T00:39:18&#43;08:00" />
-<meta itemprop="wordCount" content="43">
+<meta property="og:url" content="http://localhost:1313/post/zother-spring%E6%B3%A8%E8%A7%A3/" />
+<meta property="article:published_time" content="2020-03-27T00:08:22+08:00" />
+<meta property="article:modified_time" content="2020-03-27T00:08:22+08:00" />
+<meta itemprop="name" content="Spring注解">
+<meta itemprop="description" content="@Autowired 自动装配 @@Responsebody 注解表示该方法的返回的结果直接写入 HTTP 响应正文（ResponseBody）中，一般在异步获取数据时使用，通常是在使用 @RequestMapping 后，返回值通">
+<meta itemprop="datePublished" content="2020-03-27T00:08:22&#43;08:00" />
+<meta itemprop="dateModified" content="2020-03-27T00:08:22&#43;08:00" />
+<meta itemprop="wordCount" content="352">
 
 
 
-<meta itemprop="keywords" content="IDEA," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="IDEA快捷键"/>
-<meta name="twitter:description" content="查看所有源码 ： 双击shift
-快速修改错误：  Alt&#43;Enter
-快速构造： Alt&#43;Insert
-选择同一列的元素：Alt&#43;左键"/>
+<meta itemprop="keywords" content="spring," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Spring注解"/>
+<meta name="twitter:description" content="@Autowired 自动装配 @@Responsebody 注解表示该方法的返回的结果直接写入 HTTP 响应正文（ResponseBody）中，一般在异步获取数据时使用，通常是在使用 @RequestMapping 后，返回值通"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -131,11 +121,13 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">IDEA快捷键</h1>
+      <h1 class="post-title">Spring注解</h1>
 
       <div class="post-meta">
-        <span class="post-time"> 2020-02-18 </span>
-        
+        <span class="post-time"> 2020-03-27 </span>
+        <div class="post-category">
+            <a href="/categories/spring%E6%A1%86%E6%9E%B6/"> Spring框架 </a>
+            </div>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
     </header>
@@ -143,14 +135,49 @@
     <div class="post-toc" id="post-toc">
   <h2 class="post-toc-title">Contents</h2>
   <div class="post-toc-content always-active">
-    <nav id="TableOfContents"></nav>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#autowired">@Autowired</a></li>
+    <li><a href="#responsebody">@@Responsebody</a></li>
+    <li><a href="#requestparam">@RequestParam</a></li>
+  </ul>
+</nav>
   </div>
 </div>
     <div class="post-content">
-      <p>查看所有源码 ： <code>双击shift</code>
-快速修改错误：  <code>Alt+Enter</code>
-快速构造： <code>Alt+Insert</code>
-选择同一列的元素：<code>Alt+左键</code></p>
+      <h2 id="autowired">@Autowired</h2>
+<p>自动装配</p>
+<h2 id="responsebody">@@Responsebody</h2>
+<p>注解表示该方法的返回的结果直接写入 HTTP 响应正文（ResponseBody）中，一般在异步获取数据时使用，通常是在使用 @RequestMapping 后，返回值通常解析为跳转路径，加上 @Responsebody 后返回结果不会被解析为跳转路径，而是直接写入HTTP 响应正文中。
+<strong>作用</strong>:
+该注解用于将Controller的方法返回的对象，通过适当的HttpMessageConverter转换为指定格式后，写入到Response对象的body数据区。
+<strong>使用时机</strong>：
+返回的数据不是html标签的页面，而是其他某种格式的数据时（如json、xml等）使用；</p>
+<h2 id="requestparam">@RequestParam</h2>
+<p><code>@RequestParam(&quot;username&quot;)</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="n">String</span> <span class="nf">login</span><span class="o">(</span><span class="nd">@RequestParam</span><span class="o">(</span><span class="s">&#34;username&#34;</span><span class="o">)</span> <span class="n">String</span> <span class="n">username</span><span class="o">,</span> <span class="n">String</span> <span class="n">password</span><span class="o">)</span><span class="o">{</span>
+        <span class="k">return</span> <span class="s">&#34;ok&#34;</span><span class="o">;</span>
+    <span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>@RequestParam主要用于将请求参数区域的数据映射到控制层方法的参数上,
+白话文：从html页面action提交的数据name必须叫<code>username</code>后台才能接收</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-html" data-lang="html">	<span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;text&#34;</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;username&#34;</span>  <span class="na">placeholder</span><span class="o">=</span><span class="s">&#34;Username&#34;</span> <span class="na">required</span><span class="o">=</span><span class="s">&#34;&#34;</span> <span class="na">autofocus</span><span class="o">=</span><span class="s">&#34;&#34;</span><span class="p"></span><span class="p">&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div>
     </div>
 
     <div class="post-copyright">
@@ -161,7 +188,7 @@
   <p class="copyright-item">
     <span class="item-title">LastMod</span>
     <span class="item-content">
-        2020-02-18
+        2020-03-27
         
     </span>
   </p>
@@ -170,16 +197,16 @@
 </div>
 <footer class="post-footer">
       <div class="post-tags">
-          <a href="/tags/idea/">IDEA</a>
+          <a href="/tags/spring/">spring</a>
           </div>
       <nav class="post-nav">
-        <a class="prev" href="/post/202003-mybatis%E6%A1%86%E6%9E%B601%E7%AC%AC%E4%B8%80%E4%B8%AAmybatis%E7%A8%8B%E5%BA%8F/">
+        <a class="prev" href="/post/linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F01%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84/">
             <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">Mybatis框架01：第一个Mybatis程序</span>
+            <span class="prev-text nav-default">Linux操作系统01：系统结构</span>
             <span class="prev-text nav-mobile">Prev</span>
           </a>
-        <a class="next" href="/post/springboot%E6%A1%86%E6%9E%B603%E5%AE%8C%E6%95%B4%E7%9A%84%E9%A1%B9%E7%9B%AE%E8%BF%87%E7%A8%8B/">
-            <span class="next-text nav-default">SpringBoot框架03：完整的项目过程</span>
+        <a class="next" href="/post/springboot%E6%A1%86%E6%9E%B600%E8%87%AA%E5%8A%A8%E8%A3%85%E9%85%8D%E5%8E%9F%E7%90%86/">
+            <span class="next-text nav-default">SpringBoot框架00：自动装配原理</span>
             <span class="next-text nav-mobile">Next</span>
             <i class="iconfont icon-right"></i>
           </a>

@@ -7,10 +7,28 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Chun</copyright>
-    <lastBuildDate>Thu, 26 Mar 2020 03:51:28 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 27 Mar 2020 10:58:59 +0800</lastBuildDate>
     
 	<atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Linux操作系统</title>
+      <link>http://localhost:1313/categories/linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</link>
+      <pubDate>Fri, 27 Mar 2020 10:58:59 +0800</pubDate>
+      
+      <guid>http://localhost:1313/categories/linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Spring框架</title>
+      <link>http://localhost:1313/categories/spring%E6%A1%86%E6%9E%B6/</link>
+      <pubDate>Fri, 27 Mar 2020 00:08:22 +0800</pubDate>
+      
+      <guid>http://localhost:1313/categories/spring%E6%A1%86%E6%9E%B6/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>SpringBoot框架</title>
@@ -54,15 +72,6 @@
       <pubDate>Sun, 22 Mar 2020 23:23:48 +0800</pubDate>
       
       <guid>http://localhost:1313/categories/spirng%E6%A1%86%E6%9E%B6/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Spring框架</title>
-      <link>http://localhost:1313/categories/spring%E6%A1%86%E6%9E%B6/</link>
-      <pubDate>Sun, 22 Mar 2020 03:19:28 +0800</pubDate>
-      
-      <guid>http://localhost:1313/categories/spring%E6%A1%86%E6%9E%B6/</guid>
       <description></description>
     </item>
     

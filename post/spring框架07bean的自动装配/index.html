@@ -51,7 +51,7 @@ Bean自动装配空就是，Spring会在上下文中自动寻找，并自动给B
 Bean自动装配空就是，Spring会在上下文中自动寻找，并自动给Bean装配">
 <meta itemprop="datePublished" content="2020-03-21T22:12:51&#43;08:00" />
 <meta itemprop="dateModified" content="2020-03-21T22:12:51&#43;08:00" />
-<meta itemprop="wordCount" content="624">
+<meta itemprop="wordCount" content="775">
 
 
 
@@ -145,6 +145,7 @@ Bean自动装配空就是，Spring会在上下文中自动寻找，并自动给B
       <ul>
         <li><a href="#byname自动装配">byName自动装配</a></li>
         <li><a href="#bytype自动装配">byType自动装配</a></li>
+        <li><a href="#区别">区别</a></li>
         <li><a href="#使用注解装配">使用注解装配</a></li>
       </ul>
     </li>
@@ -163,7 +164,7 @@ Bean自动装配空就是，Spring会在上下文中自动寻找，并自动给B
 </ol>
 <p>环境搭建: 一个人两个宠物</p>
 <h3 id="byname自动装配">byName自动装配</h3>
-<p>byName :会查找和自己对象set方法（setDog）后面的Dog然后变成小写 对应的 bean id</p>
+<p>byName :会查找自己对象set方法（setDog）后面的Dog然后变成小写 对应的 bean id</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -191,7 +192,10 @@ byType :会查找和自己对象属性类型相同的 bean！</p>
     <span class="nt">&lt;/bean&gt;</span>
 </code></pre></td></tr></table>
 </div>
-</div><h3 id="使用注解装配">使用注解装配</h3>
+</div><h3 id="区别">区别</h3>
+<p>byName就是通过Bean的id或者name，byType就是按Bean的Class的类型
+若autowire=&quot;byType&quot;意思是通过 class=&quot;cn.com.bochy.dao.impl.UserDaoImpl&quot;来查找UserDaoImpl下所有的对象</p>
+<h3 id="使用注解装配">使用注解装配</h3>
 <p>jdk1.5支持的注解，Spring2.5支持注解</p>
 <ul>
 <li>使用注解须知：

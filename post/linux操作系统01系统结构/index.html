@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>IDEA快捷键 - Chun&#39;s Blog</title>
+  <title>Linux操作系统01：系统结构 - Chun&#39;s Blog</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,8 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Chun" /><meta name="description" content="查看所有源码 ： 双击shift 快速修改错误： Alt&#43;Enter 快速构造： Alt&#43;Insert 选择同一列的元素：Alt&#43;左键
-" /><meta name="keywords" content="Hugo, theme, even" />
+<meta name="author" content="Chun" /><meta name="description" content="" /><meta name="keywords" content="Hugo, theme, even" />
 
 
 
@@ -27,7 +26,7 @@
 <meta name="generator" content="Hugo 0.62.2 with theme even" />
 
 
-<link rel="canonical" href="http://localhost:1313/post/zother-idea%E5%BF%AB%E6%8D%B7%E9%94%AE/" />
+<link rel="canonical" href="http://localhost:1313/post/linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F01%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -39,32 +38,23 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="IDEA快捷键" />
-<meta property="og:description" content="查看所有源码 ： 双击shift
-快速修改错误：  Alt&#43;Enter
-快速构造： Alt&#43;Insert
-选择同一列的元素：Alt&#43;左键" />
+<meta property="og:title" content="Linux操作系统01：系统结构" />
+<meta property="og:description" content="" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://localhost:1313/post/zother-idea%E5%BF%AB%E6%8D%B7%E9%94%AE/" />
-<meta property="article:published_time" content="2020-02-18T00:39:18+08:00" />
-<meta property="article:modified_time" content="2020-02-18T00:39:18+08:00" />
-<meta itemprop="name" content="IDEA快捷键">
-<meta itemprop="description" content="查看所有源码 ： 双击shift
-快速修改错误：  Alt&#43;Enter
-快速构造： Alt&#43;Insert
-选择同一列的元素：Alt&#43;左键">
-<meta itemprop="datePublished" content="2020-02-18T00:39:18&#43;08:00" />
-<meta itemprop="dateModified" content="2020-02-18T00:39:18&#43;08:00" />
-<meta itemprop="wordCount" content="43">
+<meta property="og:url" content="http://localhost:1313/post/linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F01%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84/" />
+<meta property="article:published_time" content="2020-03-27T10:26:17+08:00" />
+<meta property="article:modified_time" content="2020-03-27T10:26:17+08:00" />
+<meta itemprop="name" content="Linux操作系统01：系统结构">
+<meta itemprop="description" content="">
+<meta itemprop="datePublished" content="2020-03-27T10:26:17&#43;08:00" />
+<meta itemprop="dateModified" content="2020-03-27T10:26:17&#43;08:00" />
+<meta itemprop="wordCount" content="863">
 
 
 
-<meta itemprop="keywords" content="IDEA," /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="IDEA快捷键"/>
-<meta name="twitter:description" content="查看所有源码 ： 双击shift
-快速修改错误：  Alt&#43;Enter
-快速构造： Alt&#43;Insert
-选择同一列的元素：Alt&#43;左键"/>
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Linux操作系统01：系统结构"/>
+<meta name="twitter:description" content=""/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -131,11 +121,13 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">IDEA快捷键</h1>
+      <h1 class="post-title">Linux操作系统01：系统结构</h1>
 
       <div class="post-meta">
-        <span class="post-time"> 2020-02-18 </span>
-        
+        <span class="post-time"> 2020-03-27 </span>
+        <div class="post-category">
+            <a href="/categories/linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"> Linux操作系统 </a>
+            </div>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
     </header>
@@ -143,14 +135,48 @@
     <div class="post-toc" id="post-toc">
   <h2 class="post-toc-title">Contents</h2>
   <div class="post-toc-content always-active">
-    <nav id="TableOfContents"></nav>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#总目录">总目录</a></li>
+  </ul>
+</nav>
   </div>
 </div>
     <div class="post-content">
-      <p>查看所有源码 ： <code>双击shift</code>
-快速修改错误：  <code>Alt+Enter</code>
-快速构造： <code>Alt+Insert</code>
-选择同一列的元素：<code>Alt+左键</code></p>
+      <h2 id="总目录">总目录</h2>
+<blockquote>
+<p>目录管理</p>
+</blockquote>
+<ul>
+<li><img src="Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F01%EF%BC%9A%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84/1.png" alt=""></li>
+<li>解释：</li>
+<li><strong>/root</strong>：该目录为系统管理员，也称为超级权限者的用户主目录</li>
+<li><strong>/home</strong>：包含各用户的主目录，每个用户都有一个自己的目录，一般目录名以用户的账号命名</li>
+<li><strong>/etc</strong>：包含着整个系统的各种配置文件</li>
+<li><strong>/usr</strong> ：这是一个非常重要的目录，用户的很多应用程序和文件都放在这个目录下，类似于windows下的program files目录。
+<ul>
+<li>/usr/bin： 系统用户使用的应用程序。</li>
+<li>/usr/sbin： 超级用户使用的比较高级的管理程序和系统守护程序</li>
+<li>/usr/src： 内核源代码默认的放置目录</li>
+</ul>
+</li>
+<li><strong>/tmp</strong>：这个目录是用来存放一些临时文件的。用完即丢的文件，可以放在这个目录，比如安装包</li>
+<li><strong>/var</strong>：这个目录中存放着在不断扩充着的东西，我们习惯将那些经常被修改的目录放在这个目录下。包括各种日志文件。</li>
+<li><strong>/opt</strong>：是由一些外部应用程序使用的目录。比如你安装一个ORACLE数据库则就可以放到这个目录下。默认是空的。</li>
+<li>/bin ：包含供每个人使用的可执行程序</li>
+<li>/sbin ：包含仅供管理员使用的可执行程序。s表示super</li>
+<li>/lib ：包含库文件，类似于Windows里的DLL文件（不要动）</li>
+<li>/boot：这里放了启动Linux时的核心文件，包括了内核镜像和其它相关内容 (不要动)</li>
+<li>/dev：（device设备）包含着代表硬件设备的设备文件</li>
+<li>/mnt ：包含装载其它非标准文件系统的装载点（我们会把一些本地文件挂载在这个目录下）</li>
+<li>/media：linux系统会自动识别一些设备，例如U盘、光驱等等，当识别后，linux会把识别的设备挂载到这个目录下。</li>
+<li>/lost+found：这个目录一般情况是空的，当系统非法关机后，这里就存放一些文件（存放突然关机的文件）</li>
+<li>/run：是一个临时文件系统，存储系统启动以来的信息。当系统重启时，这个目录下的文件应该被删掉或清除。</li>
+<li>/proc 是个虚拟目录，里面保存内核和进程的信息（不用管）</li>
+<li>/sys：这是linux2.6内核的一个很大的变化。该目录下安装了2.6内核中新出现的一个文件系统 sysfs 。</li>
+<li>/srv：该目录存放一些服务启动之后需要提取的数据</li>
+<li><strong>/www</strong>: 存放服务器网站相关的资源，环境，网站的项目</li>
+</ul>
     </div>
 
     <div class="post-copyright">
@@ -161,7 +187,7 @@
   <p class="copyright-item">
     <span class="item-title">LastMod</span>
     <span class="item-content">
-        2020-02-18
+        2020-03-27
         
     </span>
   </p>
@@ -169,17 +195,15 @@
   
 </div>
 <footer class="post-footer">
-      <div class="post-tags">
-          <a href="/tags/idea/">IDEA</a>
-          </div>
+      
       <nav class="post-nav">
-        <a class="prev" href="/post/202003-mybatis%E6%A1%86%E6%9E%B601%E7%AC%AC%E4%B8%80%E4%B8%AAmybatis%E7%A8%8B%E5%BA%8F/">
+        <a class="prev" href="/post/linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F02%E5%9F%BA%E6%9C%AC%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">
             <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">Mybatis框架01：第一个Mybatis程序</span>
+            <span class="prev-text nav-default">Linux操作系统02：基本常用命令</span>
             <span class="prev-text nav-mobile">Prev</span>
           </a>
-        <a class="next" href="/post/springboot%E6%A1%86%E6%9E%B603%E5%AE%8C%E6%95%B4%E7%9A%84%E9%A1%B9%E7%9B%AE%E8%BF%87%E7%A8%8B/">
-            <span class="next-text nav-default">SpringBoot框架03：完整的项目过程</span>
+        <a class="next" href="/post/zother-spring%E6%B3%A8%E8%A7%A3/">
+            <span class="next-text nav-default">Spring注解</span>
             <span class="next-text nav-mobile">Next</span>
             <i class="iconfont icon-right"></i>
           </a>
