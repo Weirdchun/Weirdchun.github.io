@@ -16,7 +16,9 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Chun" /><meta name="description" content="" /><meta name="keywords" content="Hugo, theme, even" />
+<meta name="author" content="Chun" /><meta name="description" content="我们知道Linux的目录结构为树状结构，最顶级的目录为根目录 /。
+其他目录通过挂载可以将它们添加到树中，通过解除挂载可以移除它们。 在开始本教程前我们需要先知道什么是绝对路径与相对路径。
+" /><meta name="keywords" content="Hugo, theme, even" />
 
 
 
@@ -39,22 +41,28 @@
 
 
 <meta property="og:title" content="Linux操作系统02：基本常用命令" />
-<meta property="og:description" content="" />
+<meta property="og:description" content="我们知道Linux的目录结构为树状结构，最顶级的目录为根目录 /。
+其他目录通过挂载可以将它们添加到树中，通过解除挂载可以移除它们。
+在开始本教程前我们需要先知道什么是绝对路径与相对路径。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://localhost:1313/post/linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F02%E5%9F%BA%E6%9C%AC%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" />
 <meta property="article:published_time" content="2020-03-27T10:58:59+08:00" />
 <meta property="article:modified_time" content="2020-03-27T10:58:59+08:00" />
 <meta itemprop="name" content="Linux操作系统02：基本常用命令">
-<meta itemprop="description" content="">
+<meta itemprop="description" content="我们知道Linux的目录结构为树状结构，最顶级的目录为根目录 /。
+其他目录通过挂载可以将它们添加到树中，通过解除挂载可以移除它们。
+在开始本教程前我们需要先知道什么是绝对路径与相对路径。">
 <meta itemprop="datePublished" content="2020-03-27T10:58:59&#43;08:00" />
 <meta itemprop="dateModified" content="2020-03-27T10:58:59&#43;08:00" />
-<meta itemprop="wordCount" content="0">
+<meta itemprop="wordCount" content="3191">
 
 
 
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Linux操作系统02：基本常用命令"/>
-<meta name="twitter:description" content=""/>
+<meta name="twitter:description" content="我们知道Linux的目录结构为树状结构，最顶级的目录为根目录 /。
+其他目录通过挂载可以将它们添加到树中，通过解除挂载可以移除它们。
+在开始本教程前我们需要先知道什么是绝对路径与相对路径。"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -135,11 +143,312 @@
     <div class="post-toc" id="post-toc">
   <h2 class="post-toc-title">Contents</h2>
   <div class="post-toc-content always-active">
-    <nav id="TableOfContents"></nav>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#目录管理">目录管理</a>
+      <ul>
+        <li><a href="#处理目录的常用命令">处理目录的常用命令</a></li>
+      </ul>
+    </li>
+    <li><a href="#基本属性">基本属性</a>
+      <ul>
+        <li><a href="#属性的常用命令">属性的常用命令</a></li>
+      </ul>
+    </li>
+    <li><a href="#文件内容查看">文件内容查看</a></li>
+    <li><a href="#链接">链接</a></li>
+  </ul>
+</nav>
   </div>
 </div>
     <div class="post-content">
-      
+      <p>我们知道Linux的目录结构为树状结构，最顶级的目录为根目录 /。</p>
+<p>其他目录通过挂载可以将它们添加到树中，通过解除挂载可以移除它们。
+在开始本教程前我们需要先知道什么是绝对路径与相对路径。</p>
+<h2 id="目录管理">目录管理</h2>
+<blockquote>
+<p>绝对路径和相对路径</p>
+</blockquote>
+<ul>
+<li>绝对路径:
+路径的写法，由根目录 / 写起，例如：/usr/share/doc 这个目录。</li>
+<li>相对路径：
+不是由 / 写起，例如由 /usr/share/doc 要到 /usr/share/man 底下时，可以写成：cd ../man 这就是相对路径的写法啦</li>
+</ul>
+<h3 id="处理目录的常用命令">处理目录的常用命令</h3>
+<ul>
+<li>
+<p>ls: 列出目录</p>
+<ul>
+<li>该命令下面可以写参数</li>
+<li>-a ：all，查看全部文件，包括隐藏文件</li>
+<li>-l ：列出所有的文件，包括文件的属性和权限，没有隐藏文件。等同于<code>ll</code>
+所有Linux命令可以组合使用：<code>ls -al</code>：表示查看全部文件（包括隐藏文件），而且列出文件属性与权限</li>
+</ul>
+</li>
+<li>
+<p>cd：切换目录</p>
+<ul>
+<li>该命令下面可以写参数</li>
+<li>/ ：进入根目录.</li>
+<li>~ ：进入当前用户目录</li>
+</ul>
+</li>
+<li>
+<p>pwd：显示目前的目录</p>
+</li>
+<li>
+<p>mkdir：创建一个新的目录</p>
+<ul>
+<li>该命令下面可以写参数</li>
+<li>p ：创建多级目录 <code>mkdir test1/test2</code></li>
+</ul>
+</li>
+<li>
+<p>rmdir：删除一个空的目录</p>
+<ul>
+<li>该命令只能删除空的目录。如果下面存在文件，需要先删除文件</li>
+<li>p ：可以删除多级目录 <code>rmdir test1/test2</code></li>
+</ul>
+</li>
+<li>
+<p>cp: 复制文件或目录</p>
+</li>
+<li>
+<p>rm: 移除文件或目录</p>
+<ul>
+<li>f ：忽略不存在的文件，不会出现警告，强制删除（危险命令）</li>
+<li>r ：递归删除目录</li>
+<li>i ：互动，删除询问是否删除</li>
+<li>rf / :  系统中的所有文件都被删除（<strong>非常危险</strong>！）</li>
+</ul>
+</li>
+<li>
+<p>mv: 移动文件与目录，或修改文件与目录的名称</p>
+<ul>
+<li>（可以重命名文件夹）<code>mv test test1</code></li>
+<li>f ：强制移动</li>
+<li>u ：只替换已经更新过的文件</li>
+</ul>
+</li>
+</ul>
+<h2 id="基本属性">基本属性</h2>
+<p>Linux系统是一种典型的多用户系统，不同的用户处于不同的地位，拥有不同的权限。为了保护系统的安全性，Linux系统对不同的用户访问同一文件（包括目录文件）的权限做了不同的规定。
+在Linux中我们可以使用<code>ll</code>或者<code>ls –l</code>命令来显示一个文件的属性以及文件所属的用户和组，
+在Linux中第一个字符代表这个文件是目录、文件或链接文件等等：</p>
+<ul>
+<li>当为[ d ]则是目录</li>
+<li>当为[ - ]则是文件；</li>
+<li>若是[ l ]则表示为链接文档 ( link file )；</li>
+<li>若是[ b ]则表示为装置文件里面的可供储存的接口设备 ( 可随机存取装置 )；</li>
+<li>若是[ c ]则表示为装置文件里面的串行端口设备，例如键盘、鼠标 ( 一次性读取装置 )。</li>
+</ul>
+<p>接下来的字符中，以三个为一组，且均为『rwx』 的三个参数的组合。
+其中，[ r ]代表可读(read)、[ w ]代表可写(write)、[ x ]代表可执行(execute)。
+要注意的是，这三个权限的位置不会改变，如果没有权限，就会出现减号[ - ]而已。
+每个文件的属性由左边第一部分的10个字符来确定（如下图）：
+<img src="Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F02%EF%BC%9A%E5%9F%BA%E6%9C%AC%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/1.png" alt="">
+从左至右用0-9这些数字来表示。</p>
+<ul>
+<li>第0位确定文件类型，第1-3位确定属主（该文件的所有者）拥有该文件的权限。</li>
+<li>第4-6位确定属组（所有者的同组用户）拥有该文件的权限</li>
+<li>第7-9位确定其他用户拥有该文件的权限。</li>
+</ul>
+<p>对于文件来说，它都有一个特定的所有者，也就是对该文件具有所有权的用户。</p>
+<p>同时，在Linux系统中，用户是按组分类的，一个用户属于一个或多个组。</p>
+<p>文件所有者以外的用户又可以分为文件所有者的同组用户和其他用户。</p>
+<p>因此，Linux系统按文件所有者、文件所有者同组用户和其他用户来规定了不同的文件访问权限。</p>
+<p>在以上实例中，boot 文件是一个目录文件，属主和属组都为 root。</p>
+<h3 id="属性的常用命令">属性的常用命令</h3>
+<ul>
+<li>chgrp：更改文件属组</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">chgrp [-R] 属组名 文件名
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>chown：更改文件属主，也可以同时更改文件属组</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">chown [–R] 属主名 文件名
+chown [-R] 属主名：属组名 文件名
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li><strong>chm od</strong>：更改文件9个属性</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">chmod [-R] rwx 文件或目录
+</code></pre></td></tr></table>
+</div>
+</div><p>Linux文件属性有两种设置方法，一种是数字，一种是符号。</p>
+<p>Linux文件的基本权限就有九个，分别是owner/group/others三种身份各有自己的read/write/execute权限。</p>
+<p>先复习一下刚刚上面提到的数据：文件的权限字符为：『-rwxrwxrwx』， 这九个权限是三个三个一组的！其中，我们可以使用数字来代表各个权限，各权限的分数对照表如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">r:4      w:2         x:1
+</code></pre></td></tr></table>
+</div>
+</div><p>每种身份(owner/group/others)各自的三个权限(r/w/x)分数是需要累加的，例如当权限为：[-rwxrwx&mdash;] 分数则是：</p>
+<ul>
+<li>
+<p>owner = rwx = 4+2+1 = 7</p>
+</li>
+<li>
+<p>group = rwx = 4+2+1 = 7</p>
+</li>
+<li>
+<p>others= &mdash; = 0+0+0 = 0</p>
+</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">chmod 770 filename
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="文件内容查看">文件内容查看</h2>
+<p>Linux系统中使用以下命令来查看文件的内容：</p>
+<ul>
+<li><strong>touch</strong> ：新建一个文件</li>
+<li><strong>cat</strong>：由第一行开始显示文件内容</li>
+<li><strong>tac</strong>：从最后一行开始显示，可以看出 tac 是 cat 的倒着写！</li>
+<li><strong>nl</strong>：显示的时候，顺道输出行号！(常用)</li>
+<li><strong>more</strong>：一页一页的显示文件内容
+<ul>
+<li>空格代表翻页</li>
+<li>回车键代表看下一行</li>
+<li>:f 代表显示当前行号</li>
+</ul>
+</li>
+<li><strong>less</strong> 与 more 类似，但是比 more 更好的是，他可以往前翻页！
+<ul>
+<li>/ + 查询字符 ：可以从上往下显示查询字符</li>
+<li>？+ 查询字符 ：从下往上查询</li>
+<li>n 搜寻下一个，N 搜寻上一个</li>
+<li>(上下键翻动页面！按q退出命令）</li>
+</ul>
+</li>
+<li>head 只看头几行
+<ul>
+<li>n 参数显示几行</li>
+</ul>
+</li>
+<li>tail 只看尾巴几行
+<ul>
+<li>n 参数显示几行</li>
+</ul>
+</li>
+</ul>
+<p>你可以使用 man [命令]来查看各个命令的使用文档，如 ：man cp。</p>
+<p>CentOS7的网络配置目录：<code>cd /etc/sysconfig/network-scripts</code></p>
+<ul>
+<li>ifcfg-eth0 ： 该文件为默认网络配置文件
+<code>ifconfig</code> 命令查看网络配置</li>
+</ul>
+<h2 id="链接">链接</h2>
+<p>Linux 链接分两种，一种被称为硬链接（Hard Link），另一种被称为符号链接（Symbolic Link）。</p>
+<ol>
+<li>硬链接：
+硬连接的作用是允许一个文件拥有多个有效路径名，这样用户就可以建立硬连接到重要文件，以防止“误删”的功能。其原因如上所述，因为对应该目录的索引节点有一个以上的连接。只删除一个连接并不影响索引节点本身和其它的连接，只有当最后一个连接被删除后，文件的数据块及目录的连接才会被释放。也就是说，文件真正删除的条件是与之相关的所有硬连接文件均被删除。</li>
+</ol>
+<p>硬连接的作用是允许一个文件拥有多个有效路径名，这样用户就可以建立硬连接到重要文件，以防止“误删”的功能。其原因如上所述，因为对应该目录的索引节点有一个以上的连接。只删除一个连接并不影响索引节点本身和其它的连接，只有当最后一个连接被删除后，文件的数据块及目录的连接才会被释放。也就是说，文件真正删除的条件是与之相关的所有硬连接文件均被删除。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="n">touch</span> <span class="n">f1</span> <span class="c1">//先创建一个f1文件
+</span><span class="c1"></span><span class="n">ln</span> <span class="n">f1</span> <span class="n">f2</span> <span class="c1">//创建f1的一个硬连接文件f2
+</span></code></pre></td></tr></table>
+</div>
+</div><p>当修改f1中的数据，f2也会修改
+2. 软链接</p>
+<p>另外一种连接称之为符号连接（Symbolic Link），也叫软连接。软链接文件有类似于 Windows 的快捷方式。它实际上是一个特殊的文件。在符号连接中，文件实际上是一个文本文件，其中包含的有另一文件的位置信息。比如：A 是 B 的软链接（A 和 B 都是文件名），A 的目录项中的 inode 节点号与 B 的目录项中的 inode 节点号不相同，A 和 B 指向的是两个不同的 inode，继而指向两块不同的数据块。但是 A 的数据块中存放的只是 B 的路径名（可以根据这个找到 B 的目录项）。A 和 B 之间是“主从”关系，如果 B 被删除了，A 仍然存在（因为两个是不同的文件），但指向的是一个无效的链接。</p>
+<p><strong>测试</strong>：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">[root@chun /]# cd /home
+[root@chun home]# touch f1 # 创建一个测试文件f1
+[root@chun home]# ln f1 f2     # 创建f1的一个硬连接文件f2
+[root@chun home]# ln -s f1 f3   # 创建f1的一个符号连接文件f3
+[root@chun home]# ls -li       # -i参数显示文件的inode节点信息
+397247 -rw-r--r-- 2 root root     0 Mar 13 00:50 f1
+397247 -rw-r--r-- 2 root root     0 Mar 13 00:50 f2
+397248 lrwxrwxrwx 1 root root     2 Mar 13 00:50 f3 -&gt; f1
+</code></pre></td></tr></table>
+</div>
+</div><p>从上面的结果中可以看出，硬连接文件 f2 与原文件 f1 的 inode 节点相同，均为 397247，然而符号连接文件的 inode 节点不同。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback"># echo 字符串输出 &gt;&gt; f1 输出到 f1文件
+[root@chun home]# echo &#34;I am f1 file&#34; &gt;&gt;f1  #将字符串给f1
+[root@chun home]# cat f1    #查看f1
+I am f1 file
+[root@chun home]# cat f2     #查看f2
+I am f1 file
+[root@chun home]# cat f3      #查看f13
+I am f1 file
+[root@chun home]# rm -f f1    #删除原文件
+[root@chun home]# cat f2
+I am f1 file                  #f2 硬链接还在
+[root@chun home]# cat f3  
+cat: f3: No such file or directory   #f3 软链接（快捷方式）不在了
+</code></pre></td></tr></table>
+</div>
+</div><p>通过上面的测试可以看出：当删除原始文件 f1 后，硬连接 f2 不受影响，但是符号连接 f1 文件无效；
+依此您可以做一些相关的测试，可以得到以下全部结论：</p>
+<ul>
+<li>删除符号连接f3,对f1,f2无影响；</li>
+<li>删除硬连接f2，对f1,f3也无影响；</li>
+<li>删除原文件f1，对硬连接f2没有影响，导致符号连接f3失效；</li>
+<li>同时删除原文件f1,硬连接f2，整个文件会真正的被删除。</li>
+</ul>
     </div>
 
     <div class="post-copyright">
@@ -160,7 +469,11 @@
 <footer class="post-footer">
       
       <nav class="post-nav">
-        
+        <a class="prev" href="/post/linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F03vim%E7%BC%96%E8%BE%91%E5%99%A8/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Linux操作系统03：Vim编辑器</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
         <a class="next" href="/post/linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F01%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84/">
             <span class="next-text nav-default">Linux操作系统01：系统结构</span>
             <span class="next-text nav-mobile">Next</span>

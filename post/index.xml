@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Chun</copyright>
-    <lastBuildDate>Fri, 27 Mar 2020 10:58:59 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 27 Mar 2020 14:13:29 +0800</lastBuildDate>
     
 	<atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Linux操作系统03：Vim编辑器</title>
+      <link>http://localhost:1313/post/linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F03vim%E7%BC%96%E8%BE%91%E5%99%A8/</link>
+      <pubDate>Fri, 27 Mar 2020 14:13:29 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F03vim%E7%BC%96%E8%BE%91%E5%99%A8/</guid>
+      <description>什么是Vim？ Vim是从 vi 发展出来的一个文本编辑器。代码补完、编译及错误跳转等方便编程的功能特别丰富，在程序员中被广泛使用。 简单的来说， vi 是</description>
+    </item>
     
     <item>
       <title>Linux操作系统02：基本常用命令</title>
@@ -18,7 +27,9 @@
       <pubDate>Fri, 27 Mar 2020 10:58:59 +0800</pubDate>
       
       <guid>http://localhost:1313/post/linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F02%E5%9F%BA%E6%9C%AC%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</guid>
-      <description></description>
+      <description>&lt;p&gt;我们知道Linux的目录结构为树状结构，最顶级的目录为根目录 /。&lt;/p&gt;
+&lt;p&gt;其他目录通过挂载可以将它们添加到树中，通过解除挂载可以移除它们。
+在开始本教程前我们需要先知道什么是绝对路径与相对路径。&lt;/p&gt;</description>
     </item>
     
     <item>
