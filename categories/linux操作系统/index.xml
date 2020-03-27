@@ -7,10 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Chun</copyright>
-    <lastBuildDate>Fri, 27 Mar 2020 14:13:29 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 27 Mar 2020 15:42:05 +0800</lastBuildDate>
     
 	<atom:link href="http://localhost:1313/categories/linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Linux操作系统04：账号管理</title>
+      <link>http://localhost:1313/post/linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F04%E8%B4%A6%E5%8F%B7%E7%AE%A1%E7%90%86/</link>
+      <pubDate>Fri, 27 Mar 2020 15:42:05 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F04%E8%B4%A6%E5%8F%B7%E7%AE%A1%E7%90%86/</guid>
+      <description>&lt;p&gt;用户账号的管理工作主要涉及到用户账号的添加、修改和删除。&lt;/p&gt;
+&lt;p&gt;添加用户账号就是在系统中创建一个新账号，然后为新账号分配用户号、用户组、主目录和登录Shell等资源。&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Linux操作系统03：Vim编辑器</title>

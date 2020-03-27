@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Linux操作系统04：账号管理 - Chun&#39;s Blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Chun" /><meta name="description" content="用户账号的管理工作主要涉及到用户账号的添加、修改和删除。
+添加用户账号就是在系统中创建一个新账号，然后为新账号分配用户号、用户组、主目录和登录Shell等资源。
+" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.62.2 with theme even" />
+
+
+<link rel="canonical" href="http://localhost:1313/post/linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F04%E8%B4%A6%E5%8F%B7%E7%AE%A1%E7%90%86/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Linux操作系统04：账号管理" />
+<meta property="og:description" content="用户账号的管理工作主要涉及到用户账号的添加、修改和删除。
+添加用户账号就是在系统中创建一个新账号，然后为新账号分配用户号、用户组、主目录和登录Shell等资源。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/post/linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F04%E8%B4%A6%E5%8F%B7%E7%AE%A1%E7%90%86/" />
+<meta property="article:published_time" content="2020-03-27T15:42:05+08:00" />
+<meta property="article:modified_time" content="2020-03-27T15:42:05+08:00" />
+<meta itemprop="name" content="Linux操作系统04：账号管理">
+<meta itemprop="description" content="用户账号的管理工作主要涉及到用户账号的添加、修改和删除。
+添加用户账号就是在系统中创建一个新账号，然后为新账号分配用户号、用户组、主目录和登录Shell等资源。">
+<meta itemprop="datePublished" content="2020-03-27T15:42:05&#43;08:00" />
+<meta itemprop="dateModified" content="2020-03-27T15:42:05&#43;08:00" />
+<meta itemprop="wordCount" content="910">
+
+
+
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Linux操作系统04：账号管理"/>
+<meta name="twitter:description" content="用户账号的管理工作主要涉及到用户账号的添加、修改和删除。
+添加用户账号就是在系统中创建一个新账号，然后为新账号分配用户号、用户组、主目录和登录Shell等资源。"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Chun</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Chun</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Linux操作系统04：账号管理</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2020-03-27 </span>
+        <div class="post-category">
+            <a href="/categories/linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"> Linux操作系统 </a>
+            </div>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#添加账号-useradd">添加账号 useradd</a></li>
+    <li><a href="#删除帐号-userdel">删除帐号 userdel</a></li>
+    <li><a href="#修改帐号-usermod">修改帐号 usermod</a></li>
+    <li><a href="#切换用户">切换用户</a></li>
+    <li><a href="#用户口令的管理">用户口令的管理</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <p>用户账号的管理工作主要涉及到用户账号的添加、修改和删除。</p>
+<p>添加用户账号就是在系统中创建一个新账号，然后为新账号分配用户号、用户组、主目录和登录Shell等资源。</p>
+<h2 id="添加账号-useradd">添加账号 useradd</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">useradd 选项 用户名
+</code></pre></td></tr></table>
+</div>
+</div><p>参数说明：</p>
+<ul>
+<li>
+<p>选项 :</p>
+<ul>
+<li>-c comment 指定一段注释性描述</li>
+<li>-d 目录 指定用户主目录，如果此目录不存在，则同时使用-m选项，可以创建主目录。</li>
+<li>-g 用户组 指定用户所属的用户组。</li>
+<li>-G 用户组，用户组 指定用户所属的附加组。</li>
+<li>-m　使用者目录如不存在则自动建立。</li>
+<li>-s Shell文件 指定用户的登录Shell。</li>
+<li>u 用户号 指定用户的用户号，如果同时有-o选项，则可以重复使用其他用户的标识号。</li>
+</ul>
+</li>
+<li>
+<p>用户名 :</p>
+<ul>
+<li>指定新账号的登录名。</li>
+</ul>
+</li>
+</ul>
+<h2 id="删除帐号-userdel">删除帐号 userdel</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">userdel 选项 用户名
+</code></pre></td></tr></table>
+</div>
+</div><p>常用的选项是 -r，它的作用是把用户的主目录一起删除
+此命令删除用户在系统文件中（主要是/etc/passwd, /etc/shadow, /etc/group等）的记录，同时删除用户的主目录。</p>
+<h2 id="修改帐号-usermod">修改帐号 usermod</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">usermod 选项 用户名
+</code></pre></td></tr></table>
+</div>
+</div><p>常用的选项包括-c, -d, -m, -g, -G, -s, -u以及-o等，这些选项的意义与useradd命令中的选项一样，可以为用户指定新的资源值。</p>
+<h2 id="切换用户">切换用户</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="o">[</span>root@chun home<span class="o">]</span>#  
+root为当前用户名
+chun为主机名
+home为当前目录位置
+<span class="c1"># 为超级用户</span>
+</code></pre></td></tr></table>
+</div>
+</div><ol>
+<li>
+<p>切换用户的命令为：su username 【username是你的用户名哦】</p>
+</li>
+<li>
+<p>从普通用户切换到root用户，还可以使用命令：sudo su</p>
+</li>
+<li>
+<p>在终端输入exit或logout或使用快捷方式ctrl+d，可以退回到原来用户，其实ctrl+d也是执行的exit命令</p>
+</li>
+<li>
+<p>在切换用户时，如果想在切换用户之后使用新用户的工作环境，可以在su和username之间加-，例如：【su - root】</p>
+</li>
+</ol>
+<p>$表示普通用户</p>
+<p>#表示超级用户，也就是root用户</p>
+<h2 id="用户口令的管理">用户口令的管理</h2>
+<p>用户管理的一项重要内容是用户口令的管理。用户账号刚创建时没有口令，但是被系统锁定，无法使用，必须为其指定口令后才可以使用，即使是指定空口令。</p>
+<p>指定和修改用户口令的Shell命令是passwd。超级用户可以为自己和其他用户指定口令，普通用户只能用它修改自己的口令。</p>
+<p>命令的格式为：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">passwd 选项 用户名
+</code></pre></td></tr></table>
+</div>
+</div><p>可使用的选项：</p>
+<ul>
+<li>-l 锁定口令，即禁用账号。</li>
+<li>-u 口令解锁。</li>
+<li>-d 使账号无口令,没有密码也不能登录</li>
+<li>-f 强迫用户下次登录时修改口令。
+如果默认用户名，则修改当前用户的口令。</li>
+</ul>
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Chun</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2020-03-27
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      
+      <nav class="post-nav">
+        
+        <a class="next" href="/post/linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F03vim%E7%BC%96%E8%BE%91%E5%99%A8/">
+            <span class="next-text nav-default">Linux操作系统03：Vim编辑器</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+  <a href="http://localhost:1313/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> site pv: <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> site uv: <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2020
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Chun</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>
