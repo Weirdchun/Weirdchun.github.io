@@ -7,10 +7,24 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Chun</copyright>
-    <lastBuildDate>Fri, 27 Mar 2020 23:19:31 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 27 Mar 2020 23:45:06 +0800</lastBuildDate>
     
 	<atom:link href="http://localhost:1313/categories/linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Linux操作系统06：环境安装</title>
+      <link>http://localhost:1313/post/linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F06%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85/</link>
+      <pubDate>Fri, 27 Mar 2020 23:45:06 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F06%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85/</guid>
+      <description>&lt;p&gt;安装软件一般有三种方式：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;rpm ：用JDK演示，在线发布一个springboot项目&lt;/li&gt;
+&lt;li&gt;解压缩：用tomca演示，启动并通过外网访问，发布网站&lt;/li&gt;
+&lt;li&gt;yum在线安装：用docker演示，直接安装运行跑起来docker就行&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
     
     <item>
       <title>Linux操作系统05：磁盘与进程管理</title>
@@ -19,7 +33,7 @@
       
       <guid>http://localhost:1313/post/linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F05%E7%A3%81%E7%9B%98%E4%B8%8E%E8%BF%9B%E7%A8%8B%E5%91%BD%E5%90%8D/</guid>
       <description>&lt;p&gt;Linux中一切皆文件：
-==（文件：读写执行（查看，创建，删除，移动，复制，编辑），权限（用户，用户组），系统（磁盘，进程））==&lt;/p&gt;</description>
+（文件：读写执行（查看，创建，删除，移动，复制，编辑），权限（用户，用户组），系统（磁盘，进程））&lt;/p&gt;</description>
     </item>
     
     <item>
