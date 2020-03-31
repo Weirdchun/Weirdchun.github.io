@@ -48,7 +48,7 @@
 <meta itemprop="description" content="">
 <meta itemprop="datePublished" content="2020-03-23T20:55:18&#43;08:00" />
 <meta itemprop="dateModified" content="2020-03-23T20:55:18&#43;08:00" />
-<meta itemprop="wordCount" content="2201">
+<meta itemprop="wordCount" content="2306">
 
 
 
@@ -155,6 +155,7 @@
         <li><a href="#spring整合mybatis">Spring整合Mybatis</a></li>
         <li><a href="#spring整合service层">Spring整合Service层</a></li>
         <li><a href="#spring整合mvc">Spring整合MVC</a></li>
+        <li><a href="#webxml">web.xml</a></li>
       </ul>
     </li>
   </ul>
@@ -1017,9 +1018,62 @@
 </code></pre></td></tr></table>
 </div>
 </div><h3 id="spring整合mvc">Spring整合MVC</h3>
-<p>spring-mvc.xml文件
-<code>xml &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt; &lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:context=&quot;http://www.springframework.org/schema/context&quot; xmlns:mvc=&quot;http://www.springframework.org/schema/mvc&quot; xsi:schemaLocation=&quot;http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/mvc https://www.springframework.org/schema/mvc/spring-mvc.xsd&quot;&gt; &lt;!--DispatchServlet--&gt; &lt;!--1.注解驱动--&gt; &lt;mvc:annotation-driven/&gt; &lt;!--2.静态资源过滤--&gt; &lt;mvc:default-servlet-handler/&gt; &lt;!--3.扫描包:Controller--&gt; &lt;context:component-scan base-package=&quot;com.chun.controller&quot;/&gt; &lt;!--4.视图解析器--&gt; &lt;bean class=&quot;org.springframework.web.servlet.view.InternalResourceViewResolver&quot;&gt; &lt;property name=&quot;prefix&quot; value=&quot;/WEB-INF/jsp/&quot;/&gt; &lt;property name=&quot;suffix&quot; value=&quot;.jsp&quot;/&gt; &lt;/bean&gt; &lt;/beans&gt;</code>
-Spring配置整合文件，applicationContext.xml</p>
+<p>spring-mvc.xml</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&#34;1.0&#34;encoding=&#34;UTF-8&#34;?&gt;</span>
+<span class="nt">&lt;beans</span> <span class="na">xmlns=</span><span class="s">&#34;http://wwwspringframework.org/schema/beans&#34;</span>
+    <span class="na">xmlns:xsi=</span><span class="s">&#34;http://www.w3.org2001/XMLSchema-instance&#34;</span>
+    <span class="na">xmlns:context=</span><span class="s">&#34;http://wwwspringframework.org/schemacontext&#34;</span>
+    <span class="na">xmlns:mvc=</span><span class="s">&#34;http://wwwspringframework.org/schema/mvc&#34;</span>
+    <span class="na">xsi:schemaLocation=</span><span class="s">&#34;http://wwwspringframework.org/schemabeans
+</span><span class="s">    http://www.springframework.orgschema/beans/spring-beans.xsd
+</span><span class="s">    http://www.springframework.orgschema/context
+</span><span class="s">    http://www.springframework.orgschema/context/spring-contextxsd
+</span><span class="s">    http://www.springframework.orgschema/mvc
+</span><span class="s">    https://www.springframeworkorg/schema/mvc/spring-mvc.xsd&#34;</span><span class="nt">&gt;</span>
+    <span class="c">&lt;!--</span><span class="c">DispatchServlet</span><span class="c">--&gt;</span>
+    <span class="c">&lt;!--</span><span class="c">1.注解驱动</span><span class="c">--&gt;</span>
+    <span class="nt">&lt;mvc:annotation-driven</span><span class="nt">/&gt;</span>
+    <span class="c">&lt;!--</span><span class="c">2.静态资源过滤</span><span class="c">--&gt;</span>
+    <span class="nt">&lt;mvc:default-servlet-handler</span><span class="nt">/&gt;</span>
+    <span class="c">&lt;!--</span><span class="c">3.扫描包:Controller</span><span class="c">--&gt;</span>
+    <span class="nt">&lt;context:component-scanbase-package</span><span class="err">=</span><span class="err">&#34;</span><span class="err">c</span><span class="err">o</span><span class="err">m</span><span class="err">.</span><span class="err">c</span><span class="err">h</span><span class="err">u</span><span class="err">n</span><span class="err">c</span><span class="err">o</span><span class="err">n</span><span class="err">t</span><span class="err">r</span><span class="err">o</span><span class="err">l</span><span class="err">l</span><span class="err">e</span><span class="err">r</span><span class="err">&#34;</span><span class="nt">/&gt;</span>
+    <span class="c">&lt;!--</span><span class="c">4.视图解析器</span><span class="c">--&gt;</span>
+    <span class="nt">&lt;bean</span> <span class="na">class=</span><span class="s">&#34;orgspringframework.web.servletviewInternalResourceViewResolver&#34;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&#34;prefix&#34;</span><span class="na">value=</span><span class="s">&#34;/WEB-INF/jsp/&#34;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&#34;suffix&#34;</span><span class="na">value=</span><span class="s">&#34;.jsp&#34;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/bean&gt;</span>
+<span class="nt">&lt;/beans&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Spring配置整合文件，applicationContext.xml</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt"> 1
@@ -1044,6 +1098,99 @@ Spring配置整合文件，applicationContext.xml</p>
     <span class="nt">&lt;import</span> <span class="na">resource=</span><span class="s">&#34;classpath:spring-service.xml&#34;</span><span class="nt">/&gt;</span>
     <span class="nt">&lt;import</span> <span class="na">resource=</span><span class="s">&#34;classpath:spring-mvc.xml&#34;</span><span class="nt">/&gt;</span>
 <span class="nt">&lt;/beans&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="webxml">web.xml</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+<span class="nt">&lt;web-app</span> <span class="na">xmlns=</span><span class="s">&#34;http://xmlns.jcp.org/xml/ns/javaee&#34;</span>
+         <span class="na">xmlns:xsi=</span><span class="s">&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span>
+         <span class="na">xsi:schemaLocation=</span><span class="s">&#34;http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd&#34;</span>
+         <span class="na">version=</span><span class="s">&#34;4.0&#34;</span><span class="nt">&gt;</span>
+    
+    <span class="c">&lt;!--</span><span class="c"> DispatchServlet</span><span class="c">--&gt;</span>
+    <span class="nt">&lt;servlet</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;servlet-name</span><span class="nt">&gt;</span>springmvc<span class="nt">&lt;/servlet-name&gt;</span>
+        <span class="nt">&lt;servlet-class</span><span class="nt">&gt;</span>org.springframework.web.servlet.DispatcherServlet<span class="nt">&lt;/servlet-class&gt;</span>
+        <span class="nt">&lt;init-param</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;param-name</span><span class="nt">&gt;</span>contextConfigLocation<span class="nt">&lt;/param-name&gt;</span>
+            <span class="nt">&lt;param-value</span><span class="nt">&gt;</span>classpath:applicationContext.xml<span class="nt">&lt;/param-value&gt;</span>
+        <span class="nt">&lt;/init-param&gt;</span>
+        <span class="nt">&lt;load-on-startup</span><span class="nt">&gt;</span>1<span class="nt">&lt;/load-on-startup&gt;</span>
+    <span class="nt">&lt;/servlet&gt;</span>
+    <span class="nt">&lt;servlet-mapping</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;servlet-name</span><span class="nt">&gt;</span>springmvc<span class="nt">&lt;/servlet-name&gt;</span>
+        <span class="nt">&lt;url-pattern</span><span class="nt">&gt;</span>/<span class="nt">&lt;/url-pattern&gt;</span>
+    <span class="nt">&lt;/servlet-mapping&gt;</span>
+    
+    <span class="c">&lt;!--</span><span class="c">乱码过滤</span><span class="c">--&gt;</span>
+    <span class="nt">&lt;filter</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;filter-name</span><span class="nt">&gt;</span>encodingFilter<span class="nt">&lt;/filter-name&gt;</span>
+        <span class="nt">&lt;filter-class</span><span class="nt">&gt;</span>org.springframework.web.filter.CharacterEncodingFilter<span class="nt">&lt;/filter-class&gt;</span>
+        <span class="nt">&lt;init-param</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;param-name</span><span class="nt">&gt;</span>encoding<span class="nt">&lt;/param-name&gt;</span>
+            <span class="nt">&lt;param-value</span><span class="nt">&gt;</span>utf-8<span class="nt">&lt;/param-value&gt;</span>
+        <span class="nt">&lt;/init-param&gt;</span>
+    <span class="nt">&lt;/filter&gt;</span>
+    <span class="nt">&lt;filter-mapping</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;filter-name</span><span class="nt">&gt;</span>encodingFilter<span class="nt">&lt;/filter-name&gt;</span>
+        <span class="nt">&lt;url-pattern</span><span class="nt">&gt;</span>/*<span class="nt">&lt;/url-pattern&gt;</span>
+    <span class="nt">&lt;/filter-mapping&gt;</span>
+
+    <span class="c">&lt;!--</span><span class="c">Session</span><span class="c">--&gt;</span>
+    <span class="nt">&lt;session-config</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;session-timeout</span><span class="nt">&gt;</span>15<span class="nt">&lt;/session-timeout&gt;</span>
+    <span class="nt">&lt;/session-config&gt;</span>
+
+
+
+<span class="nt">&lt;/web-app&gt;</span>
 </code></pre></td></tr></table>
 </div>
 </div>
