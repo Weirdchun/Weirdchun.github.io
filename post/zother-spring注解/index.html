@@ -48,7 +48,7 @@
 <meta itemprop="description" content="@Autowired 自动装配 @@Responsebody 注解表示该方法的返回的结果直接写入 HTTP 响应正文（ResponseBody）中，一般在异步获取数据时使用，通常是在使用 @RequestMapping 后，返回值通">
 <meta itemprop="datePublished" content="2020-03-27T00:08:22&#43;08:00" />
 <meta itemprop="dateModified" content="2020-03-27T00:08:22&#43;08:00" />
-<meta itemprop="wordCount" content="352">
+<meta itemprop="wordCount" content="445">
 
 
 
@@ -140,6 +140,7 @@
     <li><a href="#autowired">@Autowired</a></li>
     <li><a href="#responsebody">@@Responsebody</a></li>
     <li><a href="#requestparam">@RequestParam</a></li>
+    <li><a href="#pathvariable">@PathVariable</a></li>
   </ul>
 </nav>
   </div>
@@ -177,7 +178,27 @@
 <pre class="chroma"><code class="language-html" data-lang="html">	<span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;text&#34;</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;username&#34;</span>  <span class="na">placeholder</span><span class="o">=</span><span class="s">&#34;Username&#34;</span> <span class="na">required</span><span class="o">=</span><span class="s">&#34;&#34;</span> <span class="na">autofocus</span><span class="o">=</span><span class="s">&#34;&#34;</span><span class="p"></span><span class="p">&gt;</span>
 </code></pre></td></tr></table>
 </div>
+</div><h2 id="pathvariable">@PathVariable</h2>
+<p>通过 @PathVariable 可以将 URL 中占位符参数绑定到控制器处理方法的入参中：URL 中的 {xxx} 占位符可以通过@PathVariable(“xxx“) 绑定到操作方法的入参中
+后端：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java">    <span class="nd">@GetMapping</span><span class="o">(</span><span class="s">&#34;/delemp/{id}&#34;</span><span class="o">)</span>
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">deleteEmp</span><span class="o">(</span><span class="nd">@PathVariable</span><span class="o">(</span><span class="s">&#34;id&#34;</span><span class="o">)</span><span class="kt">int</span> <span class="n">id</span><span class="o">)</span><span class="o">{</span>
+            <span class="n">employeeDao</span><span class="o">.</span><span class="na">getEmployeeById</span><span class="o">(</span><span class="n">id</span><span class="o">)</span><span class="o">;</span>
+            <span class="k">return</span> <span class="s">&#34;redirect:/emps&#34;</span><span class="o">;</span>
+    <span class="o">}</span>
+</code></pre></td></tr></table>
 </div>
+</div><p>页面：</p>
+
     </div>
 
     <div class="post-copyright">

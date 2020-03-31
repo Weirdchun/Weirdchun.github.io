@@ -457,8 +457,7 @@
 <li>com.chun.dao</li>
 <li>com.chun.service</li>
 <li>com.chun.controller</li>
-<li>mybatis-config.xml</li>
-</ul>
+<li>mybatis-config.xml
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -479,9 +478,8 @@
 <span class="nt">&lt;/configuration&gt;</span>
 </code></pre></td></tr></table>
 </div>
-</div><ul>
-<li>applicationContext.xml</li>
-</ul>
+</div></li>
+<li>applicationContext.xml
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -495,18 +493,19 @@
 <td class="lntd">
 <pre class="chroma"><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
 <span class="nt">&lt;beans</span> <span class="na">xmlns=</span><span class="s">&#34;http://www.springframework.org/schema/beans&#34;</span>
-       <span class="na">xmlns:xsi=</span><span class="s">&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span>
-       <span class="na">xsi:schemaLocation=</span><span class="s">&#34;http://www.springframework.org/schema/beans
+    <span class="na">xmlns:xsi=</span><span class="s">&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span>
+    <span class="na">xsi:schemaLocation=</span><span class="s">&#34;http://www.springframework.org/schema/beans
 </span><span class="s">        http://www.springframework.org/schema/beans/spring-beans.xsd&#34;</span><span class="nt">&gt;</span>
 
 <span class="nt">&lt;/beans&gt;</span>
 </code></pre></td></tr></table>
 </div>
-</div><h2 id="mybatis层">Mybatis层</h2>
+</div></li>
+</ul>
+<h2 id="mybatis层">Mybatis层</h2>
 <h3 id="环境配置">环境配置</h3>
 <ol>
-<li>数据库配置文件 database.properties</li>
-</ol>
+<li>数据库配置文件 database.properties
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -521,10 +520,9 @@
 <span class="n">db</span><span class="o">.</span><span class="na">password</span> <span class="o">=</span> <span class="n">huang1</span>
 </code></pre></td></tr></table>
 </div>
-</div><ol start="2">
+</div></li>
 <li>IDEA关联数据库</li>
-<li>编写MyBatis的核心配置文件</li>
-</ol>
+<li>编写MyBatis的核心配置文件
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt"> 1
@@ -555,12 +553,14 @@
 <span class="nt">&lt;/configuration&gt;</span>
 </code></pre></td></tr></table>
 </div>
-</div><h3 id="具体实施">具体实施</h3>
+</div></li>
+</ol>
+<h3 id="具体实施">具体实施</h3>
 <h4 id="dao层">Dao层</h4>
 <ol>
-<li>建立实体类books
-使用Lombok建立</li>
-</ol>
+<li>
+<p>建立实体类books
+使用Lombok建立</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -585,9 +585,9 @@
 <span class="o">}</span>
 </code></pre></td></tr></table>
 </div>
-</div><ol start="2">
-<li>建立一个BookMapper</li>
-</ol>
+</div></li>
+<li>
+<p>建立一个BookMapper</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt"> 1
@@ -626,9 +626,9 @@
 <span class="o">}</span>
 </code></pre></td></tr></table>
 </div>
-</div><ol start="3">
-<li>BookMapper.xml</li>
-</ol>
+</div></li>
+<li>
+<p>BookMapper.xml</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt"> 1
@@ -672,16 +672,16 @@
         insert into ssmbuild.books (bookName, bookCounts, detail)
         values (#{bookName},#{bookCounts},#{detail});
     <span class="nt">&lt;/insert&gt;</span>
-    
+       
     <span class="nt">&lt;delete</span> <span class="na">id=</span><span class="s">&#34;deleteBookById&#34;</span> <span class="na">parameterType=</span><span class="s">&#34;int&#34;</span><span class="nt">&gt;</span>
         delete from ssmbuild.books where bookID = #{bookId}
     <span class="nt">&lt;/delete&gt;</span>
-    
+       
     <span class="nt">&lt;update</span> <span class="na">id=</span><span class="s">&#34;updateBook&#34;</span> <span class="na">parameterType=</span><span class="s">&#34;Books&#34;</span><span class="nt">&gt;</span>
         update ssmbuild.books set bookName=#{bookName},bookCounts=#{bookCounts},detail= #{detail}
         where bookID=#{bookID};
     <span class="nt">&lt;/update&gt;</span>
-    
+       
     <span class="nt">&lt;select</span> <span class="na">id=</span><span class="s">&#34;queryBookById&#34;</span> <span class="na">resultType=</span><span class="s">&#34;Books&#34;</span><span class="nt">&gt;</span>
         select * from ssmbuild.books where bookID = #{bookID}
     <span class="nt">&lt;/select&gt;</span>
@@ -693,9 +693,9 @@
 <span class="nt">&lt;/mapper&gt;</span>
 </code></pre></td></tr></table>
 </div>
-</div><ol start="4">
-<li>把Mapper绑定到mybatis-config.xml中</li>
-</ol>
+</div></li>
+<li>
+<p>把Mapper绑定到mybatis-config.xml中</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -710,10 +710,11 @@
     &lt;/mappers&gt;
 </code></pre></td></tr></table>
 </div>
-</div><h4 id="service层">Service层</h4>
+</div></li>
+</ol>
+<h4 id="service层">Service层</h4>
 <ul>
-<li>BookService接口</li>
-</ul>
+<li>BookService接口
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt"> 1
@@ -756,9 +757,8 @@
 
 </code></pre></td></tr></table>
 </div>
-</div><ul>
-<li>BookService接口实现</li>
-</ul>
+</div></li>
+<li>BookService接口实现
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt"> 1
@@ -823,7 +823,9 @@
 <span class="o">}</span>
 </code></pre></td></tr></table>
 </div>
-</div><h2 id="spring层">Spring层</h2>
+</div></li>
+</ul>
+<h2 id="spring层">Spring层</h2>
 <h3 id="spring整合mybatis">Spring整合Mybatis</h3>
 <p>Spring整合Mybatis需要：</p>
 <ol>
@@ -832,8 +834,7 @@
 <li>SqlSessionFactory</li>
 </ol>
 <ul>
-<li>spring-dao.xml</li>
-</ul>
+<li>spring-dao.xml
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt"> 1
@@ -887,9 +888,9 @@
 <td class="lntd">
 <pre class="chroma"><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
 <span class="nt">&lt;beans</span> <span class="na">xmlns=</span><span class="s">&#34;http://www.springframework.org/schema/beans&#34;</span>
-       <span class="na">xmlns:xsi=</span><span class="s">&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span>
-       <span class="na">xmlns:context=</span><span class="s">&#34;http://www.springframework.org/schema/context&#34;</span>
-       <span class="na">xsi:schemaLocation=</span><span class="s">&#34;http://www.springframework.org/schema/beans
+    <span class="na">xmlns:xsi=</span><span class="s">&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span>
+    <span class="na">xmlns:context=</span><span class="s">&#34;http://www.springframework.org/schema/context&#34;</span>
+    <span class="na">xsi:schemaLocation=</span><span class="s">&#34;http://www.springframework.org/schema/beans
 </span><span class="s">        http://www.springframework.org/schema/beans/spring-beans.xsd 
 </span><span class="s">        http://www.springframework.org/schema/context 
 </span><span class="s">        https://www.springframework.org/schema/context/spring-context.xsd&#34;</span><span class="nt">&gt;</span>
@@ -934,9 +935,8 @@
 <span class="nt">&lt;/beans&gt;</span>
 </code></pre></td></tr></table>
 </div>
-</div><ul>
-<li>扩展c3p0的属性</li>
-</ul>
+</div></li>
+<li>扩展c3p0的属性
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -961,7 +961,9 @@
         <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&#34;acquireRetryAttempts&#34;</span> <span class="na">value=</span><span class="s">&#34;2&#34;</span><span class="nt">/&gt;</span>
 </code></pre></td></tr></table>
 </div>
-</div><h3 id="spring整合service层">Spring整合Service层</h3>
+</div></li>
+</ul>
+<h3 id="spring整合service层">Spring整合Service层</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt"> 1
@@ -1122,7 +1124,7 @@
             <span class="prev-text nav-default">SpringBoot框架00：自动装配原理</span>
             <span class="prev-text nav-mobile">Prev</span>
           </a>
-        <a class="next" href="/post/202003-mybatis%E6%A1%86%E6%9E%B603mybatis-spring/">
+        <a class="next" href="/post/mybatis%E6%A1%86%E6%9E%B603mybatis-spring/">
             <span class="next-text nav-default">Mybatis框架03：Mybatis Spring</span>
             <span class="next-text nav-mobile">Next</span>
             <i class="iconfont icon-right"></i>

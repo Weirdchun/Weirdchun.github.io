@@ -7,10 +7,23 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Chun</copyright>
-    <lastBuildDate>Fri, 27 Mar 2020 23:45:06 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 31 Mar 2020 00:09:16 +0800</lastBuildDate>
     
 	<atom:link href="http://localhost:1313/categories/linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Linux操作系统07：Shell编程</title>
+      <link>http://localhost:1313/post/linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F07shell%E7%BC%96%E7%A8%8B/</link>
+      <pubDate>Tue, 31 Mar 2020 00:09:16 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F07shell%E7%BC%96%E7%A8%8B/</guid>
+      <description>&lt;p&gt;Shell本身是一个用C语言编写的程序，它是用户使用Linux的桥梁。Shell既是一种命令语言，又是一种程序设计语言。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;作为命令语言，它交互式地解释和执行用户输入的命令；&lt;/li&gt;
+&lt;li&gt;作为程序设计语言，它定义了各种变量和参数，并提供了许多在高级语言中才具有的控制结构，包括循环和分支。&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
     
     <item>
       <title>Linux操作系统06：环境安装</title>

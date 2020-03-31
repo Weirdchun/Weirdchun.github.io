@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Chun" /><meta name="description" content="流分为字节流和字符流两大类 字节流的类带有Stream：平常流 字符流的类带有Read或Writer：一般写中文用 输入与输出是以内存来看的。
+<meta name="author" content="Chun" /><meta name="description" content="流分为字节流和字符流两大类 字节流的类带有Stream：平常流 字符流的类带有Read或Writer：一般写中文用 输入与输出是以内存来看的。 1个字符(char)=2个字节(Byte)=8个二进制位(bit)
 " /><meta name="keywords" content="Hugo, theme, even" />
 
 
@@ -44,7 +44,8 @@
 字节流的类带有Stream：平常流
 字符流的类带有Read或Writer：一般写中文用
 
-输入与输出是以内存来看的。" />
+输入与输出是以内存来看的。
+1个字符(char)=2个字节(Byte)=8个二进制位(bit)" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://localhost:1313/post/javase11io%E6%B5%81/" />
 <meta property="article:published_time" content="2020-01-23T17:31:47+00:00" />
@@ -54,10 +55,11 @@
 字节流的类带有Stream：平常流
 字符流的类带有Read或Writer：一般写中文用
 
-输入与输出是以内存来看的。">
+输入与输出是以内存来看的。
+1个字符(char)=2个字节(Byte)=8个二进制位(bit)">
 <meta itemprop="datePublished" content="2020-01-23T17:31:47&#43;00:00" />
 <meta itemprop="dateModified" content="2020-01-23T17:31:47&#43;00:00" />
-<meta itemprop="wordCount" content="550">
+<meta itemprop="wordCount" content="1550">
 
 
 
@@ -67,7 +69,8 @@
 字节流的类带有Stream：平常流
 字符流的类带有Read或Writer：一般写中文用
 
-输入与输出是以内存来看的。"/>
+输入与输出是以内存来看的。
+1个字符(char)=2个字节(Byte)=8个二进制位(bit)"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -150,9 +153,17 @@
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#输入流">输入流</a></li>
-    <li><a href="#输出流">输出流</a></li>
-    <li><a href="#缓存流">缓存流</a></li>
+    <li><a href="#outputstream">OutputStream</a>
+      <ul>
+        <li><a href="#fileoutputstream">FileOutputStream</a></li>
+        <li><a href="#字节输出流的使用步骤重点">字节输出流的使用步骤(重点)</a></li>
+      </ul>
+    </li>
+    <li><a href="#inputstream">InputStream</a>
+      <ul>
+        <li><a href="#fileinputstream">FileInputStream</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
   </div>
@@ -162,48 +173,80 @@
 字节流的类带有<strong>Stream</strong>：平常流
 字符流的类带有<strong>Read</strong>或<strong>Writer</strong>：一般写中文用
 <img src="/image/JAVA%E5%85%A5%E9%97%A809%EF%BC%9AIO%E6%B5%81/1.png" alt="">
-输入与输出是以内存来看的。</p>
-<h2 id="输入流">输入流</h2>
-<p>输入流：可以用来把数据从硬盘的文件，读取到JVM(内存)</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="c1">//准备文件lol.txt其中的内容是AB，对应的ASCII分别是65 66
-</span><span class="c1"></span><span class="n">File</span> <span class="n">f</span> <span class="o">=</span><span class="k">new</span> <span class="n">File</span><span class="o">(</span><span class="s">&#34;d:/lol.txt&#34;</span><span class="o">)</span><span class="o">;</span>
-            <span class="c1">//创建基于文件的输入流
-</span><span class="c1"></span>            <span class="n">FileInputStream</span> <span class="n">fis</span> <span class="o">=</span><span class="k">new</span> <span class="n">FileInputStream</span><span class="o">(</span><span class="n">f</span><span class="o">)</span><span class="o">;</span>
-            <span class="c1">//创建字节数组，其长度就是文件的长度
-</span><span class="c1"></span>            <span class="kt">byte</span><span class="o">[</span><span class="o">]</span> <span class="n">all</span> <span class="o">=</span><span class="k">new</span> <span class="kt">byte</span><span class="o">[</span><span class="o">(</span><span class="kt">int</span><span class="o">)</span> <span class="n">f</span><span class="o">.</span><span class="na">length</span><span class="o">(</span><span class="o">)</span><span class="o">]</span><span class="o">;</span>
-            <span class="c1">//以字节流的形式读取文件所有内容
-</span><span class="c1"></span>            <span class="n">fis</span><span class="o">.</span><span class="na">read</span><span class="o">(</span><span class="n">all</span><span class="o">)</span><span class="o">;</span>
-            <span class="k">for</span> <span class="o">(</span><span class="kt">byte</span> <span class="n">b</span> <span class="o">:</span> <span class="n">all</span><span class="o">)</span> <span class="o">{</span>
-                <span class="c1">//打印出来是65 66
-</span><span class="c1"></span>                <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">b</span><span class="o">)</span><span class="o">;</span>
-            <span class="o">}</span>
-             
-            <span class="c1">//每次使用完流，都应该进行关闭
-</span><span class="c1"></span>            <span class="n">fis</span><span class="o">.</span><span class="na">close</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
-</code></pre></td></tr></table>
-</div>
-</div><p>我们可以在JDK环境下<code>System.out.println(b);</code>看到的</p>
-<h2 id="输出流">输出流</h2>
+输入与输出是以内存来看的。
+1个字符(char)=2个字节(Byte)=8个二进制位(bit)</p>
+<h1 id="字节流">字节流</h1>
+<p><strong>一切皆为字节</strong>：
+一切数据（文本，图片，视频）在存储时，都是以二进制数字的形式保存，都是一个一个的字节。
+所有，<strong>字节流是可以传输任意文件的数据</strong>。</p>
+<h2 id="outputstream">OutputStream</h2>
 <p>可以用JAVA语言把JVM（内存）数据写入文件（电脑硬盘）里面</p>
+<p><strong>写入数据的原理</strong>(内存——&gt;磁盘)：</p>
+<p>java程序——&gt;JVM(java虚拟机)——&gt;OS(操作系统)——&gt;OS调用写数据的方法——&gt;把数据写入到文件中</p>
+<ol>
+<li>
+<p>定义 OutputStream
+<code>public abstract class OutputStream extends Object implements Closeabel,Flushable</code></p>
+<ul>
+<li>子类：
+<ul>
+<li><code>ByteArrayOutputStream</code>：往字节数组里面写数据的输入流</li>
+<li><code>FileterOutputStream</code>：往文件中写数据的输入流</li>
+<li><code>FilterOutputStream</code>：带过滤器的字节输入流</li>
+<li><code>ObjectOutputStream</code>：写对象的输入流</li>
+</ul>
+</li>
+<li>它是一个所有字节输出流的超类。</li>
+<li>它是抽象类不能实例化对象，必须被继承，才能被使用</li>
+</ul>
+</li>
+<li>
+<p>子类共享的方法</p>
+<ul>
+<li>close() ：关闭输出流并释放与此流有关的所有资源</li>
+<li>flush()：刷新次输出流并强制写出所有缓冲的输出字节</li>
+<li>write(byte[] b)：将b.length个字节从指定的byte数组写入此输出流</li>
+<li>write(byte[] b,int off,int len)：将指定byte数组中从偏移量off开始的len个字节写入次输出流</li>
+<li>write(int b) ：将指定字节写入次输出流</li>
+<li>abstract write(int b)：将指定的字节输出流</li>
+</ul>
+</li>
+</ol>
+<h3 id="fileoutputstream">FileOutputStream</h3>
+<ol>
+<li>定义 FileOutputStream
+<code>FlieOutputStream extends OutputStream</code>
+<ul>
+<li>作用：把内存中的数据写入到磁盘的文件中</li>
+</ul>
+</li>
+<li>构造方法
+<ul>
+<li>FlieOutputStream(File file):创建一个向指定File对象表示的文件中写入数据的文件输出流</li>
+<li>FlieOutputStream(String name):创建一个向具有指定名称的文件中写入数据的文件输出流</li>
+<li>参数:写入数据的目的
+<ul>
+<li>String name：目的地是一个文件的路径</li>
+<li>File file ：目的地是一个文件</li>
+</ul>
+</li>
+<li>构造方法的作用：
+<ol>
+<li>创建一个FileOutputStream对象</li>
+<li>会根据构造方法中传递的文件/文件路径，创建一个空的文件</li>
+<li>会把FileOutputStream对象指向创建好的文件</li>
+</ol>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="字节输出流的使用步骤重点">字节输出流的使用步骤(重点)</h3>
+<h4 id="只写一个字节">只写一个字节</h4>
+<ol>
+<li>创建一个FileOutputStream对象，构造方法中传递写入数据的目的地</li>
+<li>调用FileOutputStream对象中的write方法，把数据写入到文件中</li>
+<li>释放资源(流会占用一定的内存，使用完毕要把内存清空，提高程序效率)</li>
+</ol>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt"> 1
@@ -216,26 +259,82 @@
 </span><span class="lnt"> 8
 </span><span class="lnt"> 9
 </span><span class="lnt">10
-</span><span class="lnt">11
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-java" data-lang="java"><span class="c1">// 准备文件lol2.txt其中的内容是空的
-</span><span class="c1"></span>            <span class="n">File</span> <span class="n">f</span> <span class="o">=</span> <span class="k">new</span> <span class="n">File</span><span class="o">(</span><span class="s">&#34;d:/lol2.txt&#34;</span><span class="o">)</span><span class="o">;</span>
-            <span class="c1">// 准备长度是2的字节数组，用88,89初始化，其对应的字符分别是X,Y
-</span><span class="c1"></span>            <span class="kt">byte</span> <span class="n">data</span><span class="o">[</span><span class="o">]</span> <span class="o">=</span> <span class="o">{</span> <span class="n">88</span><span class="o">,</span> <span class="n">89</span> <span class="o">}</span><span class="o">;</span>
- 
-            <span class="c1">// 创建基于文件的输出流
-</span><span class="c1"></span>            <span class="n">FileOutputStream</span> <span class="n">fos</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FileOutputStream</span><span class="o">(</span><span class="n">f</span><span class="o">)</span><span class="o">;</span>
-            <span class="c1">// 把数据写入到输出流
-</span><span class="c1"></span>            <span class="n">fos</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="n">data</span><span class="o">)</span><span class="o">;</span>
-            <span class="c1">// 关闭输出流
-</span><span class="c1"></span>            <span class="n">fos</span><span class="o">.</span><span class="na">close</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">TestOutputStream</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[</span><span class="o">]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">IOException</span> <span class="o">{</span>
+        <span class="c1">//1. 创建一个FileOutputStream对象
+</span><span class="c1"></span>        <span class="n">FileOutputStream</span> <span class="n">fileOutputStream</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FileOutputStream</span><span class="o">(</span><span class="s">&#34;target\\a.txt&#34;</span><span class="o">)</span><span class="o">;</span>
+        <span class="c1">//2.调用FileOutputStream对 象中的write方法：
+</span><span class="c1"></span>        <span class="n">fileOutputStream</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="n">97</span><span class="o">)</span><span class="o">;</span>
+        <span class="c1">//3.释放资源
+</span><span class="c1"></span>        <span class="n">fileOutputStream</span><span class="o">.</span><span class="na">close</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
 </code></pre></td></tr></table>
 </div>
-</div><h2 id="缓存流">缓存流</h2>
-<p>字节流和字符流的弊端：在每一次读写的时候，都会访问硬盘。 如果读写的频率比较高的时候，其性能表现不佳，所以我们引入了
-缓存流。
-特点：缓存流在写入数据的时候，会先把数据写入到缓存区，直到缓存区达到一定的量，才把这些数据，一起写入到硬盘中去。</p>
+</div><p>你会发现项目中多了一个<code>a.txt</code>，里面有一个a的字符</p>
+<p><strong><code>Tip</code></strong>：
+其实我们写的十进制的整数97是一个字节，电脑会把97转换为二进制的整数01100001，其实我们写的是
+<code>fileOutputStream.write(01100001)</code></p>
+<p>任意的文本编辑器（记事本，notepad++）
+在打开文件的时候，会查询编码表，把字节转换成字符表示</p>
+<ul>
+<li>0-127：查询ASCII表
+<ul>
+<li>97——&gt;a</li>
+</ul>
+</li>
+<li>其他值：查询系统默认码表(中文系统：GBK)</li>
+</ul>
+<h4 id="一次写多个字节">一次写多个字节</h4>
+<p>一次写多个字节方法：</p>
+<ul>
+<li>
+<p>write(byte[] b)：将b.length个字节从指定的byte数组写入此输出流</p>
+</li>
+<li>
+<p>write(byte[] b,int off,int len)：将指定byte数组中从偏移量off开始的len个字节写入次输出流</p>
+</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java">        <span class="kt">byte</span><span class="o">[</span><span class="o">]</span> <span class="n">bytes</span> <span class="o">=</span> <span class="o">{</span><span class="o">-</span><span class="n">65</span><span class="o">,</span><span class="o">-</span><span class="n">66</span><span class="o">,</span><span class="o">-</span><span class="n">67</span><span class="o">,</span><span class="n">68</span><span class="o">,</span><span class="n">69</span><span class="o">}</span><span class="o">;</span>
+        <span class="n">fileOutputStream</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="n">bytes</span><span class="o">)</span><span class="o">;</span>
+
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="inputstream">InputStream</h2>
+<p><code>java.io.InputStream</code>抽象类是表示字节输入流的所有类的超类，可以读取字节信息到内存中。它定义了字节输入流的基本共性方法</p>
+<p>方法：</p>
+<ul>
+<li>abstract int read() ：从输入流读取数据的下一个字节</li>
+<li>int read(byte[] b)：从输入流中读取一些字节数，并将他们存储到字节数组b中</li>
+<li>void close() ：关闭此输入流释放与次流的任何系统资源</li>
+</ul>
+<p>子类：
+- FileInputStream</p>
+<h3 id="fileinputstream">FileInputStream</h3>
+<p>作用：把硬盘文件中的数据，读取到内存中使用</p>
+<ul>
+<li>构造方法
+<ul>
+<li>FileInputStream(File file)</li>
+<li>FileInputStream(String name)</li>
+<li>参数：读取文件的数据源
+<ul>
+<li>String name：文件的路径</li>
+<li>File file：文件</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
     </div>
 
     <div class="post-copyright">

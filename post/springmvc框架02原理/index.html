@@ -48,7 +48,7 @@
 <meta itemprop="description" content="">
 <meta itemprop="datePublished" content="2020-03-23T14:27:18&#43;08:00" />
 <meta itemprop="dateModified" content="2020-03-23T14:27:18&#43;08:00" />
-<meta itemprop="wordCount" content="0">
+<meta itemprop="wordCount" content="528">
 
 
 
@@ -135,11 +135,55 @@
     <div class="post-toc" id="post-toc">
   <h2 class="post-toc-title">Contents</h2>
   <div class="post-toc-content always-active">
-    <nav id="TableOfContents"></nav>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#mvc三层">MVC三层</a></li>
+    <li><a href="#什么是springmvc">什么是SpringMVC</a></li>
+    <li><a href="#执行流程">执行流程</a></li>
+  </ul>
+</nav>
   </div>
 </div>
     <div class="post-content">
-      
+      <h2 id="mvc三层">MVC三层</h2>
+<ul>
+<li>Model（模型）:Service 与 dao
+<ul>
+<li>业务逻辑</li>
+<li>保存数据的状态</li>
+</ul>
+</li>
+<li>View（视图）
+<ul>
+<li>显示页面</li>
+</ul>
+</li>
+<li>Controller（控制器）:以前的servlet
+<ul>
+<li>取得表单数据</li>
+<li>调用业务逻辑</li>
+<li>转向指定页面</li>
+</ul>
+</li>
+</ul>
+<h2 id="什么是springmvc">什么是SpringMVC</h2>
+<p>SpringMVC就是Spring框架的一部分，是基于JAVA实现MVC的轻量级Web框架
+特点：</p>
+<ul>
+<li>轻量级</li>
+<li>基于请求响应的MVC框架</li>
+<li>与Spring无缝结合</li>
+<li>约定大于配置</li>
+</ul>
+<h2 id="执行流程">执行流程</h2>
+<p>（1）客户端（浏览器）发送请求，直接请求到DispatcherServlet。</p>
+<p>（2）DispatcherServlet根据请求信息调用HandlerMapping，解析请求对应的Handler。</p>
+<p>（3）解析到对应的Handler后，开始由HandlerAdapter适配器处理。</p>
+<p>（4）HandlerAdapter会根据Handler来调用真正的处理器开处理请求，并处理相应的业务逻辑。</p>
+<p>（5）处理器处理完业务后，会返回一个ModelAndView对象，Model是返回的数据对象，View是个逻辑上的View。</p>
+<p>（6）ViewResolver会根据逻辑View查找实际的View。</p>
+<p>（7）DispaterServlet把返回的Model传给View。</p>
+<p>（8）通过View返回给请求者（浏览器）</p>
     </div>
 
     <div class="post-copyright">

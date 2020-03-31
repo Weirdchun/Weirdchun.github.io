@@ -48,7 +48,7 @@
 <meta itemprop="description" content="">
 <meta itemprop="datePublished" content="2020-02-15T21:16:20&#43;08:00" />
 <meta itemprop="dateModified" content="2020-02-15T21:16:20&#43;08:00" />
-<meta itemprop="wordCount" content="118">
+<meta itemprop="wordCount" content="185">
 
 
 
@@ -139,6 +139,7 @@
   <ul>
     <li><a href="#使用thymeleaf">使用thymeleaf</a></li>
     <li><a href="#语法">语法</a></li>
+    <li><a href="#th">th:</a></li>
   </ul>
 </nav>
   </div>
@@ -171,16 +172,45 @@
 <ol>
 <li>简单表达式
 <ul>
-<li>${&hellip;} 该语法表示引用</li>
-<li>*{&hellip;} 表示选择表达式，一般是th:object之后，直接取Object中的属性</li>
-<li>@{&hellip;} 链接url的表达式</li>
+<li>${&hellip;} 该语法表示引用
+<ul>
+<li>获取变量值${&hellip;}</li>
+</ul>
+</li>
+<li>*{&hellip;} 表示选择表达式
+<ul>
+<li>一般是th:object之后，直接取Object中的属性</li>
+</ul>
+</li>
+<li>@{&hellip;} 链接url的表达式
+<ul>
+<li>用于静态资源的引用，form表单的请求等链接</li>
+</ul>
+</li>
 <li>#{&hellip;} 国际化消息</li>
 <li>~{&hellip;} 片段表达式</li>
 </ul>
 </li>
+<li>字符串操作
+<ul>
+<li>String concatenation: +</li>
+<li>Literal substitutions: |The name is ${name}|</li>
+</ul>
+</li>
 </ol>
-<p>三元表达式：
-<code>if </code></p>
+<h2 id="th">th:</h2>
+<ul>
+<li>th:value ：用来给属性赋值的
+<ul>
+<li><code>&lt;input th:value = &quot;${user.name}&quot; /&gt;</code></li>
+</ul>
+</li>
+<li>th:text
+<ul>
+<li>用来替换文字</li>
+</ul>
+</li>
+</ul>
     </div>
 
     <div class="post-copyright">

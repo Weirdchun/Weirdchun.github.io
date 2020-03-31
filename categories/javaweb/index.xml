@@ -14,10 +14,10 @@
     
     <item>
       <title>JAVAWEB入门02：JDBC应用</title>
-      <link>http://localhost:1313/post/202003-javaweb%E5%85%A5%E9%97%A802jdbc%E5%BA%94%E7%94%A8/</link>
+      <link>http://localhost:1313/post/javaweb%E5%85%A5%E9%97%A802jdbc%E5%BA%94%E7%94%A8/</link>
       <pubDate>Wed, 11 Mar 2020 02:27:46 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/202003-javaweb%E5%85%A5%E9%97%A802jdbc%E5%BA%94%E7%94%A8/</guid>
+      <guid>http://localhost:1313/post/javaweb%E5%85%A5%E9%97%A802jdbc%E5%BA%94%E7%94%A8/</guid>
       <description>&lt;p&gt;&lt;strong&gt;JDBC 固定步骤：&lt;/strong&gt;&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;加载驱动&lt;/li&gt;
@@ -31,10 +31,10 @@
     
     <item>
       <title>JAVAWEB入门01：第一个Servlet程序</title>
-      <link>http://localhost:1313/post/202003-javaweb%E5%85%A5%E9%97%A801%E7%AC%AC%E4%B8%80%E4%B8%AAservlet%E7%A8%8B%E5%BA%8F/</link>
+      <link>http://localhost:1313/post/javaweb%E5%85%A5%E9%97%A801%E7%AC%AC%E4%B8%80%E4%B8%AAservlet%E7%A8%8B%E5%BA%8F/</link>
       <pubDate>Tue, 10 Mar 2020 21:30:37 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/202003-javaweb%E5%85%A5%E9%97%A801%E7%AC%AC%E4%B8%80%E4%B8%AAservlet%E7%A8%8B%E5%BA%8F/</guid>
+      <guid>http://localhost:1313/post/javaweb%E5%85%A5%E9%97%A801%E7%AC%AC%E4%B8%80%E4%B8%AAservlet%E7%A8%8B%E5%BA%8F/</guid>
       <description>&lt;p&gt;先来跑一遍程序来理解servlet&lt;/p&gt;</description>
     </item>
     

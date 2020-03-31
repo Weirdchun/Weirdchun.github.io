@@ -51,7 +51,7 @@ Bean自动装配空就是，Spring会在上下文中自动寻找，并自动给B
 Bean自动装配空就是，Spring会在上下文中自动寻找，并自动给Bean装配">
 <meta itemprop="datePublished" content="2020-03-21T22:12:51&#43;08:00" />
 <meta itemprop="dateModified" content="2020-03-21T22:12:51&#43;08:00" />
-<meta itemprop="wordCount" content="775">
+<meta itemprop="wordCount" content="796">
 
 
 
@@ -163,7 +163,23 @@ Bean自动装配空就是，Spring会在上下文中自动寻找，并自动给B
 <li>隐式的自动装配bean(掌握！)</li>
 </ol>
 <p>环境搭建: 一个人两个宠物</p>
-<h3 id="byname自动装配">byName自动装配</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">Person</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="n">Cat</span> <span class="n">cat</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="n">Dog</span> <span class="n">dog</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="n">String</span> <span class="n">name</span> <span class="o">;</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="byname自动装配">byName自动装配</h3>
 <p>byName :会查找自己对象set方法（setDog）后面的Dog然后变成小写 对应的 bean id</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -179,7 +195,7 @@ Bean自动装配空就是，Spring会在上下文中自动寻找，并自动给B
 </div>
 </div><h3 id="bytype自动装配">byType自动装配</h3>
 <p>使用这个需要：同一类型的对象，在spring容器中唯一。如果不唯一，会报不唯一的异常。
-byType :会查找和自己对象属性类型相同的 bean！</p>
+byType :会查找和自己类对象属性类型相同的 bean！</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
