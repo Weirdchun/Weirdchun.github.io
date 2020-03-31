@@ -48,7 +48,7 @@
 <meta itemprop="description" content="">
 <meta itemprop="datePublished" content="2020-03-23T20:55:18&#43;08:00" />
 <meta itemprop="dateModified" content="2020-03-23T20:55:18&#43;08:00" />
-<meta itemprop="wordCount" content="2187">
+<meta itemprop="wordCount" content="2201">
 
 
 
@@ -1017,35 +1017,9 @@
 </code></pre></td></tr></table>
 </div>
 </div><h3 id="spring整合mvc">Spring整合MVC</h3>
-<p><code>spring-mvc.xml</code></p>
-<pre><code>```xml
-&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
-&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;
-    xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
-    xmlns:context=&quot;http://www.springframework.org/schema/context&quot;
-    xmlns:mvc=&quot;http://www.springframework.org/schema/mvc&quot;
-    xsi:schemaLocation=&quot;http://www.springframework.org/schema/beans
-    http://www.springframework.org/schema/beans/spring-beans.xsd
-    http://www.springframework.org/schema/context
-    http://www.springframework.org/schema/context/spring-context.xsd
-    http://www.springframework.org/schema/mvc
-    https://www.springframework.org/schema/mvc/spring-mvc.xsd&quot;&gt;
-    &lt;!--DispatchServlet--&gt;
-    &lt;!--1.注解驱动--&gt;
-    &lt;mvc:annotation-driven/&gt;
-    &lt;!--2.静态资源过滤--&gt;
-    &lt;mvc:default-servlet-handler/&gt;
-    &lt;!--3.扫描包:Controller--&gt;
-    &lt;context:component-scan base-package=&quot;com.chun.controller&quot;/&gt;
-    &lt;!--4.视图解析器--&gt;
-    &lt;bean class=&quot;org.springframework.web.servlet.view.InternalResourceViewResolver&quot;&gt;
-        &lt;property name=&quot;prefix&quot; value=&quot;/WEB-INF/jsp/&quot;/&gt;
-        &lt;property name=&quot;suffix&quot; value=&quot;.jsp&quot;/&gt;
-    &lt;/bean&gt;
-&lt;/beans&gt;
-```
-</code></pre>
-<p>Spring配置整合文件，applicationContext.xml</p>
+<p>spring-mvc.xml文件
+<code>xml &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt; &lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:context=&quot;http://www.springframework.org/schema/context&quot; xmlns:mvc=&quot;http://www.springframework.org/schema/mvc&quot; xsi:schemaLocation=&quot;http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/mvc https://www.springframework.org/schema/mvc/spring-mvc.xsd&quot;&gt; &lt;!--DispatchServlet--&gt; &lt;!--1.注解驱动--&gt; &lt;mvc:annotation-driven/&gt; &lt;!--2.静态资源过滤--&gt; &lt;mvc:default-servlet-handler/&gt; &lt;!--3.扫描包:Controller--&gt; &lt;context:component-scan base-package=&quot;com.chun.controller&quot;/&gt; &lt;!--4.视图解析器--&gt; &lt;bean class=&quot;org.springframework.web.servlet.view.InternalResourceViewResolver&quot;&gt; &lt;property name=&quot;prefix&quot; value=&quot;/WEB-INF/jsp/&quot;/&gt; &lt;property name=&quot;suffix&quot; value=&quot;.jsp&quot;/&gt; &lt;/bean&gt; &lt;/beans&gt;</code>
+Spring配置整合文件，applicationContext.xml</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt"> 1
