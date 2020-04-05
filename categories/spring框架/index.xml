@@ -7,18 +7,18 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Chun</copyright>
-    <lastBuildDate>Fri, 27 Mar 2020 00:08:22 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 01 Apr 2020 14:32:16 +0800</lastBuildDate>
     
 	<atom:link href="http://localhost:1313/categories/spring%E6%A1%86%E6%9E%B6/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Spring注解</title>
-      <link>http://localhost:1313/post/zother-spring%E6%B3%A8%E8%A7%A3/</link>
-      <pubDate>Fri, 27 Mar 2020 00:08:22 +0800</pubDate>
+      <title>Spring框架10：AOP</title>
+      <link>http://localhost:1313/post/spring%E6%A1%86%E6%9E%B610aop/</link>
+      <pubDate>Wed, 01 Apr 2020 14:32:16 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/zother-spring%E6%B3%A8%E8%A7%A3/</guid>
-      <description>@Autowired 自动装配 @@Responsebody 注解表示该方法的返回的结果直接写入 HTTP 响应正文（ResponseBody）中，一般在异步获取数据时使用，通常是在使用 @RequestMapping 后，返回值通</description>
+      <guid>http://localhost:1313/post/spring%E6%A1%86%E6%9E%B610aop/</guid>
+      <description>&lt;p&gt;这种在运行时，动态地将代码切入到类的指定方法、指定位置上的编程思想就是面向切面的编程&lt;/p&gt;</description>
     </item>
     
     <item>

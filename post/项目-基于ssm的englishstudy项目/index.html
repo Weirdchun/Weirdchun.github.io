@@ -49,7 +49,7 @@
 <meta itemprop="description" content="功能模块：注册登录，背单词模块，听听力，个人中心，后台管理">
 <meta itemprop="datePublished" content="2020-03-31T23:08:52&#43;08:00" />
 <meta itemprop="dateModified" content="2020-03-31T23:08:52&#43;08:00" />
-<meta itemprop="wordCount" content="174">
+<meta itemprop="wordCount" content="76">
 
 
 
@@ -161,61 +161,7 @@
       <p>功能模块：注册登录，背单词模块，听听力，个人中心，后台管理</p>
 <h2 id="环境搭建">环境搭建</h2>
 <h3 id="使用thymeleaf作文模板引擎">使用Thymeleaf作文模板引擎</h3>
-<p>maven依赖</p>
-<pre><code>```xml
-        &lt;dependency&gt;
-            &lt;groupId&gt;org.thymeleaf&lt;/groupId&gt;
-            &lt;artifactId&gt;thymeleaf-spring4&lt;/artifactId&gt;
-            &lt;version&gt;3.0.11.RELEASE&lt;/version&gt;
-        &lt;/dependency&gt;
-```
-</code></pre>
-<p>thymeleaf</p>
-<div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre class="chroma"><code><span class="lnt"> 1
-</span><span class="lnt"> 2
-</span><span class="lnt"> 3
-</span><span class="lnt"> 4
-</span><span class="lnt"> 5
-</span><span class="lnt"> 6
-</span><span class="lnt"> 7
-</span><span class="lnt"> 8
-</span><span class="lnt"> 9
-</span><span class="lnt">10
-</span><span class="lnt">11
-</span><span class="lnt">12
-</span><span class="lnt">13
-</span><span class="lnt">14
-</span><span class="lnt">15
-</span><span class="lnt">16
-</span><span class="lnt">17
-</span><span class="lnt">18
-</span><span class="lnt">19
-</span></code></pre></td>
-<td class="lntd">
-<pre class="chroma"><code class="language-xml" data-lang="xml"><span class="c">&lt;!--</span><span class="c"> thymeleaf</span><span class="c">--&gt;</span>
-    <span class="nt">&lt;bean</span> <span class="na">id=</span><span class="s">&#34;viewResolver&#34;</span> <span class="na">class=</span><span class="s">&#34;org.thymeleaf.spring4.view.ThymeleafViewResolver&#34;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&#34;characterEncoding&#34;</span> <span class="na">value=</span><span class="s">&#34;UTF-8&#34;</span><span class="nt">/&gt;</span>
-        <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&#34;templateEngine&#34;</span> <span class="na">ref=</span><span class="s">&#34;templateEngine&#34;</span><span class="nt">/&gt;</span>
-    <span class="nt">&lt;/bean&gt;</span>
-    <span class="c">&lt;!--</span><span class="c"> 模板引擎 </span><span class="c">--&gt;</span>
-    <span class="nt">&lt;bean</span> <span class="na">id=</span><span class="s">&#34;templateEngine&#34;</span> <span class="na">class=</span><span class="s">&#34;org.thymeleaf.spring4.SpringTemplateEngine&#34;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&#34;templateResolver&#34;</span> <span class="na">ref=</span><span class="s">&#34;templateResolver&#34;</span><span class="nt">/&gt;</span>
-    <span class="nt">&lt;/bean&gt;</span>
-    <span class="c">&lt;!--</span><span class="c"> 模板解析器 </span><span class="c">--&gt;</span>
-    <span class="nt">&lt;bean</span> <span class="na">id=</span><span class="s">&#34;templateResolver&#34;</span> <span class="na">class=</span><span class="s">&#34;org.thymeleaf.templateresolver.ServletContextTemplateResolver&#34;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;constructor-arg</span> <span class="na">ref=</span><span class="s">&#34;servletContext&#34;</span><span class="nt">/&gt;</span>
-        <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&#34;prefix&#34;</span> <span class="na">value=</span><span class="s">&#34;/WEB-INF/thymeleaf/&#34;</span><span class="nt">/&gt;</span>
-        <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&#34;suffix&#34;</span> <span class="na">value=</span><span class="s">&#34;.html&#34;</span><span class="nt">/&gt;</span>
-        <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&#34;templateMode&#34;</span> <span class="na">value=</span><span class="s">&#34;HTML5&#34;</span><span class="nt">/&gt;</span>
-        <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&#34;cacheable&#34;</span> <span class="na">value=</span><span class="s">&#34;false&#34;</span><span class="nt">/&gt;</span>
-        <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&#34;characterEncoding&#34;</span> <span class="na">value=</span><span class="s">&#34;UTF-8&#34;</span><span class="nt">/&gt;</span>
-
-    <span class="nt">&lt;/bean&gt;</span>
-</code></pre></td></tr></table>
-</div>
-</div><h2 id="数据库">数据库</h2>
+<h2 id="数据库">数据库</h2>
 <h3 id="用户表">用户表</h3>
 <h2 id="注册登录">注册登录</h2>
 <h2 id="背单词模块">背单词模块</h2>
@@ -244,7 +190,11 @@
           <a href="/tags/ssm/">SSM</a>
           </div>
       <nav class="post-nav">
-        
+        <a class="prev" href="/post/spring%E6%A1%86%E6%9E%B610aop/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Spring框架10：AOP</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
         <a class="next" href="/post/linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F07shell%E7%BC%96%E7%A8%8B/">
             <span class="next-text nav-default">Linux操作系统07：Shell编程</span>
             <span class="next-text nav-mobile">Next</span>

@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Chun</copyright>
-    <lastBuildDate>Tue, 31 Mar 2020 23:08:52 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 01 Apr 2020 14:32:16 +0800</lastBuildDate>
     
 	<atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Spring框架10：AOP</title>
+      <link>http://localhost:1313/post/spring%E6%A1%86%E6%9E%B610aop/</link>
+      <pubDate>Wed, 01 Apr 2020 14:32:16 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/spring%E6%A1%86%E6%9E%B610aop/</guid>
+      <description>&lt;p&gt;这种在运行时，动态地将代码切入到类的指定方法、指定位置上的编程思想就是面向切面的编程&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>基于SSM的EnglishStudy项目</title>
@@ -126,7 +135,7 @@
       <pubDate>Fri, 27 Mar 2020 00:08:22 +0800</pubDate>
       
       <guid>http://localhost:1313/post/zother-spring%E6%B3%A8%E8%A7%A3/</guid>
-      <description>@Autowired 自动装配 @@Responsebody 注解表示该方法的返回的结果直接写入 HTTP 响应正文（ResponseBody）中，一般在异步获取数据时使用，通常是在使用 @RequestMapping 后，返回值通</description>
+      <description>@Autowired 自动装配 @Responsebody 注解表示该方法的返回的结果直接写入 HTTP 响应正文（ResponseBody）中，一般在异步获取数据时使用，通常是在使用 @RequestMapping 后，返回值通</description>
     </item>
     
     <item>
@@ -610,12 +619,12 @@ AJAX 是与服务器交换数据并更新部分网页的艺术，在不重新加
     </item>
     
     <item>
-      <title>JAVASE06：Super关键字</title>
-      <link>http://localhost:1313/post/javase06super%E5%85%B3%E9%94%AE%E5%AD%97/</link>
+      <title>JAVASE06：super与this关键字</title>
+      <link>http://localhost:1313/post/javase06super%E4%B8%8Ethis%E5%85%B3%E9%94%AE%E5%AD%97/</link>
       <pubDate>Thu, 26 Dec 2019 22:01:55 +0000</pubDate>
       
-      <guid>http://localhost:1313/post/javase06super%E5%85%B3%E9%94%AE%E5%AD%97/</guid>
-      <description>JAVA中的super 详解 super super 调用父类的构造方法，必须在构造方法的第一个 super 必须只能出现在子类的方法或者构造方法中（不可能调用Object的）</description>
+      <guid>http://localhost:1313/post/javase06super%E4%B8%8Ethis%E5%85%B3%E9%94%AE%E5%AD%97/</guid>
+      <description>this 用法：this是自身的一个对象，代表对象本身 super 用法：调用父类的方法 super 调用父类的构造方法，必须在构造方法的第一个 super 必须只能出现在子类的方法或</description>
     </item>
     
     <item>

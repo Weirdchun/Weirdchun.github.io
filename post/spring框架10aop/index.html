@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>JAVASE13：类加载器 - Chun&#39;s Blog</title>
+  <title>Spring框架10：AOP - Chun&#39;s Blog</title>
   <meta name="renderer" content="webkit" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Chun" /><meta name="description" content="开发java代码的流程： .java——(经过java编译器)——&amp;gt;.class——(JVM类加载器)and(JVM解析)——&amp;gt;二进制数据——&amp;gt;(操作平台)
+<meta name="author" content="Chun" /><meta name="description" content="这种在运行时，动态地将代码切入到类的指定方法、指定位置上的编程思想就是面向切面的编程
 " /><meta name="keywords" content="Hugo, theme, even" />
 
 
@@ -27,7 +27,7 @@
 <meta name="generator" content="Hugo 0.62.2 with theme even" />
 
 
-<link rel="canonical" href="http://localhost:1313/post/javase13%E7%B1%BB%E5%8A%A0%E8%BD%BD%E5%99%A8/" />
+<link rel="canonical" href="http://localhost:1313/post/spring%E6%A1%86%E6%9E%B610aop/" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -39,29 +39,23 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
 
 
-<meta property="og:title" content="JAVASE13：类加载器" />
-<meta property="og:description" content="开发java代码的流程：
-
-.java——(经过java编译器)——&gt;.class——(JVM类加载器)and(JVM解析)——&gt;二进制数据——&gt;(操作平台)" />
+<meta property="og:title" content="Spring框架10：AOP" />
+<meta property="og:description" content="这种在运行时，动态地将代码切入到类的指定方法、指定位置上的编程思想就是面向切面的编程" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://localhost:1313/post/javase13%E7%B1%BB%E5%8A%A0%E8%BD%BD%E5%99%A8/" />
-<meta property="article:published_time" content="2020-03-14T04:14:13+08:00" />
-<meta property="article:modified_time" content="2020-03-14T04:14:13+08:00" />
-<meta itemprop="name" content="JAVASE13：类加载器">
-<meta itemprop="description" content="开发java代码的流程：
-
-.java——(经过java编译器)——&gt;.class——(JVM类加载器)and(JVM解析)——&gt;二进制数据——&gt;(操作平台)">
-<meta itemprop="datePublished" content="2020-03-14T04:14:13&#43;08:00" />
-<meta itemprop="dateModified" content="2020-03-14T04:14:13&#43;08:00" />
-<meta itemprop="wordCount" content="245">
+<meta property="og:url" content="http://localhost:1313/post/spring%E6%A1%86%E6%9E%B610aop/" />
+<meta property="article:published_time" content="2020-04-01T14:32:16+08:00" />
+<meta property="article:modified_time" content="2020-04-01T14:32:16+08:00" />
+<meta itemprop="name" content="Spring框架10：AOP">
+<meta itemprop="description" content="这种在运行时，动态地将代码切入到类的指定方法、指定位置上的编程思想就是面向切面的编程">
+<meta itemprop="datePublished" content="2020-04-01T14:32:16&#43;08:00" />
+<meta itemprop="dateModified" content="2020-04-01T14:32:16&#43;08:00" />
+<meta itemprop="wordCount" content="334">
 
 
 
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="JAVASE13：类加载器"/>
-<meta name="twitter:description" content="开发java代码的流程：
-
-.java——(经过java编译器)——&gt;.class——(JVM类加载器)and(JVM解析)——&gt;二进制数据——&gt;(操作平台)"/>
+<meta name="twitter:title" content="Spring框架10：AOP"/>
+<meta name="twitter:description" content="这种在运行时，动态地将代码切入到类的指定方法、指定位置上的编程思想就是面向切面的编程"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -128,12 +122,12 @@
           <article class="post">
     
     <header class="post-header">
-      <h1 class="post-title">JAVASE13：类加载器</h1>
+      <h1 class="post-title">Spring框架10：AOP</h1>
 
       <div class="post-meta">
-        <span class="post-time"> 2020-03-14 </span>
+        <span class="post-time"> 2020-04-01 </span>
         <div class="post-category">
-            <a href="/categories/javase/"> JAVASE </a>
+            <a href="/categories/spring%E6%A1%86%E6%9E%B6/"> Spring框架 </a>
             </div>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -144,30 +138,70 @@
   <div class="post-toc-content always-active">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#类加载器">类加载器</a>
-      <ul>
-        <li><a href="#类加载器分类">类加载器分类</a></li>
-      </ul>
-    </li>
+    <li><a href="#方式一-使用原生spring-api接口">方式一: 使用原生spring api接口</a></li>
+    <li><a href="#方式二使用注解">方式二：使用注解</a></li>
   </ul>
 </nav>
   </div>
 </div>
     <div class="post-content">
-      <p>开发java代码的流程：
-<!-- raw HTML omitted --></p>
-<p>.java——(经过java编译器)——&gt;.class——(JVM类加载器)and(JVM解析)——&gt;二进制数据——&gt;(操作平台)</p>
-<h2 id="类加载器">类加载器</h2>
-<ul>
-<li>类加载器作用：将.class字节码文件内容加载到内存中，将这些静态数据转换成方法区的数据结构，然后在堆中生成一个Class对象，作为方法区中类数据的访问入口</li>
-<li>类缓存：一旦某个类被加载到类加载器中，它将维持加载（缓存）一段时间，JVM的垃圾回收机制可以回收这些Class对象
-Tip：使用缓存提高效率</li>
-</ul>
-<h3 id="类加载器分类">类加载器分类</h3>
-<ol>
-<li>System classLoader</li>
-<li></li>
-</ol>
+      <p>这种在运行时，动态地将代码切入到类的指定方法、指定位置上的编程思想就是面向切面的编程</p>
+<h2 id="方式一-使用原生spring-api接口">方式一: 使用原生spring api接口</h2>
+<p>在applicationContext.xml中配置</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-xml" data-lang="xml">
+<span class="c">&lt;!--</span><span class="c"> 注册bean </span><span class="c">--&gt;</span>
+<span class="nt">&lt;bean</span> <span class="na">id=</span><span class="s">&#34;log&#34;</span> <span class="na">class=</span><span class="s">&#34;com.chun.log&#34;</span><span class="nt">&gt;</span>
+<span class="c">&lt;!--</span><span class="c"> 配置aop：导入aop约束 </span><span class="c">--&gt;</span>
+<span class="nt">&lt;aop:config</span><span class="nt">&gt;</span>
+    <span class="c">&lt;!--</span><span class="c"> execution(修饰符 返回值 包名.类名/接口名.方法名(参数列表))
+</span><span class="c">        </span><span class="c">-</span><span class="c"> 返回类型、方法名、参数是必须有的.
+</span><span class="c">        </span><span class="c">-</span><span class="c"> *表示任意值. 比如返回类型，方法名等.
+</span><span class="c">        </span><span class="c">-</span><span class="c"> 参数(..) 代表任意参数
+</span><span class="c">    </span><span class="c">--&gt;</span>
+    <span class="c">&lt;!--</span><span class="c"> 切入点 </span><span class="c">--&gt;</span>
+    <span class="nt">&lt;aop:pointcut</span> <span class="na">id=</span><span class="s">&#34;pointcut&#34;</span> <span class="na">expression=</span><span class="s">&#34;execution(* com.chun.service.UserServiceImpl.*(..))&#34;</span><span class="nt">/&gt;</span>
+    <span class="c">&lt;!--</span><span class="c"> 执行环绕增加  把log这个类切入到这个切入点</span><span class="c">--&gt;</span>
+    <span class="nt">&lt;aop:advisor</span> <span class="na">advice-ref=</span><span class="s">&#34;log&#34;</span> <span class="na">pointcut-ref=</span><span class="s">&#34;pointcut&#34;</span><span class="nt">/&gt;</span>
+
+<span class="nt">&lt;/aop:config&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="方式二使用注解">方式二：使用注解</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-xml" data-lang="xml"><span class="c">&lt;!--</span><span class="c"> 注册bean </span><span class="c">--&gt;</span>
+<span class="nt">&lt;bean</span> <span class="na">id=</span><span class="s">&#34;log&#34;</span> <span class="na">class=</span><span class="s">&#34;com.chun.log&#34;</span><span class="nt">&gt;</span>
+<span class="c">&lt;!--</span><span class="c"> 开启注解支持 </span><span class="c">--&gt;</span>
+<span class="nt">&lt;aop:aspectj-autoproxy</span><span class="nt">/&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div>
     </div>
 
     <div class="post-copyright">
@@ -178,7 +212,7 @@ Tip：使用缓存提高效率</li>
   <p class="copyright-item">
     <span class="item-title">LastMod</span>
     <span class="item-content">
-        2020-03-14
+        2020-04-01
         
     </span>
   </p>
@@ -188,13 +222,9 @@ Tip：使用缓存提高效率</li>
 <footer class="post-footer">
       
       <nav class="post-nav">
-        <a class="prev" href="/post/%E9%A1%B9%E7%9B%AE-smbmsservlet%E7%89%8804%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86%E5%AE%9E%E7%8E%B0/">
-            <i class="iconfont icon-left"></i>
-            <span class="prev-text nav-default">smbmsServlet版04：用户管理实现</span>
-            <span class="prev-text nav-mobile">Prev</span>
-          </a>
-        <a class="next" href="/post/%E9%A1%B9%E7%9B%AE-smbmsservlet%E7%89%8803%E4%BF%AE%E6%94%B9%E5%AF%86%E7%A0%81%E5%AE%9E%E7%8E%B0/">
-            <span class="next-text nav-default">smbmsServlet版03：修改密码实现</span>
+        
+        <a class="next" href="/post/%E9%A1%B9%E7%9B%AE-%E5%9F%BA%E4%BA%8Essm%E7%9A%84englishstudy%E9%A1%B9%E7%9B%AE/">
+            <span class="next-text nav-default">基于SSM的EnglishStudy项目</span>
             <span class="next-text nav-mobile">Next</span>
             <i class="iconfont icon-right"></i>
           </a>

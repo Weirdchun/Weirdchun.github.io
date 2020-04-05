@@ -48,7 +48,7 @@
 <meta itemprop="description" content="">
 <meta itemprop="datePublished" content="2020-03-26T03:51:28&#43;08:00" />
 <meta itemprop="dateModified" content="2020-03-26T03:51:28&#43;08:00" />
-<meta itemprop="wordCount" content="455">
+<meta itemprop="wordCount" content="771">
 
 
 
@@ -198,8 +198,7 @@
 <span class="o">}</span>
 </code></pre></td></tr></table>
 </div>
-</div><ul>
-<li>注解
+</div><p>注解：@SpringBootApplication：被这个标志的类是SpringBoot的主配置类</p>
 <ul>
 <li>@SpringBootConfiguration ：springboot的配置
 <ul>
@@ -212,17 +211,16 @@
 </li>
 <li>@EnableAutoConfiguration：自动配置
 <ul>
-<li>@AutoConfigurationPackage ：自动配置包
+<li>@AutoConfigurationPackage ：自动配置包。将主配置类（@SpringBootConfiguration标注的类）的所在包及下面所有子包扫描到容器中
 <ul>
-<li>@Import({Registrar.class}) ：自动配置，包注册</li>
+<li>@Import({Registrar.class}) ：spring的底层注解自动配置，给容器中导入一个组件</li>
 </ul>
 </li>
-<li>@Import({AutoConfigurationImportSelector.class})：自动配置导入选择</li>
-</ul>
-</li>
+<li>@Import({AutoConfigurationImportSelector.class})：给容器中导入组件，AutoConfigurationImportSelector导入哪些组件的选择器，会给容器中导入非常多的自动配置类（xxxAutoConfiguration）</li>
 </ul>
 </li>
 </ul>
+<p>SpirngBoot在启动的时候从类路径下的META-INF/spring.factories中获取EnableAutoConfigureation指定的值，将这些值作文自动配置类导入到容器中，自动配置类就生效，帮我们进行自动配置工作</p>
 <p>//获取所有的配置	
 List<!-- raw HTML omitted --> configurations = this.getCandidateConfigurations(annotationMetadata, attributes);
 获取候选的配置</p>

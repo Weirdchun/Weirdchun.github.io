@@ -16,7 +16,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
 
 
-<meta name="author" content="Chun" /><meta name="description" content="@Autowired 自动装配 @@Responsebody 注解表示该方法的返回的结果直接写入 HTTP 响应正文（ResponseBody）中，一般在异步获取数据时使用，通常是在使用 @RequestMapping 后，返回值通" /><meta name="keywords" content="Hugo, theme, even" />
+<meta name="author" content="Chun" /><meta name="description" content="@Autowired 自动装配 @Responsebody 注解表示该方法的返回的结果直接写入 HTTP 响应正文（ResponseBody）中，一般在异步获取数据时使用，通常是在使用 @RequestMapping 后，返回值通" /><meta name="keywords" content="Hugo, theme, even" />
 
 
 
@@ -39,22 +39,22 @@
 
 
 <meta property="og:title" content="Spring注解" />
-<meta property="og:description" content="@Autowired 自动装配 @@Responsebody 注解表示该方法的返回的结果直接写入 HTTP 响应正文（ResponseBody）中，一般在异步获取数据时使用，通常是在使用 @RequestMapping 后，返回值通" />
+<meta property="og:description" content="@Autowired 自动装配 @Responsebody 注解表示该方法的返回的结果直接写入 HTTP 响应正文（ResponseBody）中，一般在异步获取数据时使用，通常是在使用 @RequestMapping 后，返回值通" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://localhost:1313/post/zother-spring%E6%B3%A8%E8%A7%A3/" />
 <meta property="article:published_time" content="2020-03-27T00:08:22+08:00" />
 <meta property="article:modified_time" content="2020-03-27T00:08:22+08:00" />
 <meta itemprop="name" content="Spring注解">
-<meta itemprop="description" content="@Autowired 自动装配 @@Responsebody 注解表示该方法的返回的结果直接写入 HTTP 响应正文（ResponseBody）中，一般在异步获取数据时使用，通常是在使用 @RequestMapping 后，返回值通">
+<meta itemprop="description" content="@Autowired 自动装配 @Responsebody 注解表示该方法的返回的结果直接写入 HTTP 响应正文（ResponseBody）中，一般在异步获取数据时使用，通常是在使用 @RequestMapping 后，返回值通">
 <meta itemprop="datePublished" content="2020-03-27T00:08:22&#43;08:00" />
 <meta itemprop="dateModified" content="2020-03-27T00:08:22&#43;08:00" />
-<meta itemprop="wordCount" content="445">
+<meta itemprop="wordCount" content="398">
 
 
 
 <meta itemprop="keywords" content="spring," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Spring注解"/>
-<meta name="twitter:description" content="@Autowired 自动装配 @@Responsebody 注解表示该方法的返回的结果直接写入 HTTP 响应正文（ResponseBody）中，一般在异步获取数据时使用，通常是在使用 @RequestMapping 后，返回值通"/>
+<meta name="twitter:description" content="@Autowired 自动装配 @Responsebody 注解表示该方法的返回的结果直接写入 HTTP 响应正文（ResponseBody）中，一般在异步获取数据时使用，通常是在使用 @RequestMapping 后，返回值通"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -126,7 +126,7 @@
       <div class="post-meta">
         <span class="post-time"> 2020-03-27 </span>
         <div class="post-category">
-            <a href="/categories/spring%E6%A1%86%E6%9E%B6/"> Spring框架 </a>
+            <a href="/categories/%E5%8F%82%E8%80%83%E6%96%87%E6%A1%A3/"> 参考文档 </a>
             </div>
         <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
       </div>
@@ -138,7 +138,8 @@
     <nav id="TableOfContents">
   <ul>
     <li><a href="#autowired">@Autowired</a></li>
-    <li><a href="#responsebody">@@Responsebody</a></li>
+    <li><a href="#responsebody">@Responsebody</a></li>
+    <li><a href="#restcontroller">@RestController</a></li>
     <li><a href="#requestparam">@RequestParam</a></li>
     <li><a href="#pathvariable">@PathVariable</a></li>
   </ul>
@@ -148,12 +149,12 @@
     <div class="post-content">
       <h2 id="autowired">@Autowired</h2>
 <p>自动装配</p>
-<h2 id="responsebody">@@Responsebody</h2>
+<h2 id="responsebody">@Responsebody</h2>
 <p>注解表示该方法的返回的结果直接写入 HTTP 响应正文（ResponseBody）中，一般在异步获取数据时使用，通常是在使用 @RequestMapping 后，返回值通常解析为跳转路径，加上 @Responsebody 后返回结果不会被解析为跳转路径，而是直接写入HTTP 响应正文中。
 <strong>作用</strong>:
-该注解用于将Controller的方法返回的对象，通过适当的HttpMessageConverter转换为指定格式后，写入到Response对象的body数据区。
-<strong>使用时机</strong>：
-返回的数据不是html标签的页面，而是其他某种格式的数据时（如json、xml等）使用；</p>
+标志这个注解的类的所有方法返回的数据直接写给浏览器，如果是对象转为json数据。</p>
+<h2 id="restcontroller">@RestController</h2>
+<p>其实是一个合体注解，同时拥护<code>@Responsebody</code>与<code>@Controller</code>的功能</p>
 <h2 id="requestparam">@RequestParam</h2>
 <p><code>@RequestParam(&quot;username&quot;)</code></p>
 <div class="highlight"><div class="chroma">

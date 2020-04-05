@@ -92,12 +92,12 @@
     </item>
     
     <item>
-      <title>JAVASE06：Super关键字</title>
-      <link>http://localhost:1313/post/javase06super%E5%85%B3%E9%94%AE%E5%AD%97/</link>
+      <title>JAVASE06：super与this关键字</title>
+      <link>http://localhost:1313/post/javase06super%E4%B8%8Ethis%E5%85%B3%E9%94%AE%E5%AD%97/</link>
       <pubDate>Thu, 26 Dec 2019 22:01:55 +0000</pubDate>
       
-      <guid>http://localhost:1313/post/javase06super%E5%85%B3%E9%94%AE%E5%AD%97/</guid>
-      <description>JAVA中的super 详解 super super 调用父类的构造方法，必须在构造方法的第一个 super 必须只能出现在子类的方法或者构造方法中（不可能调用Object的）</description>
+      <guid>http://localhost:1313/post/javase06super%E4%B8%8Ethis%E5%85%B3%E9%94%AE%E5%AD%97/</guid>
+      <description>this 用法：this是自身的一个对象，代表对象本身 super 用法：调用父类的方法 super 调用父类的构造方法，必须在构造方法的第一个 super 必须只能出现在子类的方法或</description>
     </item>
     
     <item>
