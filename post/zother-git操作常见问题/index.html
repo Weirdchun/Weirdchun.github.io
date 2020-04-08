@@ -49,7 +49,7 @@
 <meta itemprop="description" content="git">
 <meta itemprop="datePublished" content="2019-10-15T04:20:09&#43;08:00" />
 <meta itemprop="dateModified" content="2019-10-15T04:20:09&#43;08:00" />
-<meta itemprop="wordCount" content="950">
+<meta itemprop="wordCount" content="946">
 
 
 
@@ -283,9 +283,14 @@ To https://e.coding.net/Weirdchun/Weirdchun.coding.me.git
 error: failed to push some refs to &#39;https://e.coding.net/Weirdchun/Weirdchun.coding.me.git&#39;
 </code></pre></td></tr></table>
 </div>
-</div><p>解决:1.  <code> git push -f coding save</code> 忽略版本问题，强制上传并且覆盖(不建议)
-2.  <code>git pull --rebase origin master</code>(把远程仓库拉到本地同步)
-2. 分支没有找到</p>
+</div><p>解决:</p>
+<ul>
+<li><code> git push -f coding save</code> 忽略版本问题，强制上传并且覆盖(不建议)</li>
+<li><code>git pull --rebase origin master</code>(把远程仓库拉到本地同步)</li>
+</ul>
+<ol start="2">
+<li>分支没有找到</li>
+</ol>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
