@@ -22,11 +22,11 @@
     </item>
     
     <item>
-      <title>基于SSM的EnglishStudy项目</title>
-      <link>http://localhost:1313/post/%E9%A1%B9%E7%9B%AE-%E5%9F%BA%E4%BA%8Essm%E7%9A%84englishstudy%E9%A1%B9%E7%9B%AE/</link>
+      <title>基于SpringBoot的EnglishStudy项目</title>
+      <link>http://localhost:1313/post/%E9%A1%B9%E7%9B%AE-%E5%9F%BA%E4%BA%8Espringboot%E7%9A%84englishstudy%E9%A1%B9%E7%9B%AE/</link>
       <pubDate>Tue, 31 Mar 2020 23:08:52 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/%E9%A1%B9%E7%9B%AE-%E5%9F%BA%E4%BA%8Essm%E7%9A%84englishstudy%E9%A1%B9%E7%9B%AE/</guid>
+      <guid>http://localhost:1313/post/%E9%A1%B9%E7%9B%AE-%E5%9F%BA%E4%BA%8Espringboot%E7%9A%84englishstudy%E9%A1%B9%E7%9B%AE/</guid>
       <description>&lt;p&gt;功能模块：注册登录，背单词模块，听听力，个人中心，后台管理&lt;/p&gt;</description>
     </item>
     
@@ -117,7 +117,17 @@
       <guid>http://localhost:1313/post/linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F02%E5%9F%BA%E6%9C%AC%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</guid>
       <description>&lt;p&gt;我们知道Linux的目录结构为树状结构，最顶级的目录为根目录 /。&lt;/p&gt;
 &lt;p&gt;其他目录通过挂载可以将它们添加到树中，通过解除挂载可以移除它们。
-在开始本教程前我们需要先知道什么是绝对路径与相对路径。&lt;/p&gt;</description>
+在开始本教程前我们需要先知道什么是绝对路径与相对路径。&lt;/p&gt;
+&lt;p&gt;我们在使用命令的时候很可能没有配置环境变量而不能使用，则输入！&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;export PATH=$PATH:/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
     </item>
     
     <item>
@@ -130,11 +140,11 @@
     </item>
     
     <item>
-      <title>Spring注解</title>
-      <link>http://localhost:1313/post/zother-spring%E6%B3%A8%E8%A7%A3/</link>
+      <title>Spring相关注解</title>
+      <link>http://localhost:1313/post/z%E5%8F%82%E8%80%83%E6%96%87%E6%A1%A3-spring%E7%9B%B8%E5%85%B3%E6%B3%A8%E8%A7%A3%E4%BB%8B%E7%BB%8D/</link>
       <pubDate>Fri, 27 Mar 2020 00:08:22 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/zother-spring%E6%B3%A8%E8%A7%A3/</guid>
+      <guid>http://localhost:1313/post/z%E5%8F%82%E8%80%83%E6%96%87%E6%A1%A3-spring%E7%9B%B8%E5%85%B3%E6%B3%A8%E8%A7%A3%E4%BB%8B%E7%BB%8D/</guid>
       <description>@Autowired 自动装配 @Responsebody 注解表示该方法的返回的结果直接写入 HTTP 响应正文（ResponseBody）中，一般在异步获取数据时使用，通常是在使用 @RequestMapping 后，返回值通</description>
     </item>
     
@@ -368,10 +378,10 @@ Bean自动装配空就是，Spring会在上下文中自动寻找，并自动给B
     
     <item>
       <title>ajax快速入门</title>
-      <link>http://localhost:1313/post/zother-ajax%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/</link>
+      <link>http://localhost:1313/post/ajax%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/</link>
       <pubDate>Fri, 13 Mar 2020 03:07:49 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/zother-ajax%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/</guid>
+      <guid>http://localhost:1313/post/ajax%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/</guid>
       <description>&lt;p&gt;AJAX = Asynchronous JavaScript and XML（异步的 JavaScript 和 XML）。
 AJAX 不是新的编程语言，而是一种使用现有标准的新方法。
 AJAX 是与服务器交换数据并更新部分网页的艺术，在不重新加载整个页面的情况下。&lt;/p&gt;</description>
@@ -414,10 +424,10 @@ AJAX 是与服务器交换数据并更新部分网页的艺术，在不重新加
     
     <item>
       <title>MySQL安装与使用</title>
-      <link>http://localhost:1313/post/zother-mysql%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/</link>
+      <link>http://localhost:1313/post/z%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85-mysql%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/</link>
       <pubDate>Mon, 09 Mar 2020 23:41:32 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/zother-mysql%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/</guid>
+      <guid>http://localhost:1313/post/z%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85-mysql%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/</guid>
       <description>很多教程都是Mysql的，所以我也先学习mysql吧 第一次使用MySQL Mysql原理 其实我们安装的MySQL是一个服务，别人可以通过访问我</description>
     </item>
     
@@ -441,10 +451,10 @@ AJAX 是与服务器交换数据并更新部分网页的艺术，在不重新加
     
     <item>
       <title>IDEA快捷键</title>
-      <link>http://localhost:1313/post/zother-idea%E5%BF%AB%E6%8D%B7%E9%94%AE/</link>
+      <link>http://localhost:1313/post/z%E5%8F%82%E8%80%83%E6%96%87%E6%A1%A3-idea%E5%BF%AB%E6%8D%B7%E9%94%AE/</link>
       <pubDate>Tue, 18 Feb 2020 00:39:18 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/zother-idea%E5%BF%AB%E6%8D%B7%E9%94%AE/</guid>
+      <guid>http://localhost:1313/post/z%E5%8F%82%E8%80%83%E6%96%87%E6%A1%A3-idea%E5%BF%AB%E6%8D%B7%E9%94%AE/</guid>
       <description>&lt;p&gt;查看所有源码 ： &lt;code&gt;双击shift&lt;/code&gt;
 快速修改错误：  &lt;code&gt;Alt+Enter&lt;/code&gt;
 快速构造： &lt;code&gt;Alt+Insert&lt;/code&gt;
@@ -678,19 +688,19 @@ byte -&amp;gt; short -&amp;gt; char -&amp;gt; int -&amp;gt; long -&amp;gt; float
     
     <item>
       <title>Git操作常见问题</title>
-      <link>http://localhost:1313/post/zother-git%E6%93%8D%E4%BD%9C%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/</link>
+      <link>http://localhost:1313/post/z%E5%8F%82%E8%80%83%E6%96%87%E6%A1%A3-git%E6%93%8D%E4%BD%9C%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/</link>
       <pubDate>Tue, 15 Oct 2019 04:20:09 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/zother-git%E6%93%8D%E4%BD%9C%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/</guid>
+      <guid>http://localhost:1313/post/z%E5%8F%82%E8%80%83%E6%96%87%E6%A1%A3-git%E6%93%8D%E4%BD%9C%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/</guid>
       <description>&lt;p&gt;git&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>Vultr快照密码</title>
-      <link>http://localhost:1313/post/zother-vultr%E5%BF%AB%E7%85%A7%E5%AF%86%E7%A0%81/</link>
+      <title>Vultr翻墙命令</title>
+      <link>http://localhost:1313/post/z%E5%8F%82%E8%80%83%E6%96%87%E6%A1%A3-vultr%E7%BF%BB%E5%A2%99%E5%91%BD%E4%BB%A4/</link>
       <pubDate>Wed, 02 Oct 2019 20:29:28 +0000</pubDate>
       
-      <guid>http://localhost:1313/post/zother-vultr%E5%BF%AB%E7%85%A7%E5%AF%86%E7%A0%81/</guid>
+      <guid>http://localhost:1313/post/z%E5%8F%82%E8%80%83%E6%96%87%E6%A1%A3-vultr%E7%BF%BB%E5%A2%99%E5%91%BD%E4%BB%A4/</guid>
       <description>&lt;p&gt;隐藏&lt;/p&gt;</description>
     </item>
     

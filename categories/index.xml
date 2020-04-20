@@ -49,15 +49,6 @@
     </item>
     
     <item>
-      <title>参考文档</title>
-      <link>http://localhost:1313/categories/%E5%8F%82%E8%80%83%E6%96%87%E6%A1%A3/</link>
-      <pubDate>Fri, 27 Mar 2020 00:08:22 +0800</pubDate>
-      
-      <guid>http://localhost:1313/categories/%E5%8F%82%E8%80%83%E6%96%87%E6%A1%A3/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>SpringBoot框架</title>
       <link>http://localhost:1313/categories/springboot%E6%A1%86%E6%9E%B6/</link>
       <pubDate>Thu, 26 Mar 2020 03:51:28 +0800</pubDate>
@@ -139,11 +130,11 @@
     </item>
     
     <item>
-      <title>MySQL</title>
-      <link>http://localhost:1313/categories/mysql/</link>
+      <title>软件安装</title>
+      <link>http://localhost:1313/categories/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/</link>
       <pubDate>Mon, 09 Mar 2020 23:41:32 +0800</pubDate>
       
-      <guid>http://localhost:1313/categories/mysql/</guid>
+      <guid>http://localhost:1313/categories/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/</guid>
       <description></description>
     </item>
     

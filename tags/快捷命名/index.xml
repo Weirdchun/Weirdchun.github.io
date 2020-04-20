@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>快捷命名 on Chun&#39;s Blog</title>
+    <link>http://localhost:1313/tags/%E5%BF%AB%E6%8D%B7%E5%91%BD%E5%90%8D/</link>
+    <description>Recent content in 快捷命名 on Chun&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Chun</copyright>
+    <lastBuildDate>Tue, 18 Feb 2020 00:39:18 +0800</lastBuildDate>
+    
+	<atom:link href="http://localhost:1313/tags/%E5%BF%AB%E6%8D%B7%E5%91%BD%E5%90%8D/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>IDEA快捷键</title>
+      <link>http://localhost:1313/post/z%E5%8F%82%E8%80%83%E6%96%87%E6%A1%A3-idea%E5%BF%AB%E6%8D%B7%E9%94%AE/</link>
+      <pubDate>Tue, 18 Feb 2020 00:39:18 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/z%E5%8F%82%E8%80%83%E6%96%87%E6%A1%A3-idea%E5%BF%AB%E6%8D%B7%E9%94%AE/</guid>
+      <description>&lt;p&gt;查看所有源码 ： &lt;code&gt;双击shift&lt;/code&gt;
+快速修改错误：  &lt;code&gt;Alt+Enter&lt;/code&gt;
+快速构造： &lt;code&gt;Alt+Insert&lt;/code&gt;
+选择同一列的元素：&lt;code&gt;Alt+左键&lt;/code&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Git操作常见问题</title>
+      <link>http://localhost:1313/post/z%E5%8F%82%E8%80%83%E6%96%87%E6%A1%A3-git%E6%93%8D%E4%BD%9C%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Tue, 15 Oct 2019 04:20:09 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/z%E5%8F%82%E8%80%83%E6%96%87%E6%A1%A3-git%E6%93%8D%E4%BD%9C%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/</guid>
+      <description>&lt;p&gt;git&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

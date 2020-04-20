@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>参考文档 on Chun&#39;s Blog</title>
+    <link>http://localhost:1313/tags/%E5%8F%82%E8%80%83%E6%96%87%E6%A1%A3/</link>
+    <description>Recent content in 参考文档 on Chun&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Chun</copyright>
+    <lastBuildDate>Fri, 27 Mar 2020 00:08:22 +0800</lastBuildDate>
+    
+	<atom:link href="http://localhost:1313/tags/%E5%8F%82%E8%80%83%E6%96%87%E6%A1%A3/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Spring相关注解</title>
+      <link>http://localhost:1313/post/z%E5%8F%82%E8%80%83%E6%96%87%E6%A1%A3-spring%E7%9B%B8%E5%85%B3%E6%B3%A8%E8%A7%A3%E4%BB%8B%E7%BB%8D/</link>
+      <pubDate>Fri, 27 Mar 2020 00:08:22 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/z%E5%8F%82%E8%80%83%E6%96%87%E6%A1%A3-spring%E7%9B%B8%E5%85%B3%E6%B3%A8%E8%A7%A3%E4%BB%8B%E7%BB%8D/</guid>
+      <description>@Autowired 自动装配 @Responsebody 注解表示该方法的返回的结果直接写入 HTTP 响应正文（ResponseBody）中，一般在异步获取数据时使用，通常是在使用 @RequestMapping 后，返回值通</description>
+    </item>
+    
+    <item>
+      <title>Vultr翻墙命令</title>
+      <link>http://localhost:1313/post/z%E5%8F%82%E8%80%83%E6%96%87%E6%A1%A3-vultr%E7%BF%BB%E5%A2%99%E5%91%BD%E4%BB%A4/</link>
+      <pubDate>Wed, 02 Oct 2019 20:29:28 +0000</pubDate>
+      
+      <guid>http://localhost:1313/post/z%E5%8F%82%E8%80%83%E6%96%87%E6%A1%A3-vultr%E7%BF%BB%E5%A2%99%E5%91%BD%E4%BB%A4/</guid>
+      <description>&lt;p&gt;隐藏&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

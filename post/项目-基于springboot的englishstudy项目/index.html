@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>基于SpringBoot的EnglishStudy项目 - Chun&#39;s Blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Chun" /><meta name="description" content="功能模块：注册登录，背单词模块，听听力，个人中心，后台管理
+" /><meta name="keywords" content="Hugo, theme, even" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.62.2 with theme even" />
+
+
+<link rel="canonical" href="http://localhost:1313/post/%E9%A1%B9%E7%9B%AE-%E5%9F%BA%E4%BA%8Espringboot%E7%9A%84englishstudy%E9%A1%B9%E7%9B%AE/" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<link href="/dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="基于SpringBoot的EnglishStudy项目" />
+<meta property="og:description" content="功能模块：注册登录，背单词模块，听听力，个人中心，后台管理" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/post/%E9%A1%B9%E7%9B%AE-%E5%9F%BA%E4%BA%8Espringboot%E7%9A%84englishstudy%E9%A1%B9%E7%9B%AE/" />
+<meta property="article:published_time" content="2020-03-31T23:08:52+08:00" />
+<meta property="article:modified_time" content="2020-03-31T23:08:52+08:00" />
+<meta itemprop="name" content="基于SpringBoot的EnglishStudy项目">
+<meta itemprop="description" content="功能模块：注册登录，背单词模块，听听力，个人中心，后台管理">
+<meta itemprop="datePublished" content="2020-03-31T23:08:52&#43;08:00" />
+<meta itemprop="dateModified" content="2020-03-31T23:08:52&#43;08:00" />
+<meta itemprop="wordCount" content="1236">
+
+
+
+<meta itemprop="keywords" content="SpringBoot," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="基于SpringBoot的EnglishStudy项目"/>
+<meta name="twitter:description" content="功能模块：注册登录，背单词模块，听听力，个人中心，后台管理"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Chun</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Chun</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">基于SpringBoot的EnglishStudy项目</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2020-03-31 </span>
+        <div class="post-category">
+            <a href="/categories/englishstudy%E9%A1%B9%E7%9B%AE/"> EnglishStudy项目 </a>
+            </div>
+        <span id="busuanzi_container_page_pv" class="more-meta"> <span id="busuanzi_value_page_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> times read </span>
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#邮箱注册功能">邮箱注册功能</a></li>
+    <li><a href="#登录拦截与注销">登录拦截与注销</a></li>
+    <li><a href="#部署到阿里云">部署到阿里云</a></li>
+  </ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <p>功能模块：注册登录，背单词模块，听听力，个人中心，后台管理</p>
+<h1 id="springboot-studyenglish">Springboot-StudyEnglish</h1>
+<p>基于SpringBoot+MyBatis的英语学习平台</p>
+<h2 id="邮箱注册功能">邮箱注册功能</h2>
+<p>使用Spring封装的邮件发送类 <code>JavaMailSenderImpl</code>实现邮箱发送进行注册。</p>
+<ol>
+<li>添加maven依赖</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-xml" data-lang="xml">        <span class="nt">&lt;dependency</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;groupId</span><span class="nt">&gt;</span>org.springframework.boot<span class="nt">&lt;/groupId&gt;</span>
+            <span class="nt">&lt;artifactId</span><span class="nt">&gt;</span>spring-boot-starter-mail<span class="nt">&lt;/artifactId&gt;</span>
+        <span class="nt">&lt;/dependency&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><ol start="2">
+<li>配置<code>application.yml</code>文件</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-yml" data-lang="yml">spring<span class="p">:</span><span class="w">
+</span><span class="w">  </span>mail<span class="p">:</span><span class="w">
+</span><span class="w">    </span>host<span class="p">:</span><span class="w"> </span>smtp.qq.com<span class="w">
+</span><span class="w">    </span>username<span class="p">:</span><span class="w"> </span>xxxxxxxxx@qq.com<span class="w">  </span><span class="c"># 邮箱地址</span><span class="w">
+</span><span class="w">    </span>password<span class="p">:</span><span class="w"> </span>xxxxxxxxxx<span class="w"> </span><span class="c"># 授权码</span><span class="w">
+</span><span class="w">    </span>properties<span class="p">:</span><span class="w">
+</span><span class="w">      </span>mail<span class="p">:</span><span class="w">
+</span><span class="w">        </span>smtp<span class="p">:</span><span class="w">
+</span><span class="w">          </span>ssl<span class="p">:</span><span class="w">
+</span><span class="w">            </span>enable<span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="w">
+</span></code></pre></td></tr></table>
+</div>
+</div><ol start="3">
+<li>在发送之前利用UUID类生成一个随机的验证码</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">static</span> <span class="n">String</span> <span class="nf">getUUID</span><span class="o">(</span><span class="o">)</span><span class="o">{</span>
+        <span class="k">return</span> <span class="n">UUID</span><span class="o">.</span><span class="na">randomUUID</span><span class="o">(</span><span class="o">)</span><span class="o">.</span><span class="na">toString</span><span class="o">(</span><span class="o">)</span><span class="o">.</span><span class="na">replace</span><span class="o">(</span><span class="s">&#34;-&#34;</span><span class="o">,</span><span class="s">&#34;&#34;</span><span class="o">)</span><span class="o">;</span>
+    <span class="o">}</span>
+
+</code></pre></td></tr></table>
+</div>
+</div><ol start="4">
+<li>然后使用QQ邮箱的smtp邮件服务器，给注册的用户发送带着验证码的邮箱，邮箱内容包含了to,object,context</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"> <span class="n">String</span> <span class="n">email</span> <span class="o">=</span> <span class="n">user</span><span class="o">.</span><span class="na">getEmail</span><span class="o">(</span><span class="o">)</span><span class="o">;</span>
+        <span class="n">String</span> <span class="n">subject</span> <span class="o">=</span> <span class="s">&#34;来自StudyEnglish网站的激活邮件&#34;</span><span class="o">;</span>
+        <span class="n">String</span> <span class="n">context</span> <span class="o">=</span> <span class="s">&#34;&lt;a href=\&#34;http://localhost:8080/user/checkCode?activeCode=&#34;</span><span class="o">+</span><span class="n">activeCode</span><span class="o">+</span><span class="s">&#34;\&#34;&gt;激活请点击:&#34;</span><span class="o">+</span><span class="n">activeCode</span><span class="o">+</span><span class="s">&#34;&lt;/a&gt;&#34;</span><span class="o">;</span>
+        <span class="n">sendEmail</span><span class="o">.</span><span class="na">SendEmail</span><span class="o">(</span><span class="n">email</span><span class="o">,</span><span class="n">subject</span><span class="o">,</span><span class="n">context</span><span class="o">)</span><span class="o">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><ol start="5">
+<li>
+<p>用户收到邮箱后，用户点击邮箱，然后进入RegisterController处理</p>
+<p>如果数据库中的验证码与用户注册的验证码相同则注册成功</p>
+</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="nd">@RequestMapping</span><span class="o">(</span><span class="s">&#34;/user/checkCode&#34;</span><span class="o">)</span>
+   <span class="kd">public</span> <span class="n">String</span> <span class="nf">active</span><span class="o">(</span><span class="n">String</span> <span class="n">activeCode</span><span class="o">)</span><span class="o">{</span>
+       <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;进入checkCode&#34;</span><span class="o">)</span><span class="o">;</span>
+       <span class="c1">//查询这个激活码
+</span><span class="c1"></span>       <span class="n">User</span> <span class="n">user</span> <span class="o">=</span> <span class="n">userService</span><span class="o">.</span><span class="na">queryUserByActiveCode</span><span class="o">(</span><span class="n">activeCode</span><span class="o">)</span><span class="o">;</span>
+
+       <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;user----&gt;&#34;</span><span class="o">+</span><span class="n">user</span><span class="o">)</span><span class="o">;</span>
+
+       <span class="k">if</span> <span class="o">(</span><span class="n">user</span> <span class="o">!</span><span class="o">=</span> <span class="kc">null</span><span class="o">)</span>
+       <span class="o">{</span>
+           <span class="c1">//给这个用户激活
+</span><span class="c1"></span>           <span class="n">user</span><span class="o">.</span><span class="na">setActiveStatus</span><span class="o">(</span><span class="n">1</span><span class="o">)</span><span class="o">;</span>
+           <span class="c1">//把激活码清除
+</span><span class="c1"></span>           <span class="n">user</span><span class="o">.</span><span class="na">setActiveCode</span><span class="o">(</span><span class="kc">null</span><span class="o">)</span><span class="o">;</span>
+           <span class="n">userService</span><span class="o">.</span><span class="na">updateUser</span><span class="o">(</span><span class="n">user</span><span class="o">)</span><span class="o">;</span>
+       <span class="o">}</span>
+       <span class="k">return</span> <span class="s">&#34;index&#34;</span><span class="o">;</span>
+   <span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="登录拦截与注销">登录拦截与注销</h2>
+<p>1.在LoginController登录中加入session</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java">    <span class="cm">/**
+</span><span class="cm">     *登录成功，添加session
+</span><span class="cm">     */</span>
+    <span class="nd">@RequestMapping</span><span class="o">(</span><span class="s">&#34;/login&#34;</span><span class="o">)</span>
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">login</span><span class="o">(</span><span class="n">User</span> <span class="n">user</span><span class="o">,</span> <span class="n">Model</span> <span class="n">model</span><span class="o">,</span><span class="n">HttpSession</span> <span class="n">session</span><span class="o">)</span><span class="o">{</span>
+        <span class="n">User</span> <span class="n">usr</span> <span class="o">=</span> <span class="n">userService</span><span class="o">.</span><span class="na">loginByEmailAndPasswordAndActiveStatus</span><span class="o">(</span><span class="n">user</span><span class="o">)</span><span class="o">;</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">usr</span><span class="o">!</span><span class="o">=</span><span class="kc">null</span><span class="o">)</span><span class="o">{</span>
+            <span class="n">session</span><span class="o">.</span><span class="na">setAttribute</span><span class="o">(</span><span class="s">&#34;loginUser&#34;</span><span class="o">,</span><span class="n">user</span><span class="o">)</span><span class="o">;</span>
+            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;成功登录&#34;</span><span class="o">)</span><span class="o">;</span>
+            <span class="k">return</span> <span class="s">&#34;redirect:/main.html&#34;</span><span class="o">;</span>
+        <span class="o">}</span><span class="k">else</span> <span class="o">{</span>
+            <span class="n">model</span><span class="o">.</span><span class="na">addAttribute</span><span class="o">(</span><span class="s">&#34;msg&#34;</span><span class="o">,</span><span class="s">&#34;密码或账号输入错误&#34;</span><span class="o">)</span><span class="o">;</span>
+            <span class="k">return</span> <span class="s">&#34;index&#34;</span><span class="o">;</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>2.写一个<code>LoginHandlerInterceptor</code>类实现<code>HandlerInterceptor</code></p>
+<p>在Controller之前进行拦截处理</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">LoginHandlerInterceptor</span> <span class="kd">implements</span> <span class="n">HandlerInterceptor</span> <span class="o">{</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">preHandle</span><span class="o">(</span><span class="n">HttpServletRequest</span> <span class="n">request</span><span class="o">,</span> <span class="n">HttpServletResponse</span> <span class="n">response</span><span class="o">,</span> <span class="n">Object</span> <span class="n">handler</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
+        <span class="c1">//登录成功之后，应该有用户的session.
+</span><span class="c1"></span>        <span class="c1">// request.getSession().getAttribute 得到`loginUser`的session
+</span><span class="c1"></span>        <span class="n">Object</span> <span class="n">loginUser</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="na">getSession</span><span class="o">(</span><span class="o">)</span><span class="o">.</span><span class="na">getAttribute</span><span class="o">(</span><span class="s">&#34;loginUser&#34;</span><span class="o">)</span><span class="o">;</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">loginUser</span><span class="o">=</span><span class="o">=</span><span class="kc">null</span><span class="o">)</span><span class="o">{</span>
+            <span class="n">request</span><span class="o">.</span><span class="na">setAttribute</span><span class="o">(</span><span class="s">&#34;msg&#34;</span><span class="o">,</span><span class="s">&#34;没有权限，请先登录&#34;</span><span class="o">)</span><span class="o">;</span>
+            <span class="n">request</span><span class="o">.</span><span class="na">getRequestDispatcher</span><span class="o">(</span><span class="s">&#34;/index.html&#34;</span><span class="o">)</span><span class="o">.</span><span class="na">forward</span><span class="o">(</span><span class="n">request</span><span class="o">,</span><span class="n">response</span><span class="o">)</span><span class="o">;</span>
+            <span class="k">return</span> <span class="kc">false</span><span class="o">;</span>
+        <span class="o">}</span><span class="k">else</span> <span class="o">{</span>
+            <span class="k">return</span> <span class="kc">true</span><span class="o">;</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>3.在写一个<code>MyMvcConfig配置类</code>实现<code>WebMvcConfigurer</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-java" data-lang="java"><span class="nd">@Configuration</span>
+    <span class="kd">public</span> <span class="kd">class</span> <span class="nc">MyMvcConfig</span> <span class="kd">implements</span> <span class="n">WebMvcConfigurer</span> <span class="o">{</span>
+    <span class="c1">//拦截所有，放行部分路径
+</span><span class="c1"></span>    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">addInterceptors</span><span class="o">(</span><span class="n">InterceptorRegistry</span> <span class="n">registry</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">registry</span><span class="o">.</span><span class="na">addInterceptor</span><span class="o">(</span><span class="k">new</span> <span class="n">LoginHandlerInterceptor</span><span class="o">(</span><span class="o">)</span><span class="o">)</span><span class="o">.</span><span class="na">addPathPatterns</span><span class="o">(</span><span class="s">&#34;/**&#34;</span><span class="o">)</span><span class="o">.</span><span class="na">excludePathPatterns</span><span class="o">(</span><span class="s">&#34;/index.html&#34;</span><span class="o">,</span><span class="s">&#34;/&#34;</span><span class="o">,</span><span class="s">&#34;/login&#34;</span><span class="o">,</span><span class="s">&#34;/css/**&#34;</span><span class="o">,</span>
+                <span class="s">&#34;/js/**&#34;</span><span class="o">,</span><span class="s">&#34;/images/**&#34;</span><span class="o">,</span><span class="s">&#34;&#34;</span><span class="o">,</span><span class="s">&#34;/register.html&#34;</span><span class="o">,</span><span class="s">&#34;/register&#34;</span><span class="o">,</span><span class="s">&#34;/user/checkCode&#34;</span><span class="o">)</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="部署到阿里云">部署到阿里云</h2>
+<p>如果本运行正常，放到服务器缺丢失样式以及图片，则需要检测Maven以及拦截器！！</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-xml" data-lang="xml">        <span class="nt">&lt;resources</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;resource</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;directory</span><span class="nt">&gt;</span>src/main/java<span class="nt">&lt;/directory&gt;</span>
+                <span class="nt">&lt;includes</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;include</span><span class="nt">&gt;</span>**/*.properties<span class="nt">&lt;/include&gt;</span>
+                    <span class="nt">&lt;include</span><span class="nt">&gt;</span>**/*.xml<span class="nt">&lt;/include&gt;</span>
+                <span class="nt">&lt;/includes&gt;</span>
+                <span class="nt">&lt;filtering</span><span class="nt">&gt;</span>false<span class="nt">&lt;/filtering&gt;</span>
+            <span class="nt">&lt;/resource&gt;</span>
+            <span class="nt">&lt;resource</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;directory</span><span class="nt">&gt;</span>src/main/resources<span class="nt">&lt;/directory&gt;</span>
+                <span class="nt">&lt;includes</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;include</span><span class="nt">&gt;</span>**/*.yml<span class="nt">&lt;/include&gt;</span>
+                    <span class="nt">&lt;include</span><span class="nt">&gt;</span>**/*.xml<span class="nt">&lt;/include&gt;</span>
+                    <span class="nt">&lt;include</span><span class="nt">&gt;</span>**/*.css<span class="nt">&lt;/include&gt;</span>
+                    <span class="nt">&lt;include</span><span class="nt">&gt;</span>**/*.png<span class="nt">&lt;/include&gt;</span>
+                    <span class="nt">&lt;include</span><span class="nt">&gt;</span>**/*.js<span class="nt">&lt;/include&gt;</span>
+                    <span class="nt">&lt;include</span><span class="nt">&gt;</span>**/*.html<span class="nt">&lt;/include&gt;</span>
+                <span class="nt">&lt;/includes&gt;</span>
+                <span class="nt">&lt;filtering</span><span class="nt">&gt;</span>false<span class="nt">&lt;/filtering&gt;</span>
+            <span class="nt">&lt;/resource&gt;</span>
+        <span class="nt">&lt;/resources&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Chun</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2020-03-31
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="/tags/springboot/">SpringBoot</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="/post/spring%E6%A1%86%E6%9E%B610aop/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Spring框架10：AOP</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="/post/linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F07shell%E7%BC%96%E7%A8%8B/">
+            <span class="next-text nav-default">Linux操作系统07：Shell编程</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+  <a href="http://localhost:1313/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  <div class="busuanzi-footer">
+    <span id="busuanzi_container_site_pv"> site pv: <span id="busuanzi_value_site_pv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+      <span class="division">|</span>
+    <span id="busuanzi_container_site_uv"> site uv: <span id="busuanzi_value_site_uv"><img src="/img/spinner.svg" alt="spinner.svg"/></span> </span>
+  </div>
+
+  <span class="copyright-year">
+    &copy; 
+    2020
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Chun</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/dist/even.26188efa.min.js"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

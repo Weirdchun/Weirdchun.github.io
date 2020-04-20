@@ -59,7 +59,7 @@ yum在线安装：用docker演示，直接安装运行跑起来docker就行
 ">
 <meta itemprop="datePublished" content="2020-03-27T23:45:06&#43;08:00" />
 <meta itemprop="dateModified" content="2020-03-27T23:45:06&#43;08:00" />
-<meta itemprop="wordCount" content="877">
+<meta itemprop="wordCount" content="1208">
 
 
 
@@ -155,7 +155,7 @@ yum在线安装：用docker演示，直接安装运行跑起来docker就行
   <ul>
     <li><a href="#rpm-jdk安装">rpm JDK安装</a></li>
     <li><a href="#解压缩-tomcat安装">解压缩 Tomcat安装</a></li>
-    <li><a href="#yum在线安装">yum在线安装</a></li>
+    <li><a href="#安装dockeryum在线安装">安装Docker(yum在线安装)</a></li>
   </ul>
 </nav>
   </div>
@@ -332,7 +332,133 @@ firewall-cmd --list-ports  <span class="c1"># 只看端口信息</span>
 --permanent   <span class="c1">#永久生效，没有此参数重启后失效</span>
 </code></pre></td></tr></table>
 </div>
-</div><h2 id="yum在线安装">yum在线安装</h2>
+</div><h2 id="安装dockeryum在线安装">安装Docker(yum在线安装)</h2>
+<p>基于 CentOS 7 安装</p>
+<p>1.官网安装参考手册：https://docs.docker.com/install/linux/docker-ce/centos/</p>
+<p>2.确定你是CentOS7及以上版本</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="o">[</span>root@192 Desktop<span class="o">]</span><span class="c1"># cat /etc/redhat-release</span>
+CentOS Linux release 7.2.1511 <span class="o">(</span>Core<span class="o">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>3.yum安装gcc相关（需要确保 虚拟机可以上外网 ）</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">yum -y install gcc
+yum -y install gcc-c++
+</code></pre></td></tr></table>
+</div>
+</div><p>4.卸载旧版本</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">yum -y remove docker docker-common docker-selinux docker-engine
+<span class="c1"># 官网版本</span>
+yum remove docker <span class="se">\
+</span><span class="se"></span>          docker-client <span class="se">\
+</span><span class="se"></span>          docker-client-latest <span class="se">\
+</span><span class="se"></span>          docker-common <span class="se">\
+</span><span class="se"></span>          docker-latest <span class="se">\
+</span><span class="se"></span>          docker-latest-logrotate <span class="se">\
+</span><span class="se"></span>          docker-logrotate <span class="se">\
+</span></code></pre></td></tr></table>
+</div>
+</div><p>5.安装需要的软件包</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">yum install -y yum-utils device-mapper-persistent-data lvm2
+</code></pre></td></tr></table>
+</div>
+</div><p>6.设置stable镜像仓库</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1"># 错误</span>
+yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+<span class="c1">## 报错</span>
+<span class="o">[</span>Errno 14<span class="o">]</span> curl#35 - TCP connection reset by peer
+<span class="o">[</span>Errno 12<span class="o">]</span> curl#35 - Timeout
+
+<span class="c1"># 正确推荐使用国内的</span>
+yum-config-manager --add-repo http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
+</code></pre></td></tr></table>
+</div>
+</div><p>7.更新yum软件包索引</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">yum makecache fast
+</code></pre></td></tr></table>
+</div>
+</div><p>8.安装Docker CE</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">yum -y install docker-ce docker-ce-cli containerd.io
+</code></pre></td></tr></table>
+</div>
+</div><p>9.启动docker</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">systemctl start docker
+</code></pre></td></tr></table>
+</div>
+</div><p>10.测试</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">docker version
+
+docker run hello-world
+
+docker images
+</code></pre></td></tr></table>
+</div>
+</div>
     </div>
 
     <div class="post-copyright">
