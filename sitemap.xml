@@ -9,21 +9,42 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/categories/</loc>
-    <lastmod>2020-04-01T14:32:16+08:00</lastmod>
+    <loc>http://localhost:1313/</loc>
+    <lastmod>2020-04-20T10:13:41+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>http://localhost:1313/</loc>
-    <lastmod>2020-04-01T14:32:16+08:00</lastmod>
+    <loc>http://localhost:1313/post/z%E5%BF%AB%E6%8D%B7%E5%91%BD%E4%BB%A4-mysql%E7%9A%84%E7%9B%B8%E5%85%B3%E5%91%BD%E4%BB%A4/</loc>
+    <lastmod>2020-04-20T10:13:41+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>http://localhost:1313/post/</loc>
+    <lastmod>2020-04-20T10:13:41+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2020-04-20T10:13:41+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/%E5%BF%AB%E6%8D%B7%E5%91%BD%E4%BB%A4/</loc>
+    <lastmod>2020-04-20T10:13:41+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/categories/</loc>
     <lastmod>2020-04-01T14:32:16+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -44,28 +65,14 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/categories/englishstudy%E9%A1%B9%E7%9B%AE/</loc>
-    <lastmod>2020-03-31T23:08:52+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/springboot/</loc>
-    <lastmod>2020-03-31T23:08:52+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/</loc>
-    <lastmod>2020-03-31T23:08:52+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>http://localhost:1313/post/%E9%A1%B9%E7%9B%AE-%E5%9F%BA%E4%BA%8Espringboot%E7%9A%84englishstudy%E9%A1%B9%E7%9B%AE/</loc>
+    <lastmod>2020-03-31T23:08:52+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/tags/%E7%9B%B8%E5%85%B3%E9%A1%B9%E7%9B%AE/</loc>
     <lastmod>2020-03-31T23:08:52+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -94,13 +101,6 @@
   
   <url>
     <loc>http://localhost:1313/post/javase12jdbc/</loc>
-    <lastmod>2020-03-30T01:19:01+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/jdbc/</loc>
     <lastmod>2020-03-30T01:19:01+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -422,7 +422,7 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/categories/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/</loc>
+    <loc>http://localhost:1313/tags/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/</loc>
     <lastmod>2020-03-09T23:41:32+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -436,14 +436,7 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/post/z%E5%8F%82%E8%80%83%E6%96%87%E6%A1%A3-idea%E5%BF%AB%E6%8D%B7%E9%94%AE/</loc>
-    <lastmod>2020-02-18T00:39:18+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>http://localhost:1313/tags/%E5%BF%AB%E6%8D%B7%E5%91%BD%E5%90%8D/</loc>
+    <loc>http://localhost:1313/post/z%E5%BF%AB%E6%8D%B7%E5%91%BD%E4%BB%A4-idea%E5%BF%AB%E6%8D%B7%E9%94%AE/</loc>
     <lastmod>2020-02-18T00:39:18+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
@@ -632,7 +625,21 @@
   </url>
   
   <url>
-    <loc>http://localhost:1313/post/z%E5%8F%82%E8%80%83%E6%96%87%E6%A1%A3-git%E6%93%8D%E4%BD%9C%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/</loc>
+    <loc>http://localhost:1313/post/z%E5%BF%AB%E6%8D%B7%E5%91%BD%E4%BB%A4-git%E6%93%8D%E4%BD%9C%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/</loc>
+    <lastmod>2019-10-15T04:20:09+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/series/s1/</loc>
+    <lastmod>2019-10-15T04:20:09+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/series/</loc>
     <lastmod>2019-10-15T04:20:09+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>

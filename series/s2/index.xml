@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>s2 on Chun&#39;s Blog</title>
+    <link>http://localhost:1313/series/s2/</link>
+    <description>Recent content in s2 on Chun&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Chun</copyright>
+    <lastBuildDate>Tue, 15 Oct 2019 04:20:09 +0800</lastBuildDate>
+    
+	<atom:link href="http://localhost:1313/series/s2/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Git操作常见问题</title>
+      <link>http://localhost:1313/post/z%E5%8F%82%E8%80%83%E6%96%87%E6%A1%A3-git%E6%93%8D%E4%BD%9C%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Tue, 15 Oct 2019 04:20:09 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/z%E5%8F%82%E8%80%83%E6%96%87%E6%A1%A3-git%E6%93%8D%E4%BD%9C%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/</guid>
+      <description>&lt;p&gt;git&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

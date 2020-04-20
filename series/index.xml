@@ -2,13 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Series on Chun&#39;s Blog</title>
-    <link>https://gitee.com/weirdchun/blog/series/</link>
+    <link>http://localhost:1313/series/</link>
     <description>Recent content in Series on Chun&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
+    <copyright>Chun</copyright>
+    <lastBuildDate>Tue, 15 Oct 2019 04:20:09 +0800</lastBuildDate>
     
-	<atom:link href="https://gitee.com/weirdchun/blog/series/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://localhost:1313/series/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>s1</title>
+      <link>http://localhost:1313/series/s1/</link>
+      <pubDate>Tue, 15 Oct 2019 04:20:09 +0800</pubDate>
+      
+      <guid>http://localhost:1313/series/s1/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>

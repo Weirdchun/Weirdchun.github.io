@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>快捷命令 on Chun&#39;s Blog</title>
+    <link>http://localhost:1313/tags/%E5%BF%AB%E6%8D%B7%E5%91%BD%E4%BB%A4/</link>
+    <description>Recent content in 快捷命令 on Chun&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Chun</copyright>
+    <lastBuildDate>Mon, 20 Apr 2020 10:13:41 +0800</lastBuildDate>
+    
+	<atom:link href="http://localhost:1313/tags/%E5%BF%AB%E6%8D%B7%E5%91%BD%E4%BB%A4/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>MySQL的相关命令</title>
+      <link>http://localhost:1313/post/z%E5%BF%AB%E6%8D%B7%E5%91%BD%E4%BB%A4-mysql%E7%9A%84%E7%9B%B8%E5%85%B3%E5%91%BD%E4%BB%A4/</link>
+      <pubDate>Mon, 20 Apr 2020 10:13:41 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/z%E5%BF%AB%E6%8D%B7%E5%91%BD%E4%BB%A4-mysql%E7%9A%84%E7%9B%B8%E5%85%B3%E5%91%BD%E4%BB%A4/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>IDEA快捷键</title>
+      <link>http://localhost:1313/post/z%E5%BF%AB%E6%8D%B7%E5%91%BD%E4%BB%A4-idea%E5%BF%AB%E6%8D%B7%E9%94%AE/</link>
+      <pubDate>Tue, 18 Feb 2020 00:39:18 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/z%E5%BF%AB%E6%8D%B7%E5%91%BD%E4%BB%A4-idea%E5%BF%AB%E6%8D%B7%E9%94%AE/</guid>
+      <description>&lt;p&gt;查看所有源码 ： &lt;code&gt;双击shift&lt;/code&gt;
+快速修改错误：  &lt;code&gt;Alt+Enter&lt;/code&gt;
+快速构造： &lt;code&gt;Alt+Insert&lt;/code&gt;
+选择同一列的元素：&lt;code&gt;Alt+左键&lt;/code&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Git相关命令及问题</title>
+      <link>http://localhost:1313/post/z%E5%BF%AB%E6%8D%B7%E5%91%BD%E4%BB%A4-git%E6%93%8D%E4%BD%9C%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Tue, 15 Oct 2019 04:20:09 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/z%E5%BF%AB%E6%8D%B7%E5%91%BD%E4%BB%A4-git%E6%93%8D%E4%BD%9C%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/</guid>
+      <description>&lt;p&gt;git&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

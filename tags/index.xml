@@ -7,26 +7,26 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Chun</copyright>
-    <lastBuildDate>Tue, 31 Mar 2020 23:08:52 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 20 Apr 2020 10:13:41 +0800</lastBuildDate>
     
 	<atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>SpringBoot</title>
-      <link>http://localhost:1313/tags/springboot/</link>
-      <pubDate>Tue, 31 Mar 2020 23:08:52 +0800</pubDate>
+      <title>快捷命令</title>
+      <link>http://localhost:1313/tags/%E5%BF%AB%E6%8D%B7%E5%91%BD%E4%BB%A4/</link>
+      <pubDate>Mon, 20 Apr 2020 10:13:41 +0800</pubDate>
       
-      <guid>http://localhost:1313/tags/springboot/</guid>
+      <guid>http://localhost:1313/tags/%E5%BF%AB%E6%8D%B7%E5%91%BD%E4%BB%A4/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>JDBC</title>
-      <link>http://localhost:1313/tags/jdbc/</link>
-      <pubDate>Mon, 30 Mar 2020 01:19:01 +0800</pubDate>
+      <title>相关项目</title>
+      <link>http://localhost:1313/tags/%E7%9B%B8%E5%85%B3%E9%A1%B9%E7%9B%AE/</link>
+      <pubDate>Tue, 31 Mar 2020 23:08:52 +0800</pubDate>
       
-      <guid>http://localhost:1313/tags/jdbc/</guid>
+      <guid>http://localhost:1313/tags/%E7%9B%B8%E5%85%B3%E9%A1%B9%E7%9B%AE/</guid>
       <description></description>
     </item>
     
@@ -40,11 +40,11 @@
     </item>
     
     <item>
-      <title>快捷命名</title>
-      <link>http://localhost:1313/tags/%E5%BF%AB%E6%8D%B7%E5%91%BD%E5%90%8D/</link>
-      <pubDate>Tue, 18 Feb 2020 00:39:18 +0800</pubDate>
+      <title>软件安装</title>
+      <link>http://localhost:1313/tags/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/</link>
+      <pubDate>Mon, 09 Mar 2020 23:41:32 +0800</pubDate>
       
-      <guid>http://localhost:1313/tags/%E5%BF%AB%E6%8D%B7%E5%91%BD%E5%90%8D/</guid>
+      <guid>http://localhost:1313/tags/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/</guid>
       <description></description>
     </item>
     

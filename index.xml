@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>Chun</copyright>
-    <lastBuildDate>Wed, 01 Apr 2020 14:32:16 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 20 Apr 2020 10:13:41 +0800</lastBuildDate>
     
 	<atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     
@@ -19,6 +19,15 @@
       
       <guid>http://localhost:1313/about/</guid>
       <description>Hugo博客 前言 由于Hexo博客的生成速度太慢了，所以我开始使用Hugo博客 写博客 当使用Hugo博客后，写文章的姿势 1 hugo new post/202001-xxxxxx.md 生成静态文件 使用</description>
+    </item>
+    
+    <item>
+      <title>MySQL的相关命令</title>
+      <link>http://localhost:1313/post/z%E5%BF%AB%E6%8D%B7%E5%91%BD%E4%BB%A4-mysql%E7%9A%84%E7%9B%B8%E5%85%B3%E5%91%BD%E4%BB%A4/</link>
+      <pubDate>Mon, 20 Apr 2020 10:13:41 +0800</pubDate>
+      
+      <guid>http://localhost:1313/post/z%E5%BF%AB%E6%8D%B7%E5%91%BD%E4%BB%A4-mysql%E7%9A%84%E7%9B%B8%E5%85%B3%E5%91%BD%E4%BB%A4/</guid>
+      <description></description>
     </item>
     
     <item>
@@ -460,10 +469,10 @@ AJAX 是与服务器交换数据并更新部分网页的艺术，在不重新加
     
     <item>
       <title>IDEA快捷键</title>
-      <link>http://localhost:1313/post/z%E5%8F%82%E8%80%83%E6%96%87%E6%A1%A3-idea%E5%BF%AB%E6%8D%B7%E9%94%AE/</link>
+      <link>http://localhost:1313/post/z%E5%BF%AB%E6%8D%B7%E5%91%BD%E4%BB%A4-idea%E5%BF%AB%E6%8D%B7%E9%94%AE/</link>
       <pubDate>Tue, 18 Feb 2020 00:39:18 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/z%E5%8F%82%E8%80%83%E6%96%87%E6%A1%A3-idea%E5%BF%AB%E6%8D%B7%E9%94%AE/</guid>
+      <guid>http://localhost:1313/post/z%E5%BF%AB%E6%8D%B7%E5%91%BD%E4%BB%A4-idea%E5%BF%AB%E6%8D%B7%E9%94%AE/</guid>
       <description>&lt;p&gt;查看所有源码 ： &lt;code&gt;双击shift&lt;/code&gt;
 快速修改错误：  &lt;code&gt;Alt+Enter&lt;/code&gt;
 快速构造： &lt;code&gt;Alt+Insert&lt;/code&gt;
@@ -696,11 +705,11 @@ byte -&amp;gt; short -&amp;gt; char -&amp;gt; int -&amp;gt; long -&amp;gt; float
     </item>
     
     <item>
-      <title>Git操作常见问题</title>
-      <link>http://localhost:1313/post/z%E5%8F%82%E8%80%83%E6%96%87%E6%A1%A3-git%E6%93%8D%E4%BD%9C%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/</link>
+      <title>Git相关命令及问题</title>
+      <link>http://localhost:1313/post/z%E5%BF%AB%E6%8D%B7%E5%91%BD%E4%BB%A4-git%E6%93%8D%E4%BD%9C%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/</link>
       <pubDate>Tue, 15 Oct 2019 04:20:09 +0800</pubDate>
       
-      <guid>http://localhost:1313/post/z%E5%8F%82%E8%80%83%E6%96%87%E6%A1%A3-git%E6%93%8D%E4%BD%9C%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/</guid>
+      <guid>http://localhost:1313/post/z%E5%BF%AB%E6%8D%B7%E5%91%BD%E4%BB%A4-git%E6%93%8D%E4%BD%9C%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/</guid>
       <description>&lt;p&gt;git&lt;/p&gt;</description>
     </item>
     
